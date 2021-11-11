@@ -19,7 +19,11 @@
 		border: 1px solid $light-gray;
 		padding: 50px;
 		border-radius: 2px;
+		@media screen and (max-width: 768px){
+			padding: 0;
+		}
 	}
+
 
 	.race-rank-title {
 		text-align: center;
