@@ -45,33 +45,21 @@
               icon="now-ui-icons design_image"
               class="nav-item"
       >
-        <nav-link to="/landing">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 1
-        </nav-link>
-        <nav-link to="/login">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 2
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 3
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 4
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 5
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons media-1_camera-compact"></i> Corrida 6
-        </nav-link>
+         <a
+          href="https://www.1-kart-do-barbeiro.adrenalizemidia.com/"
+          class="dropdown-item"
+		  target="_blank"
+        >
+          <i class="now-ui-icons ui-1_calendar-60"></i> Corrida 1
+        </a>
       </drop-down>
       <li class="nav-item">
-			<a
-			class="nav-link btn btn-neutral"
-			href="https://www.creative-tim.com/product/vue-now-ui-kit-pro"
-			target="_blank"
-			>
-          	<p>Inscreva-se</p>
-        </a>
+			<router-link
+				class="nav-link btn btn-neutral"
+				to="/sing-up"
+				>
+				<p>Inscreva-se</p>
+        	</router-link>
       </li>
 
       <li class="nav-item">
