@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-12 ml-auto col-xl-12 mr-auto">
           <!-- Tabs with Background on Card -->
-          <div class="card">
+          <div class="card calendario-tabs-content">
             <tabs
               centered
               type="neutral"
