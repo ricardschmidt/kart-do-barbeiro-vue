@@ -29,15 +29,15 @@
         <nav-link to="/driver-championship">
           <i class="now-ui-icons sport_user-run"></i> Campeonato de Pilotos
         </nav-link>
-        <nav-link to="/crew-championship">
+        <nav-link to="/team-championship">
           <i class="now-ui-icons objects_spaceship"></i> Campeonato de Equipes
         </nav-link>
-         <a
-          href="#calendar"
+         <router-link
+          to="/#calendar"
           class="dropdown-item"
         >
           <i class="now-ui-icons ui-1_calendar-60"></i> Calendário
-        </a>
+        </router-link>
       </drop-down>
       <drop-down
               tag="li"
