@@ -21,6 +21,8 @@
       </div>
     </div>
 	<calendario-tabs></calendario-tabs>
+	<geral-rank></geral-rank>
+	<race-rank></race-rank>
     <div class="section">
       <div class="container text-center">
         <div class="row justify-content-md-center">
@@ -45,6 +47,8 @@ import { Parallax } from '@/components';
 import CalendarioTabs from './components/CalendarioTabs';
 import SignupForm from './components/SignupForm';
 import DownloadSection from './components/DownloadSection';
+import GeralRank from './components/GeralRank';
+import RaceRank from './components/RaceRank';
 
 export default {
   name: 'index',
@@ -54,6 +58,8 @@ export default {
 	CalendarioTabs,
     SignupForm,
     DownloadSection,
+	GeralRank,
+	RaceRank
   }
 };
 </script>
