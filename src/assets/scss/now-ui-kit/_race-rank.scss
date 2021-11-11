@@ -1,0 +1,45 @@
+.race-rank {
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.fulfilling-bouncing-circle-spinner {
+		margin: 100px;
+	}
+
+	.race-rank-content {
+		border: 1px solid $light-gray;
+		padding: 50px;
+		border-radius: 2px;
+	}
+
+	.race-rank-title {
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+	}
+
+	table{
+		border-collapse: collapse;
+		width: 100%;
+		td, th {
+			border-bottom: 1px solid $primary-color;
+			text-align: left;
+			padding: 8px;
+			text-align: center;
+		}
+		th {
+			font-weight: 400;
+			color: $dark-gray;
+			text-transform: uppercase;
+		}
+		td {
+			color: $light-black;
+		}
+
+		tr:nth-child(even) {
+			background-color: $light-blue;
+		}
+	}
+}

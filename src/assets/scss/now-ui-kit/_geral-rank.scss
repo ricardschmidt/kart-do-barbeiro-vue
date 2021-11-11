@@ -1,0 +1,148 @@
+.rank-geral {
+	background-color: $orange-bg;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.fulfilling-bouncing-circle-spinner {
+		margin: 100px;
+	}
+}
+.rank-title {
+	text-transform: uppercase;
+	font-size: 40px;
+	text-align: center;
+	padding: 30px;
+	color: $white-color;
+}
+.rank-geral-image {
+	position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+ol.podium-rank {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	>li {
+		display: flex;
+		flex-basis: 0;
+		flex-grow: 1;
+		&:nth-of-type(odd) {
+			order: 0;
+		}
+		&:nth-of-type(2) {
+			order: -1;
+		}
+		&:nth-of-type(4) {
+			order: -2;
+		}
+		* {
+			transition: all 0.5s ease 0s;
+		}
+		>* {
+			padding: 1em;
+			width: 100%;
+		}
+		>a {
+			text-decoration: none;
+		}
+		.image {
+			height: 0;
+			padding-bottom: calc((100% / 4) * 3);
+			position: relative;
+			width: 100%;
+			>* {
+				height: auto;
+				left: 50%;
+				max-height: 30%;
+				max-width: 30%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				width: 100%;
+			}
+		}
+		&:hover {
+			.image {
+				>* {
+					max-height: 90%;
+					max-width: 90%;
+				}
+			}
+			.rank-content {
+				padding-bottom: 1em;
+			}
+		}
+		&:not(:hover) {
+			.rank-content {
+				opacity: 0.5;
+				padding-top: 1em;
+			}
+		}
+		.rank-content {
+			* {
+				margin: 0.25em 0 0 0;
+			}
+		}
+		a {
+			color: $white-color;
+		}
+	}
+	&:not(:hover) {
+		>li {
+			&:first-of-type {
+				.image {
+					>* {
+						max-height: 75%;
+						max-width: 75%;
+					}
+				}
+			}
+			&:nth-of-type(2) {
+				.image {
+					>* {
+						max-height: 60%;
+						max-width: 60%;
+					}
+				}
+			}
+			&:nth-of-type(3) {
+				.image {
+					>* {
+						max-height: 45%;
+						max-width: 45%;
+					}
+				}
+			}
+		}
+	}
+}
+#place-1 {
+	fill: #D6AF36
+}
+#place-2 {
+	fill: #D7D7D7
+}
+#place-3 {
+	fill: #824A02
+}
+#place-4 {
+	fill: #A7A7AD
+}
+#place-5 {
+	fill: #A77044
+}
+@media only screen and ( max-width: 50em ) {
+	ol.podium-rank {
+		flex-direction: column;
+		>li {
+			display: block;
+			order: 1 !important;
+		}
+	}
+}
