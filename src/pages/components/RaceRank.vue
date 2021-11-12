@@ -1,6 +1,6 @@
 <template>
 	<article class="race-rank">
-		<div v-if="loading">
+		<div class="loading-spinner" v-if="loading">
 			<fulfilling-bouncing-circle-spinner
 				:animation-duration="4000"
 				:size="60"
