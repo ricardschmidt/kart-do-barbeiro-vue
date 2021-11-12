@@ -21,7 +21,8 @@
 			/>
 		</div>
 		<div class="champion-table" v-else>
-			<tables-driver :drivers="drivers" :index="0"></tables-driver>
+			<driver-card :driver="test"></driver-card>
+			<!-- <tables-driver :drivers="drivers" :index="0"></tables-driver> -->
 		</div>
 	</article>
 </template>
@@ -29,17 +30,29 @@
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import TablesDriver from '../components/TablesDriver.vue';
+import DriverCard from '../components/Cards/DriverCard.vue';
 
 export default {
 	data() {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
-			loading: true,
-			drivers: []
+			loading: false,
+			drivers: [],
+			test: {
+				name:'Ricardo',
+				lastName:'Schmidt',
+				teamColor:'#118AB2',
+				position: 1,
+				points: 254,
+				state: 'PR',
+				img: 'norris',
+				scuderia: 'Scuderia Barbieri',
+				number: '#44'
+			}
 		}
 	},
 	mounted() {
-		this.rankGeral();
+		//this.rankGeral();
 	},
 	methods: {
 		rankGeral() {
@@ -56,7 +69,8 @@ export default {
 	},
 	components: {
 		FulfillingBouncingCircleSpinner,
-		TablesDriver,
+		//TablesDriver,
+		DriverCard,
 	}
 };
 </script>
