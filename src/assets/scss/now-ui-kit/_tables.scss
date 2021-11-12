@@ -1,0 +1,22 @@
+.vue-table{
+	border-collapse: collapse;
+	width: 100%;
+	td, th {
+		border-bottom: 1px solid $primary-color;
+		text-align: left;
+		padding: 8px;
+		text-align: center;
+	}
+	th {
+		font-weight: 400;
+		color: $dark-gray;
+		text-transform: uppercase;
+	}
+	td {
+		color: $light-black;
+	}
+
+	tr:nth-child(even) {
+		background-color: $light-blue;
+	}
+}

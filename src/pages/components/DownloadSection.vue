@@ -9,9 +9,9 @@
         <div class="text-center col-md-12 col-lg-8">
           <h3 class="title">Você se interessou pelo campeonato e quer participar?</h3>
           <h5 class="description">
-            De uma olhada em nosso regulamento e veja tudo que preparamos para
-			essa temporada, você pode fazer download dele clicando no botão a
-			baixo ou pode se inscrever para o campeonato.
+            Dê uma olhada em nosso regulamento e veja tudo que preparamos para
+			essa temporada, você pode fazer download dele clicando no botão
+			abaixo ou pode se inscrever para o campeonato.
           </h5>
         </div>
         <div class="text-center col-md-12 col-lg-8">

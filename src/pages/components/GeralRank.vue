@@ -37,7 +37,7 @@ import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 export default {
 	data() {
 		return {
-			urlBase: 'https://script.google.com/macros/s/AKfycbzvjNiix1_EP6yLmJjR-eIeuhR4l2rOU2kwQAKGnGE0Hmt1FqiKpfmvmsVN91o8AAs8/exec',
+			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
 			drivers: []
 		}
@@ -47,7 +47,7 @@ export default {
 	},
 	methods: {
 		rankGeral() {
-			var url = this.urlBase + "?data=geral";//Sua URL
+			var url = this.urlBase + "?data=top5";//Sua URL
 			axios.get(url)
 			.then(response => {
 				this.drivers = response.data
