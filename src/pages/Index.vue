@@ -20,6 +20,7 @@
         </h6>
       </div>
     </div>
+	<deposition></deposition>
 	<calendario-tabs></calendario-tabs>
 	<geral-rank></geral-rank>
 	<race-rank></race-rank>
@@ -49,6 +50,7 @@ import SignupForm from './components/SignupForm';
 import DownloadSection from './components/DownloadSection';
 import GeralRank from './components/GeralRank';
 import RaceRank from './components/RaceRank';
+import Deposition from './components/Deposition';
 
 export default {
   name: 'index',
@@ -59,7 +61,8 @@ export default {
     SignupForm,
     DownloadSection,
 	GeralRank,
-	RaceRank
+	RaceRank,
+	Deposition
   }
 };
 </script>
