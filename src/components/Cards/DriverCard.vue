@@ -17,10 +17,10 @@
 			<img :src="'img/state-flags/'+driver.state+'.png'" :alt="'Bandeira do '+driver.state">
 		</div>
 		<div class="card-footer">
-			<p>{{driver.scuderia}}</p>
+			<p>{{driver.team}}</p>
 			<div>
 				<h2 :style="'color:'+driver.teamColor">{{driver.number}}</h2>
-				<img :src="'img/'+driver.img+'.png'" alt="Foto do Piloto">
+				<img :src="'img/drivers/'+driver.img+'.png'" alt="Foto do Piloto">
 			</div>
 		</div>
 	</div>

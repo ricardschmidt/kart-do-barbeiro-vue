@@ -10,8 +10,18 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 		width: 100%;
 		min-height: 100%;
+
+		.drivers {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+			max-width: 1095px;
+		}
 
 		.drivers-table {
 			min-width: 50%;
