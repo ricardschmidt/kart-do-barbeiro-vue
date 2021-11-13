@@ -1,13 +1,13 @@
 <template>
-  <div class="section section-tabs">
+  <div class="section section-tabs" style="background-image:url('img/bg22.jpg')">
     <div class="container">
       <div class="title">
-        <h4 id="calendar">Calendário de 2022</h4>
+        <h3 id="calendar">Calendário de 2022</h3>
       </div>
       <div class="row">
         <div class="col-md-12 ml-auto col-xl-12 mr-auto">
           <!-- Tabs with Background on Card -->
-          <div class="card">
+          <div class="card calendario-tabs-content">
             <tabs
               centered
               type="neutral"

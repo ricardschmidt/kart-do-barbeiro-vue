@@ -1,6 +1,6 @@
 <template>
 	<article class="race-rank">
-		<div v-if="loading">
+		<div class="loading-spinner" v-if="loading">
 			<fulfilling-bouncing-circle-spinner
 				:animation-duration="4000"
 				:size="60"
@@ -11,18 +11,7 @@
 			<h2 class="race-rank-title">Classificação por Corridas</h2>
 			<tabs type="primary" vertical class="row race-rank-content">
 				<tab-pane v-for="(drivers, index) in races" :key="index" :label="'Corrida '+(index + 1)">
-					<table>
-						<tr>
-							<th>Pos</th>
-							<th>Piloto</th>
-							<th>Pts</th>
-						</tr>
-						<tr class="race-table" v-for="(driver, i) in drivers" :key="index + i">
-							<td>{{driver.position}}º</td>
-							<td>{{driver.driver}}</td>
-							<td>{{driver.points}}</td>
-						</tr>
-					</table>
+					<tables-driver :drivers="drivers" :index="index"></tables-driver>
 				</tab-pane>
 			</tabs>
 		</div>
@@ -32,11 +21,12 @@
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import { Tabs, TabPane } from '@/components';
+import TablesDriver from '../../components/TablesDriver.vue';
 
 export default {
 	data() {
 		return {
-			urlBase: 'https://script.google.com/macros/s/AKfycbwxoyz0nau8QQsb6kCeQlP5NQ0Je5CnwCFUml063cYhjaE6riOj-9NisOLZMrzeQB4T/exec',
+			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
 			races: [],
 		}
@@ -53,7 +43,6 @@ export default {
 				this.loading = false
 			})
 			.catch(error => {
-				console.error(error)
 				this.loading = false
 			})
 		}
@@ -61,7 +50,8 @@ export default {
 	components: {
 		FulfillingBouncingCircleSpinner,
 		Tabs,
-    	TabPane
+    	TabPane,
+		TablesDriver,
 	}
 };
 </script>
