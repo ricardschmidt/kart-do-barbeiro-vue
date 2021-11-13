@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="drivers-table">
 		<table class="vue-table" :class="tableClasses">
 			<tr>
 				<th>Pos</th>

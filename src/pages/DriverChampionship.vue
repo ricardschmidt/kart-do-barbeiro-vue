@@ -21,29 +21,42 @@
 			/>
 		</div>
 		<div class="champion-table" v-else>
-			<tables-driver :drivers="drivers" :index="0"></tables-driver>
+			<div class="drivers">
+				<driver-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-card>
+			</div>
 		</div>
 	</article>
 </template>
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import TablesDriver from '../components/TablesDriver.vue';
+import DriverCard from '../components/Cards/DriverCard.vue';
 
 export default {
 	data() {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			drivers: []
+			drivers: [],
+			test: {
+				name:'Ricardo',
+				lastName:'Schmidt',
+				teamColor:'#118AB2',
+				position: 1,
+				points: 254,
+				state: 'PR',
+				img: 'norris',
+				team: 'Scuderia Barbieri',
+				number: '#44'
+			}
 		}
 	},
 	mounted() {
-		this.rankGeral();
+		this.getDrivers();
 	},
 	methods: {
-		rankGeral() {
-			var url = this.urlBase + "?data=geral";//Sua URL
+		getDrivers() {
+			var url = this.urlBase + "?data=drivers";//Sua URL
 			axios.get(url)
 			.then(response => {
 				this.drivers = response.data
@@ -56,7 +69,7 @@ export default {
 	},
 	components: {
 		FulfillingBouncingCircleSpinner,
-		TablesDriver,
+		DriverCard,
 	}
 };
 </script>

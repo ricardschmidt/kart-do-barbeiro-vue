@@ -16,7 +16,7 @@
 							<div class="col-md-4" v-for="(deposition, index) in depositions" :key="'deposition'+index">
 								<div class="team-player">
 									<img
-										:src="'img/'+deposition.img+'.png'"
+										:src="'img/drivers/'+deposition.img+'.png'"
 										alt="Thumbnail Image"
 										class="rounded-circle img-fluid img-raised"
 									/>
