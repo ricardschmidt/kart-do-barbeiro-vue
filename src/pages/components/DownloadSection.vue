@@ -15,12 +15,14 @@
           </h5>
         </div>
         <div class="text-center col-md-12 col-lg-8">
-          <router-link to="/sing-up"
+          <a
+		  	href="https://forms.gle/MyLCb2xd8KaVzX5e7"
+            target="_blank"
             class="btn btn-primary btn-lg btn-round"
             role="button"
           >
             Inscrever-se
-          </router-link>
+          </a>
           <a
             href="#"
             target="_blank"

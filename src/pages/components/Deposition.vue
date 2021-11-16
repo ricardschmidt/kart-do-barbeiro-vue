@@ -43,18 +43,26 @@ export default {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			dapositions: [],
+			depositions: [],
 		}
 	},
 	mounted() {
-		this.deposition()
+		this.getDeposition()
 	},
 	methods: {
-		deposition() {
-			var url = this.urlBase + "?data=depositions";//Sua URL
-			axios.get(url)
+		getDeposition() {
+			axios.get(this.urlBase, {
+				params: {
+					action: 'read',
+					table: 'Depoimentos'
+				}
+			})
 			.then(response => {
-				this.depositions = response.data
+				let allDepositions = response.data.data
+				allDepositions = allDepositions.sort(() => Math.random() - 0.5)
+				this.depositions.push(allDepositions[0])
+				this.depositions.push(allDepositions[1])
+				this.depositions.push(allDepositions[2])
 				this.loading = false
 			})
 			.catch(error => {

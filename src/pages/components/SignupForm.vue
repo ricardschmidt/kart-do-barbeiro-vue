@@ -7,52 +7,72 @@
       <div class="row">
         <card class="card-signup" header-classes="text-center" color="orange">
           <template slot="header">
-            <h3 class="card-title title-up">Sign Up</h3>
+            <h3 class="card-title title-up">Inscreva-se</h3>
             <div class="social-line">
               <a
-                href="#pablo"
+                href="#"
                 class="btn btn-neutral btn-facebook btn-icon btn-round"
               >
                 <i class="fab fa-facebook-square"></i>
               </a>
               <a
-                href="#pablo"
-                class="btn btn-neutral btn-twitter btn-icon btn-lg btn-round"
+                href="#"
+                class="btn btn-neutral btn-youtube btn-icon btn-lg btn-round"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
               </a>
               <a
-                href="#pablo"
-                class="btn btn-neutral btn-google btn-icon btn-round"
+                href="https://www.instagram.com/kartdobarbeiro.kdb"
+                class="btn btn-neutral btn-instagram btn-icon btn-round"
               >
-                <i class="fab fa-google-plus"></i>
+                <i class="fab fa-instagram"></i>
               </a>
             </div>
           </template>
           <template>
             <fg-input
               class="no-border"
-              placeholder="First Name..."
+              placeholder="Nome..."
               addon-left-icon="now-ui-icons users_circle-08"
+			  v-model="name"
             >
             </fg-input>
 
             <fg-input
               class="no-border"
-              placeholder="Last Name..."
-              addon-left-icon="now-ui-icons text_caps-small"
+              placeholder="Sobrenome..."
+              addon-left-icon="now-ui-icons users_circle-08"
+			  v-model="lastName"
             >
             </fg-input>
 
             <fg-input
               class="no-border"
-              placeholder="Email"
-              addon-left-icon="now-ui-icons ui-1_email-85"
+              placeholder="Número"
+              addon-left-icon="now-ui-icons sport_trophy"
+			  v-model="number"
             >
             </fg-input>
+
+            <fg-input
+              class="no-border"
+              placeholder="Equipe"
+              addon-left-icon="now-ui-icons ui-1_send"
+			  v-model="team"
+            >
+            </fg-input>
+
+            <fg-input
+              class="no-border"
+              placeholder="Estado"
+              addon-left-icon="now-ui-icons location_world"
+			  v-model="state"
+            >
+            </fg-input>
+
           </template>
           <div class="card-footer text-center">
-            <n-button type="neutral" round size="lg">Get Started</n-button>
+            <n-button :type="typeButton" round size="lg" v-on:click="insertDriver" >Inscrever-se</n-button>
           </div>
         </card>
       </div>
@@ -68,6 +88,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import { Card, FormGroupInput, Button } from '@/components';
 
 export default {
@@ -75,6 +96,52 @@ export default {
     Card,
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+	  return{
+		  urlBase: process.env.VUE_APP_API_URL,
+		  typeButton: "neutral",
+		  name: "",
+		  lastName: "",
+		  number: "",
+		  team:"",
+		  state: "",
+	  }
+  },
+  methods: {
+		insertDriver() {
+			axios.get(this.urlBase, {
+				params: {
+					action: 'insert',
+					table: 'Inscrição',
+					data: {
+						"Carimbo de data/hora": Date.getTime(),
+						"Número de Piloto": "#" + this.number,
+						"Nome": this.name,
+						"Sobrenome": this.lastName,
+						"Estado": this.state,
+						"Equipe": this.team,
+						"Cor do Time": "",
+						"Foto": "",
+						"Insira sua foto aqui":"",
+						"Temporada": "2022/1",
+						"Pagamento": false
+						}
+				}
+			})
+			.then(response => {
+				this.drivers = response.data.data
+				this.name = ""
+				this.lastName = ""
+				this.number = ""
+				this.state = ""
+				this.team = ""
+
+			})
+			.catch(error => {
+				this.typeButton = "danger"
+			})
+		}
   }
 };
 </script>

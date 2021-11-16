@@ -4,7 +4,7 @@
 		<div class="card-header">
 			<h2>{{driver.position}}º</h2>
 			<div class="header-points">
-				<p>{{driver.points}}</p>
+				<p>{{points}}</p>
 				<small>PTS</small>
 			</div>
 		</div>
@@ -31,5 +31,10 @@ export default {
 	props: {
 		driver: Object
 	},
+	data() {
+		return {
+			points: parseInt(this.driver.points)
+		}
+	}
 }
 </script>
