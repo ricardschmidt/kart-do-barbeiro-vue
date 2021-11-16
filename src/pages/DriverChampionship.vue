@@ -56,10 +56,14 @@ export default {
 	},
 	methods: {
 		getDrivers() {
-			var url = this.urlBase + "?data=drivers";//Sua URL
-			axios.get(url)
+			axios.get(this.urlBase, {
+				params: {
+					action: 'read',
+					table: 'Campeonato de Pilotos'
+				}
+			})
 			.then(response => {
-				this.drivers = response.data
+				this.drivers = response.data.data
 				this.loading = false
 			})
 			.catch(error => {

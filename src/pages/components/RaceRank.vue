@@ -36,10 +36,14 @@ export default {
 	},
 	methods: {
 		raceRank() {
-			var url = this.urlBase + "?data=allRaces";//Sua URL
-			axios.get(url)
+			axios.get(this.urlBase, {
+				params: {
+					action: 'read',
+					table: 'Classificação'
+				}
+			})
 			.then(response => {
-				this.races = response.data
+				this.races = response.data.data
 				this.loading = false
 			})
 			.catch(error => {
