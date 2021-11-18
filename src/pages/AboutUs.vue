@@ -51,13 +51,12 @@
         </div>
         <h3 class="title">Sobre nós</h3>
         <h5 class="description">
-          Criamos o Kart do Barbeiro com a vontade de ter um hambiente para que
+          Criamos o Kart do Barbeiro com a vontade de ter um ambiente para que
 		  entusiastas de automobilismos possam brincar e confraternizar, levamos
-		  uma leve dose da pressão de um campeonato, pois isso move todos os
-		  amante de corridas.
-		  Com isso misturamos pessoas sem experiencia mas com empolgação para
-		  aprender e alguns pilotos de fim de semana e nasceu o Campeonato do Kart
-		  do Barbeiro.
+		   uma leve dose da pressão de um campeonato, pois isso move todos os
+		   amantes de corridas. Com isso misturamos pessoas sem experiência mas
+		   com empolgação para aprender e alguns pilotos de fim de semana e
+		   nasceu o Campeonato do Kart do Barbeiro.
         </h5>
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">

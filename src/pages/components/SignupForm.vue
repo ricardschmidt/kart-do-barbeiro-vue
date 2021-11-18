@@ -31,7 +31,7 @@
           </template>
 		  <div class="sing-up-form-success" v-if="success" >
 			  <p>
-                Você concluio o seu cadastro para o Campeonado do Kart do Barbeiro 2022/1
+                Você concluiu o seu cadastro para o Campeonato do Kart do Barbeiro 2022/1
               </p>
 		  </div>
 		  <div class="sing-up-form"  v-else >
