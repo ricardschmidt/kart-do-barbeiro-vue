@@ -24,7 +24,7 @@
             Inscrever-se
           </a>
           <a
-            href="#"
+            href="https://ras-upload.s3.amazonaws.com/ckdb/Regulamento+Kart+do+Barbeiro.pdf"
             target="_blank"
             class="btn btn-primary btn-lg btn-simple btn-round"
             role="button"
@@ -61,7 +61,7 @@
           </a>
           <a
             target="_blank"
-            href="#"
+            href="https://www.instagram.com/kartdobarbeiro.kdb/"
             class="btn btn-neutral btn-icon btn-instagram btn-round btn-lg"
             rel="tooltip"
             title="Follow Us"
