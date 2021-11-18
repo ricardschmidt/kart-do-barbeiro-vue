@@ -3,12 +3,12 @@
     <div class="page-header clear-filter" filter-color="orange">
       <parallax
         class="page-header-image"
-        style="background-image:url('img/bg21.jpg')"
+        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg03.jpg')"
       >
       </parallax>
       <div class="container">
         <div class="photo-container">
-          <img src="img/bg10.jpeg" alt="Regulamento Image" />
+          <img src="https://ras-upload.s3.amazonaws.com/ckdb/img/avatar-regulation.jpeg" alt="Regulamento Image" />
         </div>
         <h3 class="title">Regulamento</h3>
         <p class="category">Kart do Barbeiro</p>
