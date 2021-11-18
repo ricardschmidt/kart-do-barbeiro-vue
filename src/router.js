@@ -4,7 +4,6 @@ import Index from './pages/Index.vue';
 import DriverChampionship from './pages/DriverChampionship.vue';
 import TeamChampionship from './pages/TeamChampionship.vue';
 import SingUp from './pages/SingUp.vue';
-import Championship from './pages/Championship.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Driver from './pages/Driver.vue';
 import Regulation from './pages/Regulation.vue';
@@ -58,15 +57,6 @@ export default new Router({
       components: { default: SingUp, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400 }
-      }
-    },
-    {
-      path: '/championship',
-      name: 'championship',
-      components: { default: Championship, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
       }
     },
     {

@@ -8,7 +8,7 @@
       <nav>
         <ul>
           <li>
-            <router-link to="/championship">
+            <router-link to="/driver-championship">
               Campeonato
             </router-link>
           </li>
@@ -26,7 +26,7 @@
       </nav>
       <div class="copyright">
         &copy; {{ year }}, Designed and Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
+        <a href="https://github.com/ricardschmidt" target="_blank" rel="noopener"
           >Ricardo Schmidt</a
         >
       </div>
