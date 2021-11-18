@@ -23,6 +23,19 @@
 		color: $white-color;
 		text-transform: uppercase;
 	}
+
+	.sing-up-form-success {
+		background-color: $success-color;
+		padding: 30px 20px 15px;
+		margin-bottom: 30px;
+		border-radius: 3px;
+
+		p {
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 500;
+		}
+	}
 }
 .landing-page{
 
