@@ -24,8 +24,8 @@
 					<p>
 					O traçado tradicional do Kartódromo dos Ingleses é o mais
 					conhecido por todos, um traçado que possibilita boas brigas
-					por posição, com curvas de alta velocidade, chicanes estreitas
-					e longas retas, alem de proporsionar muita diversão.
+					por posição, com curvas de alta velocidade, chicanes
+					estreitas e longas retas, além de proporcionar muita diversão.
 					</p>
 				</div>
               </tab-pane>
@@ -36,13 +36,10 @@
                 <div class="tab-tracado d-md-flex">
 					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
 					<p>
-					I think that’s a responsibility that I have, to push
-					possibilities, to show people, this is the level that things
-					could be at. So when you get something that has the name Kanye
-					West on it, it’s supposed to be pushing the furthest
-					possibilities. I will be the leader of a company that ends up
-					being worth billions of dollars, because I got the answers. I
-					understand culture. I am the nucleus.
+					Este é o traçado que mostra a habilidade dos pilotos, com
+					várias chicanes estreitas é necessário escolher muito bem a
+					hora de ultrapassar, para não perder a chance, e acabar se
+					enroscando na próxima curva.
 					</p>
 				</div>
               </tab-pane>
@@ -53,13 +50,10 @@
                 <div class="tab-tracado d-md-flex">
 					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-james.png" alt="">
 					<p>
-					I think that’s a responsibility that I have, to push
-					possibilities, to show people, this is the level that things
-					could be at. So when you get something that has the name Kanye
-					West on it, it’s supposed to be pushing the furthest
-					possibilities. I will be the leader of a company that ends up
-					being worth billions of dollars, because I got the answers. I
-					understand culture. I am the nucleus.
+					Esta é a Monza do calendário, uma pista muito rápida, mas
+					que cobra seu preço sendo muito desgastante, os pilotos
+					precisam prestar muita atenção na parte sinuosa para não
+					perder a posição na curva após a reta oposta.
 					</p>
 				</div>
               </tab-pane>
