@@ -8,7 +8,7 @@
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.png" alt="" />
+          <img class="n-logo" src="logo.svg" alt="Logo KDB" />
           <h1 class="h1-seo">Kart do Barbeiro</h1>
           <h3>Um novo modo de competir.</h3>
         </div>
