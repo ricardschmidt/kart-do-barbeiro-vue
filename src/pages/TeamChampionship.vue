@@ -8,7 +8,7 @@
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/avatar-team-championship.jpg" alt="" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.png" alt="Logo KDB" />
 				</div>
 				<h2 class="championship-title">Classificação Geral de Equipes</h2>
 			</div>
