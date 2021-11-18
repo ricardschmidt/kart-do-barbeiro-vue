@@ -50,7 +50,8 @@ export default {
 			axios.get(this.urlBase, {
 				params: {
 					action: 'read',
-					table: 'Campeonato de Pilotos'
+					table: 'Campeonato de Pilotos',
+					season: '2022/1',
 				}
 			})
 			.then(response => {

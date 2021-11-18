@@ -1,5 +1,5 @@
 <template>
-  <div class="section section-tabs" style="background-image:url('img/bg22.jpg')">
+  <div class="section section-tabs" style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg04.jpg')">
     <div class="container">
       <div class="title">
         <h3 id="calendar">Calendário de 2022</h3>
@@ -20,7 +20,7 @@
                   <i class="now-ui-icons sport_trophy"></i> Tradicional
                 </template>
 				<div class="tab-tracado d-md-flex">
-					<img src="img/t-tradicional.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-tradicional.png" alt="">
 					<p>
 					O traçado tradicional do Kartódromo dos Ingleses é o mais
 					conhecido por todos, um traçado que possibilita boas brigas
@@ -34,7 +34,7 @@
                   <i class="now-ui-icons sport_trophy"></i> Ayrton Senna
                 </template>
                 <div class="tab-tracado d-md-flex">
-					<img src="img/t-senna.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
 					<p>
 					I think that’s a responsibility that I have, to push
 					possibilities, to show people, this is the level that things
@@ -51,7 +51,7 @@
                   <i class="now-ui-icons sport_trophy"></i> James Hunt
                 </template>
                 <div class="tab-tracado d-md-flex">
-					<img src="img/t-james.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-james.png" alt="">
 					<p>
 					I think that’s a responsibility that I have, to push
 					possibilities, to show people, this is the level that things
@@ -68,7 +68,7 @@
                   <i class="now-ui-icons sport_trophy"></i> Hamilton
                 </template>
                 <div class="tab-tracado d-md-flex">
-					<img src="img/t-hamilton.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-hamilton.png" alt="">
 					<p>
 					I think that’s a responsibility that I have, to push
 					possibilities, to show people, this is the level that things
@@ -85,7 +85,7 @@
                   <i class="now-ui-icons sport_trophy"></i>Fangio
                 </template>
                 <div class="tab-tracado d-md-flex">
-					<img src="img/t-fangio.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-fangio.png" alt="">
 					<p>
 					I think that’s a responsibility that I have, to push
 					possibilities, to show people, this is the level that things
@@ -102,7 +102,7 @@
                   <i class="now-ui-icons sport_trophy"></i>Beto Carreiro
                 </template>
                 <div class="tab-tracado d-md-flex">
-					<img src="img/t-joker.png" alt="">
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-joker.png" alt="">
 					<p>
 					I think that’s a responsibility that I have, to push
 					possibilities, to show people, this is the level that things

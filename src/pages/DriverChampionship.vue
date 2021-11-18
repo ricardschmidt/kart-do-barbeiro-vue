@@ -3,12 +3,12 @@
 		<div class="page-header champion clear-filter" filter-color="orange">
 			<parallax
 				class="page-header-image"
-				style="background-image:url('img/bg20.jpg')"
+				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg02.jpg')"
 			>
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="img/largada.jpg" alt="" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/avatar-driver-championship.jpg" alt="" />
 				</div>
 				<h2 class="championship-title">Classificação Geral</h2>
 			</div>
@@ -30,6 +30,7 @@
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
+//import { Radio } from '@/components';
 import DriverCard from '../components/Cards/DriverCard.vue';
 
 export default {
@@ -38,16 +39,9 @@ export default {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
 			drivers: [],
-			test: {
-				name:'Ricardo',
-				lastName:'Schmidt',
-				teamColor:'#118AB2',
-				position: 1,
-				points: 254,
-				state: 'PR',
-				img: 'norris',
-				team: 'Scuderia Barbieri',
-				number: '#44'
+			radios: {
+				radioOn: '2022/1',
+				radioOff: '2022/2'
 			}
 		}
 	},
@@ -59,7 +53,8 @@ export default {
 			axios.get(this.urlBase, {
 				params: {
 					action: 'read',
-					table: 'Campeonato de Pilotos'
+					table: 'Campeonato de Pilotos',
+					season: this.radios.radioOn,
 				}
 			})
 			.then(response => {
@@ -74,6 +69,7 @@ export default {
 	components: {
 		FulfillingBouncingCircleSpinner,
 		DriverCard,
+		//[Radio.name]: Radio,
 	}
 };
 </script>

@@ -3,18 +3,18 @@
     <div class="page-header clear-filter" filter-color="blue">
       <parallax
         class="page-header-image"
-        style="background-image:url('img/header1.jpeg')"
+        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/header.jpeg')"
       >
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="img/now-logo.png" alt="" />
+          <img class="n-logo" src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.png" alt="" />
           <h1 class="h1-seo">Kart do Barbeiro</h1>
           <h3>Um novo modo de competir.</h3>
         </div>
         <h6 class="category category-absolute">
           Designed and Coded by
-          <a href="http://invisionapp.com/" target="_blank">
+          <a href="https://github.com/ricardschmidt" target="_blank">
             Ricardo Schmidt</a
           >.
         </h6>
