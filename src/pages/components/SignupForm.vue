@@ -29,60 +29,67 @@
               </a>
             </div>
           </template>
-          <template>
-            <fg-input
-              class="no-border"
-              placeholder="Nome..."
-              addon-left-icon="now-ui-icons users_circle-08"
-			  v-model="name"
-            >
-            </fg-input>
+		  <div class="sing-up-form-success" v-if="success" >
+			  <p>
+                Você concluio o seu cadastro para o Campeonado do Kart do Barbeiro 2022/1
+              </p>
+		  </div>
+		  <div class="sing-up-form"  v-else >
+			<template>
+				<fg-input
+				class="no-border"
+				placeholder="Nome..."
+				addon-left-icon="now-ui-icons users_circle-08"
+				v-model="name"
+				>
+				</fg-input>
 
-            <fg-input
-              class="no-border"
-              placeholder="Sobrenome..."
-              addon-left-icon="now-ui-icons users_circle-08"
-			  v-model="lastName"
-            >
-            </fg-input>
+				<fg-input
+				class="no-border"
+				placeholder="Sobrenome..."
+				addon-left-icon="now-ui-icons users_circle-08"
+				v-model="lastName"
+				>
+				</fg-input>
 
-            <fg-input
-              class="no-border"
-              placeholder="Número"
-              addon-left-icon="now-ui-icons sport_trophy"
-			  v-model="number"
-            >
-            </fg-input>
+				<fg-input
+				class="no-border"
+				placeholder="Número"
+				addon-left-icon="now-ui-icons sport_trophy"
+				v-model="number"
+				>
+				</fg-input>
 
-            <fg-input
-              class="no-border"
-              placeholder="Equipe"
-              addon-left-icon="now-ui-icons ui-1_send"
-			  v-model="team"
-            >
-            </fg-input>
+				<fg-input
+				class="no-border"
+				placeholder="Equipe"
+				addon-left-icon="now-ui-icons ui-1_send"
+				v-model="team"
+				>
+				</fg-input>
 
-            <fg-input
-              class="no-border"
-              placeholder="Estado"
-              addon-left-icon="now-ui-icons location_world"
-			  v-model="state"
-            >
-            </fg-input>
+				<fg-input
+				class="no-border"
+				placeholder="Estado"
+				addon-left-icon="now-ui-icons location_world"
+				v-model="state"
+				>
+				</fg-input>
 
-          </template>
-          <div class="card-footer text-center">
-            <n-button :type="typeButton" round size="lg" v-on:click="insertDriver" >Inscrever-se</n-button>
-          </div>
+				<fg-input
+				class="no-border"
+				placeholder="E-mail"
+				addon-left-icon="now-ui-icons ui-1_email-85"
+				v-model="email"
+				>
+				</fg-input>
+
+			</template>
+			<div class="card-footer text-center">
+				<n-button :type="typeButton" round size="lg" v-on:click="insertDriver" >Inscrever-se</n-button>
+			</div>
+		  </div>
         </card>
-      </div>
-      <div class="col text-center">
-        <router-link
-          to="/login"
-          class="btn btn-simple btn-round btn-white btn-lg"
-        >
-          View Login Page
-        </router-link>
       </div>
     </div>
   </div>
@@ -101,21 +108,24 @@ export default {
 	  return{
 		  urlBase: process.env.VUE_APP_API_URL,
 		  typeButton: "neutral",
+		  success: false,
 		  name: "",
 		  lastName: "",
 		  number: "",
 		  team:"",
 		  state: "",
+		  email: "",
 	  }
   },
   methods: {
 		insertDriver() {
+			let now = new Date()
 			axios.get(this.urlBase, {
 				params: {
 					action: 'insert',
 					table: 'Inscrição',
 					data: {
-						"Carimbo de data/hora": Date.getTime(),
+						"Carimbo de data/hora": `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`,
 						"Número de Piloto": "#" + this.number,
 						"Nome": this.name,
 						"Sobrenome": this.lastName,
@@ -124,18 +134,20 @@ export default {
 						"Cor do Time": "",
 						"Foto": "",
 						"Insira sua foto aqui":"",
+						"Email": this.email,
 						"Temporada": "2022/1",
-						"Pagamento": false
+						"Pagamento": false,
 						}
 				}
 			})
 			.then(response => {
-				this.drivers = response.data.data
 				this.name = ""
 				this.lastName = ""
 				this.number = ""
 				this.state = ""
 				this.team = ""
+				this.typeButton = "success"
+				this.success = true
 
 			})
 			.catch(error => {
