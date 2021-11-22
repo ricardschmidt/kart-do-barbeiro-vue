@@ -40,7 +40,7 @@ export default {
 			loading: true,
 			teams: [],
 			radios: {
-				radioOn: '2022/1',
+				radioOn: '2021/1',
 				radioOff: '2022/2'
 			}
 		}
