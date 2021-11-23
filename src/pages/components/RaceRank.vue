@@ -39,16 +39,44 @@ export default {
 			axios.get(this.urlBase, {
 				params: {
 					action: 'read',
-					table: 'Classificação'
+					table: 'Pontuação Pilotos',
+					season: '2021/1'
 				}
 			})
 			.then(response => {
-				this.races = response.data.data
+				this.createRaceData(response.data.data)
 				this.loading = false
 			})
 			.catch(error => {
 				this.loading = false
 			})
+		},
+
+		createRaceData(results) {
+			let keys = Object.keys(results[0])
+			let count = 0
+			keys.forEach((key) => {
+				if(key.startsWith('bateria')){
+					count++;
+				}
+			})
+			count = count/2
+			for(let i = 0; i < count; i++) {
+				let corrida = []
+				results.forEach((result) => {
+					if(result[keys[(3 + i * 2)]] + result[keys[(4 + i * 2)]] > 0){
+						corrida.push( {
+							number: result[keys[0]],
+							driver: result[keys[1]],
+							points: parseInt(result[keys[(3 + i * 2)]] + result[keys[(4 + i * 2)]])
+						})
+					}
+				})
+				corrida.sort((a,b) => (a.points > b.points) ? -1: 1)
+				if(corrida[0].points !== 0){
+					this.races.push(corrida)
+				}
+			}
 		}
 	},
 	components: {
