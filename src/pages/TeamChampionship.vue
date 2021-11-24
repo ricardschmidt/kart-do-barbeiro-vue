@@ -53,8 +53,7 @@ export default {
 		this.apiRequest();
 	},
 	methods: {
-		newRequest(season, event) {
-			console.log(event)
+		newRequest(season) {
 			if(season !== this.season) {
 				this.loading = true;
 				this.season = season
