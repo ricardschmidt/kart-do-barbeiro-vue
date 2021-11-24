@@ -129,6 +129,7 @@ export default {
 						"Número de Piloto": "#" + this.number,
 						"Nome": this.name,
 						"Sobrenome": this.lastName,
+						"Nome Completo": `${this.name} ${this.lastName}`,
 						"Estado": this.state,
 						"Equipe": this.team,
 						"Cor do Time": "",

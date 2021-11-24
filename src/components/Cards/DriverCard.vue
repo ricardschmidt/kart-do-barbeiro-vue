@@ -3,7 +3,7 @@
 		<div class="card-header">
 			<h2>{{driver.position}}º</h2>
 			<div class="header-points">
-				<p>{{points}}</p>
+				<p>{{parseInt(driver.points)}}</p>
 				<small>PTS</small>
 			</div>
 		</div>
@@ -13,7 +13,18 @@
 				<p>{{driver.name}}</p>
 				<h3>{{driver.lastName}}</h3>
 			</div>
-			<img :src="'https://ras-upload.s3.amazonaws.com/ckdb/img/state-flags/'+driver.state+'.png'" :alt="'Bandeira do '+driver.state">
+			<img v-popover:popover1 :src="'https://ras-upload.s3.amazonaws.com/ckdb/img/state-flags/'+driver.state+'.png'" :alt="'Bandeira do '+driver.state">
+			<el-popover
+				ref="popover1"
+				popper-class="popover"
+				placement="bottom"
+				width="50"
+				trigger="hover"
+			>
+				<div class="popover-body">
+					Estado: {{driver.state}}
+				</div>
+      		</el-popover>
 		</div>
 		<div class="card-footer">
 			<p>{{driver.team}}</p>
@@ -25,14 +36,13 @@
 	</div>
 </template>
 <script>
+import { Popover } from 'element-ui';
 export default {
 	props: {
 		driver: Object
 	},
-	data() {
-		return {
-			points: parseInt(this.driver.points)
-		}
+	components: {
+		[Popover.name]: Popover
 	}
 }
 </script>
