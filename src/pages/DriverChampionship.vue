@@ -20,9 +20,16 @@
 				color="#118AB2"
 			/>
 		</div>
-		<div class="champion-table" v-else>
-			<div class="drivers">
-				<driver-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-card>
+		<div class="content-championship" v-else>
+			<div class="content">
+				 <n-button type="primary" round :simple="season !== '2021/1'" @click="newRequest('2021/1')">Temporada 2021/1</n-button>
+				 <n-button type="primary" round :simple="season !== '2022/1'" @click="newRequest('2022/1')">Temporada 2022/1</n-button>
+			</div>
+			<h3 >Temporada de {{ season }}</h3>
+			<div class="champion-table" >
+				<div class="drivers">
+					<driver-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-card>
+				</div>
 			</div>
 		</div>
 	</article>
@@ -30,8 +37,8 @@
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-//import { Radio } from '@/components';
 import DriverCard from '../components/Cards/DriverCard.vue';
+import { Button } from '@/components';
 
 export default {
 	data() {
@@ -39,22 +46,27 @@ export default {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
 			drivers: [],
-			radios: {
-				radioOn: '2021/1',
-				radioOff: '2022/2'
-			}
+			season: "2021/1",
 		}
 	},
 	mounted() {
-		this.getDrivers();
+		this.apiRequest();
 	},
 	methods: {
-		getDrivers() {
+		newRequest(season, event) {
+			console.log(event)
+			if(season !== this.season) {
+				this.loading = true;
+				this.season = season
+				this.apiRequest()
+			}
+		},
+		apiRequest() {
 			axios.get(this.urlBase, {
 				params: {
 					action: 'read',
 					table: 'Campeonato de Pilotos',
-					season: this.radios.radioOn,
+					season: this.season,
 				}
 			})
 			.then(response => {
@@ -69,7 +81,7 @@ export default {
 	components: {
 		FulfillingBouncingCircleSpinner,
 		DriverCard,
-		//[Radio.name]: Radio,
+		[Button.name]: Button,
 	}
 };
 </script>

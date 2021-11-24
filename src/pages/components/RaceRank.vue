@@ -68,7 +68,7 @@ export default {
 						corrida.push( {
 							number: result[keys[0]],
 							driver: result[keys[1]],
-							points: parseInt(result[keys[(3 + i * 2)]] + result[keys[(4 + i * 2)]])
+							points: result[keys[(3 + i * 2)]] + result[keys[(4 + i * 2)]]
 						})
 					}
 				})

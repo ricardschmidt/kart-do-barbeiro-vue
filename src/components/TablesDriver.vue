@@ -11,7 +11,7 @@
 				<td>{{i + 1}}º</td>
 				<td>{{driver.number}}</td>
 				<td>{{driver.driver}}</td>
-				<td>{{driver.points}}</td>
+				<td>{{parseInt(driver.points)}}</td>
 			</tr>
 		</table>
 	</div>
@@ -30,6 +30,6 @@ export default {
 			type: Number,
 			default: 0
 		},
-	},
+	}
 }
 </script>
