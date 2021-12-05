@@ -3,7 +3,7 @@
 		<div class="card-header">
 			<h2>{{driver.position}}º</h2>
 			<div class="header-points">
-				<p>{{parseInt(driver.points)}}</p>
+				<p>{{driver.points >= 1 ? parseInt(driver.points) : 0}}</p>
 				<small>PTS</small>
 			</div>
 		</div>

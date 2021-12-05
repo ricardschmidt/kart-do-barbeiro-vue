@@ -38,7 +38,7 @@ export default {
 	},
 	data() {
 		return {
-			points: parseInt(this.team.points),
+			points: this.team.points >= 1 ? parseInt(this.team.points) : 0,
 			names1: this.team.driver1,
 			names2: this.team.driver2,
 		}
