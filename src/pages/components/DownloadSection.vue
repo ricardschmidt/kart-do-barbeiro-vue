@@ -52,7 +52,7 @@
           </a>
           <a
             target="_blank"
-            href="#"
+            href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
             class="btn btn-neutral btn-icon btn-youtube btn-round btn-lg"
             rel="tooltip"
             title="Like us"

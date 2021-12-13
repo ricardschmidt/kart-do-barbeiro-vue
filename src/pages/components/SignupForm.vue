@@ -16,7 +16,7 @@
                 <i class="fab fa-facebook-square"></i>
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
                 class="btn btn-neutral btn-youtube btn-icon btn-lg btn-round"
               >
                 <i class="fab fa-youtube"></i>

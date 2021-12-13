@@ -11,7 +11,7 @@
 				<td>{{i + 1}}º</td>
 				<td>{{driver.number}}</td>
 				<td>{{driver.driver}}</td>
-				<td>{{parseInt(driver.points)}}</td>
+				<td>{{driver.points >= 1 ? parseInt(driver.points) : 0}}</td>
 			</tr>
 		</table>
 	</div>
