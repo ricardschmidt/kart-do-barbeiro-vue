@@ -7,7 +7,6 @@
 
     nav{
         display: inline-block;
-        float: left;
     }
 
     ul{
@@ -41,4 +40,19 @@
         clear: both;
         content: " ";
     }
+
+
+	.sponsor {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 50px 50px;
+		flex-wrap: wrap;
+
+		img {
+			height: 50px;
+			margin: 15px;
+		}
+
+	}
 }
