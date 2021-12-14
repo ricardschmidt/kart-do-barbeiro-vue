@@ -24,6 +24,19 @@
 		text-transform: uppercase;
 	}
 
+	.track-date {
+		font-size: $font-size-h4;
+		text-transform: uppercase;
+		padding-left: 50px;
+		font-weight: $font-weight-semi;
+
+		span {
+			padding-left: 20px;
+			font-size: $font-size-h3;
+			font-weight: $font-weight-bold;
+		}
+	}
+
 	.sing-up-form-success {
 		background-color: $success-color;
 		padding: 30px 20px 15px;
@@ -36,6 +49,7 @@
 			font-weight: 500;
 		}
 	}
+
 }
 .landing-page{
 
@@ -250,9 +264,6 @@
 }
 
 .login-page{
-
-
-
     .card-login{
         border-radius: $border-radius-large;
         padding-bottom: $padding-base-horizontal;

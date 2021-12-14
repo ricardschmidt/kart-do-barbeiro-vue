@@ -69,7 +69,7 @@
           rel="tooltip"
           title="Like us on Youtube"
           data-placement="bottom"
-          href="#"
+          href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
           target="_blank"
         >
           <i class="fab fa-youtube"></i>

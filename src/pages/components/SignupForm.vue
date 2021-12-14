@@ -16,7 +16,7 @@
                 <i class="fab fa-facebook-square"></i>
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
                 class="btn btn-neutral btn-youtube btn-icon btn-lg btn-round"
               >
                 <i class="fab fa-youtube"></i>
@@ -35,9 +35,12 @@
               </p>
 		  </div>
 		  <div class="sing-up-form"  v-else >
+			  <alert type="danger" dismissible :visible="error" >Preencha todos os campos!</alert>
 			<template>
 				<fg-input
+				id="input-name"
 				class="no-border"
+				:class="{'has-danger': errors.name}"
 				placeholder="Nome..."
 				addon-left-icon="now-ui-icons users_circle-08"
 				v-model="name"
@@ -45,7 +48,9 @@
 				</fg-input>
 
 				<fg-input
+				id="input-lastname"
 				class="no-border"
+				:class="{'has-danger': errors.lastName}"
 				placeholder="Sobrenome..."
 				addon-left-icon="now-ui-icons users_circle-08"
 				v-model="lastName"
@@ -53,7 +58,9 @@
 				</fg-input>
 
 				<fg-input
+				id="input-number"
 				class="no-border"
+				:class="{'has-danger': errors.number}"
 				placeholder="Número"
 				addon-left-icon="now-ui-icons sport_trophy"
 				v-model="number"
@@ -62,6 +69,7 @@
 
 				<fg-input
 				class="no-border"
+				:class="{'has-danger': errors.team}"
 				placeholder="Equipe"
 				addon-left-icon="now-ui-icons ui-1_send"
 				v-model="team"
@@ -69,7 +77,9 @@
 				</fg-input>
 
 				<fg-input
+				id="input-state"
 				class="no-border"
+				:class="{'has-danger': errors.state}"
 				placeholder="Estado"
 				addon-left-icon="now-ui-icons location_world"
 				v-model="state"
@@ -77,7 +87,9 @@
 				</fg-input>
 
 				<fg-input
+				id="input-email"
 				class="no-border"
+				:class="{'has-danger': errors.email}"
 				placeholder="E-mail"
 				addon-left-icon="now-ui-icons ui-1_email-85"
 				v-model="email"
@@ -96,29 +108,35 @@
 </template>
 <script>
 import axios from 'axios'
-import { Card, FormGroupInput, Button } from '@/components';
+import { Alert, Card, FormGroupInput, Button } from '@/components';
 
 export default {
   components: {
-    Card,
-    [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
+	Alert,
+	Card,
+	[Button.name]: Button,
+	[FormGroupInput.name]: FormGroupInput
   },
   data() {
 	  return{
 		  urlBase: process.env.VUE_APP_API_URL,
 		  typeButton: "neutral",
+		  error: false,
+		  errors: {},
 		  success: false,
-		  name: "",
-		  lastName: "",
-		  number: "",
-		  team:"",
-		  state: "",
-		  email: "",
+		  name: null,
+		  lastName: null,
+		  number: null,
+		  team: null,
+		  state: null,
+		  email: null,
 	  }
   },
   methods: {
 		insertDriver() {
+			if(this.checkForm()){
+				return
+			}
 			let now = new Date()
 			axios.get(this.urlBase, {
 				params: {
@@ -142,11 +160,12 @@ export default {
 				}
 			})
 			.then(response => {
-				this.name = ""
-				this.lastName = ""
-				this.number = ""
-				this.state = ""
-				this.team = ""
+				this.name = null
+				this.lastName = null
+				this.number = null
+				this.state = null
+				this.team = null
+				this.email = null
 				this.typeButton = "success"
 				this.success = true
 
@@ -154,6 +173,43 @@ export default {
 			.catch(error => {
 				this.typeButton = "danger"
 			})
+		},
+
+		checkForm() {
+			this.errors = {}
+			if(!this.name) {
+				this.errors['name'] = true
+			}
+			if(!this.lastName) {
+				this.errors['lastName'] = true
+			}
+			if(!this.number) {
+				this.errors['number'] = true
+			}
+			if(!this.state) {
+				this.errors['state'] = true
+			}
+			if(!this.email) {
+				this.errors['email'] = true
+			}
+
+			if (!this.isEmpty(this.errors)) {
+				this.error = true
+				return true;
+			} else {
+				this.error = false
+				return false;
+			}
+		},
+
+		isEmpty(obj) {
+			for(var prop in obj) {
+				if(Object.prototype.hasOwnProperty.call(obj, prop)) {
+				return false;
+				}
+			}
+
+			return JSON.stringify(obj) === JSON.stringify({});
 		}
   }
 };

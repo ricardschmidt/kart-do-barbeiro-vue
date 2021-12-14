@@ -8,7 +8,7 @@
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/avatar-driver-championship.jpg" alt="" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.jpg" alt="" />
 				</div>
 				<h2 class="championship-title">Classificação Geral</h2>
 			</div>

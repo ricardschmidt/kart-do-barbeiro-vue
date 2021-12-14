@@ -35,8 +35,9 @@
 				<h4>1. GERAL</h4>
 				<h5>
 					1.1. A primeira edição do CAMPEONATO DO KART DO BARBEIRO será
-					realizada em 2022. O evento contará com as organizações do XXXXX, além
-					do apoio do INGLESES KART. A competição será realizada com a finalidade
+					realizada em 2022. O evento contará com as organizações de
+					Ricardo Schmidt e Caio Quirino, além do apoio do XXXXXXXXX.
+					A competição será realizada com a finalidade
 					de promover a integração entre pilotos amadores de kart de aluguel,
 					premiando os melhores colocados de cada categoria, conforme descrito
 					neste regulamento.
@@ -85,25 +86,23 @@
 					3.1. Na primeira edição do ano de 2021, campeonato será realizada com
 					quatro etapas conforme o calendário a seguir:
 					<h6>
-						3.1.a. 1ª Etapa (25/07/2021) - Traçado Tradicional - Kartódromo dos Ingleses;
+						3.1.a. 1ª Etapa (29/01/2022) - Traçado James Hunt  - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.b. 2ª Etapa (22/08/2021) - Traçado Traçado James Hunt - Kartódromo dos
-						Ingleses;
+						3.1.b. 2ª Etapa (19/02/2022) - Traçado Hamilton - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.c. 3ª Etapa (26/09/2021) - Traçado Ayrton Senna - Kartódromo dos
-						Ingleses;
+						3.1.c. 3ª Etapa (29/03/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.d. 4ª Etapa (31/10/2021) - Traçado Coringa - Kartódromo dos Ingleses.
+						3.1.d. 4ª Etapa (16/04/2022) - Traçado Ayrton Senna - Kartódromo dos Ingleses.
 					</h6>
 					<h6>
-						3.1.e. 5ª Etapa (02/11/2021) - Traçado Tradicional - Kartódromo do Beto
-					Carreiro;
+						3.1.e. 5ª Etapa (21/05/2022) - Traçado Verstappen - Kartódromo do Beto Carreiro;
 					</h6>
 					<h6>
-						3.1.f. 6ª Etapa (02/11/2021) - Traçado Tradicional - Kartódromo dos Ingleses;
+						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses OU
+						Traçado Tradicional - Kartódromo do Beto Carrero World;
 					</h6>
 					<h6>
 						3.1.g. As datas podem sofrer alteração por parte do kartódromo, no qual
@@ -199,7 +198,7 @@
 					6.3. Além da pontuação da tabela acima, haverá também a bonificação de 1
 					ponto pela pole position (conquistada no tempo de classificação, na
 					tomada de tempo) e mais 1 ponto pela volta mais rápida da corrida.
-					CONSIDERA-SE POLE E VOLTA MAIS RÁPIDA PARA AQUELE QUE A FIZER PRIMEIRO.
+					<span>CONSIDERA-SE POLE E VOLTA MAIS RÁPIDA PARA AQUELE QUE A FIZER PRIMEIRO.</span>
 				</h5>
 				<h5>
 					6.4. Todos os pilotos que largarem receberão a pontuação referente a sua
@@ -549,36 +548,43 @@
 				<h4>13. VALORES</h4>
 
 				<h5>
-					13.1. A taxa de inscrição no CAMPEONATO DO KART DO BARBEIRO 1ª EDIÇÃO é
-					de R$250,00 (Duzentos e Cinquenta reais). Esse valor será PROMOCIONAL
-					e será válido a partir da abertura das inscrições , no dia XX de XXXX até o
-					dia XX de XXXX de 2022 , podendo ser PARCELADO EM 3x SEM JUROS. As
-					inscrições se encerrarão dia XX de XXXX de 2022 ou no momento que
-					esgotarem as vagas.
+					13.1. A taxa de inscrição no CAMPEONATO DO KART DO BARBEIRO
+					1ª EDIÇÃO é de R$250,00 (Duzentos e Cinquenta reais). Esse
+					valor será PROMOCIONAL e será válido a partir da abertura
+					das inscrições , no dia 20 de DEZEMBRO de 2021 até o dia 22
+					de JANEIRO de 2022 , podendo ser PARCELADO EM 6x COM JUROS.
+					As inscrições se encerrarão dia 22 de JANEIRO de 2022 ou no
+					momento que esgotarem as vagas.
+
 				</h5>
 				<h5>
-					13.2. As inscrições poderão ser pagas de duas maneiras: a) Através de
-					Depósito/Transferência para a seguinte conta. XXXXXXXXX b) Através de
-					link do PAGSEGURO , com opções de pagamento em boleto bancário e
-					parcelamento no cartão de crédito em até 12x.
+					13.2. As inscrições poderão ser pagas de duas maneiras:
+					<h6>
+						13.2.a. Através de Depósito/Transferência para a seguinte conta. PIX ricardschmidt@gmail.com
+					</h6>
+					<h6>
+						13.2.b. Através do link do PAGSEGURO , com opções de pagamento em boleto bancário e parcelamento no cartão de crédito em até 6x.
+					</h6>
 				</h5>
 				<h5>
-					13.3. A inscrição só será efetivada após a confirmação do pagamento, cujo
-					comprovante deverá ser enviado, exclusivamente, para o e-mail:
-					ainda@naosei.com.
+					13.3. A inscrição só será efetivada após a confirmação do
+					pagamento, cujo comprovante deverá ser enviado, exclusivamente,
+					para o e-mail: ricardschmidt@gmail.com.
 				</h5>
 				<h4>14. TERMO DE CANCELAMENTO DE INSCRIÇÃO</h4>
 
 				<h5>
-					14.1. Todo piloto que se inscrever no CAMPEONATO DO KART DO BARBEIRO
-					2021, que será realizado pelos XXXX, atesta estar plenamente de acordo e
-					ciente que deverá pagar uma taxa de R$100,00. Esta será devidamente
-					descontada da restituição a ser feita por parte da organização do evento,
-					caso desista de participar do evento em questão, seja por qualquer
-					motivo. Caso o cancelamento seja realizado dentro do prazo legal previsto
-					no art. 49 da Lei nº 8078/90, ou seja, em até 7 dias da data da inscrição, a
-					restituição dos valores pagos será integral, nos moldes do parágrafo único
-					do mesmo artigo de lei.
+					14.1. Todo piloto que se inscrever no CAMPEONATO DO KART DO
+					BARBEIRO 2022, que será realizado pelos integrantes Ricardo
+					Schmidt e Caio Quirino, atesta estar plenamente de acordo e
+					ciente que deverá pagar uma taxa de R$100,00. Esta será
+					devidamente descontada da restituição a ser feita por parte
+					da organização do evento, caso desista de participar do evento
+					em questão, seja por qualquer motivo. Caso o cancelamento
+					seja realizado dentro do prazo legal previsto no art. 49 da
+					Lei nº 8078/90, ou seja, em até 7 dias da data da inscrição,
+					a restituição dos valores pagos será integral, nos moldes do
+					parágrafo único do mesmo artigo de lei.
 				</h5>
 				<h5>
 					14.2. Considerando que o piloto teria um grande prejuízo caso OS

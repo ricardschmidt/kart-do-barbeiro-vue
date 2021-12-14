@@ -1,7 +1,196 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="305.372" height="394.535" viewBox="0 0 305.372 394.535">
-  <path id="Caminho_3" data-name="Caminho 3" d="M540.362,1242.77v205.2h107.26s39.79,3.408,39.79-30.355c-.443-20.336,0-52.582,0-52.582" transform="translate(-457.121 -1133.678)" fill="none" stroke="#073b4c" stroke-width="36"/>
-  <path id="Caminho_4" data-name="Caminho 4" d="M647.448,1247.555l-88.7,83.911,88.7,77.11" transform="translate(-457.121 -1133.678)" fill="none" stroke="#118ab2" stroke-width="36"/>
-  <path id="Caminho_5" data-name="Caminho 5" d="M524.2,1206.662H641.357s45.847-6.533,47.15,55.338c.778,36.954,0,68.659,0,68.659" transform="translate(-457.121 -1133.678)" fill="none" stroke="#073b4c" stroke-width="36"/>
-  <path id="Caminho_2" data-name="Caminho 2" d="M475.121,1151.678v358.535H686.646s57.684-1.5,57.826-62.48,0-80.2,0-80.2-10-36.162-57.826-37.625-31.661,0-40.111,0h.249c38.932.017,95.377,8.372,97.649-61.614.062-1.9.077-4.06.039-6.3-.566-32.822,0-54.619,0-54.619s-8.468-55.7-66.266-55.7Z" transform="translate(-457.121 -1133.678)" fill="none" stroke="#118ab2" stroke-linejoin="bevel" stroke-width="36"/>
-  <path id="Caminho_6" data-name="Caminho 6" d="M627.908,1312.9l-22.2,17.465s16.381,13.272,22.2,17.406C628.012,1347.848,627.908,1312.9,627.908,1312.9Z" transform="translate(-438.294 -1133.942)" fill="#118ab2" stroke="#118ab2" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="560" height="807.201" viewBox="0 0 560 807.201">
+  <defs>
+    <filter id="Caminho_12" x="26.702" y="0" width="507.723" height="277.946" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_13" x="54.567" y="179.223" width="457.354" height="377.704" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_14" x="29.612" y="220.995" width="212.171" height="192.285" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_15" x="192.872" y="179.507" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-4"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_16" x="188.872" y="210.759" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-5"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_17" x="201.372" y="250.759" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-6"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_18" x="48.444" y="385.759" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-7"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_19" x="461.444" y="161.759" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-8"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_20" x="461.444" y="128.759" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-9"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_21" x="268.164" y="180.817" width="215.438" height="265.161" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-10"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_22" x="178.237" y="357.749" width="141.191" height="185.064" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-11"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_23" x="92.637" y="283.198" width="171.195" height="203.015" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-12"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_24" x="59.552" y="32.816" width="370.325" height="196.249" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-13"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Caminho_25" x="284.024" y="77.886" width="174.286" height="172.491" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-14"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="CKDB" x="50" y="552.701" width="460" height="235" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-15"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="KartdoBarbeiro" x="0" y="704.201" width="560" height="103" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-16"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="CKDB-2" x="80" y="582.701" width="400" height="175" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-17"/>
+      <feFlood flood-color="#00f9ff" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-17"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Logo" transform="translate(-271.5 -153.299)">
+    <g id="Capacete" transform="translate(-15.089)">
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_12)">
+        <path id="Caminho_12-2" data-name="Caminho 12" d="M3028.472,364.739c-27.213,42.683-164.082,50.9-174.383,49.879,41.727-335.042,338.124-231.076,387.689-215.057s82.4,12.543,82.4,12.543l-27.726,44.361v49.589" transform="translate(-2809.59 -154.3)" fill="none" stroke="#00f9ff" stroke-width="5"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_13)">
+        <path id="Caminho_13-2" data-name="Caminho 13" d="M2881.533,559.856l16.521,50.791s18.713-5.766,49.256,38.059c37.239,30.1,45.8,39.208,45.8,39.208s12.646,15.331,30.554-3.936,246.435-224.11,280.307-237.717c-.347-16.436-3.51-84.788-4.959-97.455" transform="translate(-2809.59 -154.3)" fill="none" stroke="#00f9ff" stroke-width="5"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_14)">
+        <path id="Caminho_14-2" data-name="Caminho 14" d="M3021.074,392.558c-39.114,18.324-86.266,33.927-164.193,36.45,2.315,32.171,21.766,119.734,21.766,119.734s133.189-75.307,155.618-110.425" transform="translate(-2809.59 -154.3)" fill="none" stroke="#00f9ff" stroke-width="5"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_15)">
+        <g id="Caminho_15-2" data-name="Caminho 15" transform="translate(207.87 194.51)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_16)">
+        <g id="Caminho_16-2" data-name="Caminho 16" transform="translate(203.87 225.76)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_17)">
+        <g id="Caminho_17-2" data-name="Caminho 17" transform="translate(216.37 265.76)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_18)">
+        <g id="Caminho_18-2" data-name="Caminho 18" transform="translate(63.44 400.76)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_19)">
+        <g id="Caminho_19-2" data-name="Caminho 19" transform="translate(476.44 176.76)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_20)">
+        <g id="Caminho_20-2" data-name="Caminho 20" transform="translate(476.44 143.76)" fill="#2b2a28">
+          <path d="M 12.5 22.5 C 6.985980033874512 22.5 2.5 18.0140209197998 2.5 12.5 C 2.5 6.985980033874512 6.985980033874512 2.5 12.5 2.5 C 18.0140209197998 2.5 22.5 6.985980033874512 22.5 12.5 C 22.5 18.0140209197998 18.0140209197998 22.5 12.5 22.5 Z" stroke="none"/>
+          <path d="M 12.5 5 C 8.364490509033203 5 5 8.364490509033203 5 12.5 C 5 16.6355094909668 8.364490509033203 20 12.5 20 C 16.6355094909668 20 20 16.6355094909668 20 12.5 C 20 8.364490509033203 16.6355094909668 5 12.5 5 M 12.5 0 C 19.40356063842773 0 25 5.596439361572266 25 12.5 C 25 19.40356063842773 19.40356063842773 25 12.5 25 C 5.596439361572266 25 0 19.40356063842773 0 12.5 C 0 5.596439361572266 5.596439361572266 0 12.5 0 Z" stroke="none" fill="#00f9ff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_21)">
+        <path id="Caminho_21-2" data-name="Caminho 21" d="M3092.753,498.741l132.338-148.135s35.339-5.664,52.025,21.564c2.419,17.214,0,53.855,0,53.855l-174.54,159.253,136.056-159.253V402.994l-13.542-4.722-66.8,74.52,73.688-100.623h-10.656" transform="translate(-2809.59 -154.3)" fill="#00f9ff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_22)">
+        <path id="Caminho_22-2" data-name="Caminho 22" d="M3002.826,652.159v29.954l33.775-29.954,77.415-125.11Z" transform="translate(-2809.59 -154.3)" fill="#00f9ff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_23)">
+        <path id="Caminho_23-2" data-name="Caminho 23" d="M3058.421,452.5s-36.057,65.078-112.845,93.379c-17.86,3.141-28.35,4.674-28.35,4.674l28.35,17.027-24.565,25.184s27.022-.44,29.917,14.976,4.259,17.774,4.259,17.774C2987.072,576.758,3058.421,452.5,3058.421,452.5Z" transform="translate(-2809.59 -154.3)" fill="#00f9ff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_24)">
+        <path id="Caminho_24-2" data-name="Caminho 24" d="M3204.547,218.32s-259.218-88.846-320.406,149.531a393.241,393.241,0,0,0,39.342,0s25.693-163.712,281.065-142.2c12.823.487,19.919,0,19.919,0Z" transform="translate(-2809.59 -154.3)" fill="#00f9ff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 286.59, 153.3)" filter="url(#Caminho_25)">
+        <path id="Caminho_25-2" data-name="Caminho 25" d="M3128.4,250.769c32.671-7.453,111.736-6.939,124.5,38.18-20.8,11.423-126.38,83.558-138.136,100.728,14.225-31.92,95.486-100.728,95.486-100.728s-36.39-35.548-81.85-29.263c-11.36,4.76-19.786,8.4-19.786,8.4S3115.486,256.017,3128.4,250.769Z" transform="translate(-2809.59 -154.3)" fill="#00f9ff"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 271.5, 153.3)" filter="url(#CKDB)">
+      <text id="CKDB-3" data-name="CKDB" transform="translate(97 705.7)" fill="#fefefe" stroke="#00f9ff" stroke-width="2" font-size="141" font-family="Lovelo-LineLight, Lovelo" font-weight="300"><tspan x="0" y="0">CKDB</tspan></text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 271.5, 153.3)" filter="url(#KartdoBarbeiro)">
+      <text id="KartdoBarbeiro-2" data-name="KartdoBarbeiro" transform="translate(10.5 778.7)" fill="#00f9ff" font-size="60" font-family="OpenSans-Regular, Open Sans"><tspan x="0" y="0">KART</tspan><tspan y="0" fill="#fefefe">DO</tspan><tspan y="0" font-family="OpenSans-Bold, Open Sans" font-weight="700">BARBEIRO</tspan></text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 271.5, 153.3)" filter="url(#CKDB-2)">
+      <text id="CKDB-4" data-name="CKDB" transform="translate(97 705.7)" fill="#fefefe" stroke="#00f9ff" stroke-width="2" font-size="141" font-family="Lovelo-LineLight, Lovelo" font-weight="300"><tspan x="0" y="0">CKDB</tspan></text>
+    </g>
+  </g>
 </svg>

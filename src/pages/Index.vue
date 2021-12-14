@@ -30,10 +30,9 @@
           <div class="col-md-12 col-lg-8">
             <h2 class="title">Venha fazer parte desse Campeonato</h2>
             <h5 class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-			  facilis. Cumque molestias adipisci odio error ex maiores optio?
-			  Provident reprehenderit alias officia? Possimus aperiam facilis
-			  sapiente minus, rem explicabo doloribus?
+              Aqui você pode se inscrever para fazer parte da nossa próxima
+			  temporada, onde teremos mais 6 etapas em traçados distintos para
+			  aumentar a competitividade nesse esporte que nos move.
             </h5>
           </div>
         </div>
