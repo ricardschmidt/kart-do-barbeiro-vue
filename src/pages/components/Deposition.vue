@@ -16,7 +16,7 @@
 							<div class="col-md-4" v-for="(deposition, index) in depositions" :key="'deposition'+index">
 								<div class="team-player">
 									<img
-										:src="'img/drivers/'+deposition.img+'.png'"
+										:src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+deposition.img+'.png'"
 										alt="Thumbnail Image"
 										class="rounded-circle img-fluid img-raised"
 									/>
@@ -43,18 +43,26 @@ export default {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			dapositions: [],
+			depositions: [],
 		}
 	},
 	mounted() {
-		this.deposition()
+		this.getDeposition()
 	},
 	methods: {
-		deposition() {
-			var url = this.urlBase + "?data=depositions";//Sua URL
-			axios.get(url)
+		getDeposition() {
+			axios.get(this.urlBase, {
+				params: {
+					action: 'read',
+					table: 'Depoimentos'
+				}
+			})
 			.then(response => {
-				this.depositions = response.data
+				let allDepositions = response.data.data
+				allDepositions = allDepositions.sort(() => Math.random() - 0.5)
+				this.depositions.push(allDepositions[0])
+				this.depositions.push(allDepositions[1])
+				this.depositions.push(allDepositions[2])
 				this.loading = false
 			})
 			.catch(error => {

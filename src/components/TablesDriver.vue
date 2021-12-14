@@ -3,13 +3,15 @@
 		<table class="vue-table" :class="tableClasses">
 			<tr>
 				<th>Pos</th>
+				<th>Número</th>
 				<th>Piloto</th>
 				<th>Pts</th>
 			</tr>
 			<tr class="race-table" :class="trClasses" v-for="(driver, i) in drivers" :key="index + i">
-				<td>{{driver.position}}º</td>
+				<td>{{i + 1}}º</td>
+				<td>{{driver.number}}</td>
 				<td>{{driver.driver}}</td>
-				<td>{{driver.points}}</td>
+				<td>{{driver.points >= 1 ? parseInt(driver.points) : 0}}</td>
 			</tr>
 		</table>
 	</div>
@@ -28,6 +30,6 @@ export default {
 			type: Number,
 			default: 0
 		},
-	},
+	}
 }
 </script>

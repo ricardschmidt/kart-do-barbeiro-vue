@@ -15,14 +15,16 @@
           </h5>
         </div>
         <div class="text-center col-md-12 col-lg-8">
-          <router-link to="/sing-up"
+          <a
+		  	href="https://forms.gle/MyLCb2xd8KaVzX5e7"
+            target="_blank"
             class="btn btn-primary btn-lg btn-round"
             role="button"
           >
             Inscrever-se
-          </router-link>
+          </a>
           <a
-            href="#"
+            href="https://ras-upload.s3.amazonaws.com/ckdb/Regulamento+Kart+do+Barbeiro.pdf"
             target="_blank"
             class="btn btn-primary btn-lg btn-simple btn-round"
             role="button"
@@ -50,7 +52,7 @@
           </a>
           <a
             target="_blank"
-            href="#"
+            href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
             class="btn btn-neutral btn-icon btn-youtube btn-round btn-lg"
             rel="tooltip"
             title="Like us"
@@ -59,7 +61,7 @@
           </a>
           <a
             target="_blank"
-            href="#"
+            href="https://www.instagram.com/kartdobarbeiro.kdb/"
             class="btn btn-neutral btn-icon btn-instagram btn-round btn-lg"
             rel="tooltip"
             title="Follow Us"

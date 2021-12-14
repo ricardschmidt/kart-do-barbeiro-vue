@@ -3,12 +3,12 @@
 		<div class="page-header champion clear-filter" filter-color="orange">
 			<parallax
 				class="page-header-image"
-				style="background-image:url('img/bg20.jpg')"
+				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg02.jpg')"
 			>
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="img/largada.jpg" alt="" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.jpg" alt="" />
 				</div>
 				<h2 class="championship-title">Classificação Geral</h2>
 			</div>
@@ -20,9 +20,16 @@
 				color="#118AB2"
 			/>
 		</div>
-		<div class="champion-table" v-else>
-			<div class="drivers">
-				<driver-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-card>
+		<div class="content-championship" v-else>
+			<div class="content">
+				 <n-button type="primary" round :simple="season !== '2021/1'" @click="newRequest('2021/1')">Temporada 2021/1</n-button>
+				 <n-button type="primary" round :simple="season !== '2022/1'" @click="newRequest('2022/1')">Temporada 2022/1</n-button>
+			</div>
+			<h3 >Temporada de {{ season }}</h3>
+			<div class="champion-table" >
+				<div class="drivers">
+					<driver-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-card>
+				</div>
 			</div>
 		</div>
 	</article>
@@ -31,6 +38,7 @@
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import DriverCard from '../components/Cards/DriverCard.vue';
+import { Button } from '@/components';
 
 export default {
 	data() {
@@ -38,28 +46,30 @@ export default {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
 			drivers: [],
-			test: {
-				name:'Ricardo',
-				lastName:'Schmidt',
-				teamColor:'#118AB2',
-				position: 1,
-				points: 254,
-				state: 'PR',
-				img: 'norris',
-				team: 'Scuderia Barbieri',
-				number: '#44'
-			}
+			season: "2021/1",
 		}
 	},
 	mounted() {
-		this.getDrivers();
+		this.apiRequest();
 	},
 	methods: {
-		getDrivers() {
-			var url = this.urlBase + "?data=drivers";//Sua URL
-			axios.get(url)
+		newRequest(season) {
+			if(season !== this.season) {
+				this.loading = true;
+				this.season = season
+				this.apiRequest()
+			}
+		},
+		apiRequest() {
+			axios.get(this.urlBase, {
+				params: {
+					action: 'read',
+					table: 'Campeonato de Pilotos',
+					season: this.season,
+				}
+			})
 			.then(response => {
-				this.drivers = response.data
+				this.drivers = response.data.data
 				this.loading = false
 			})
 			.catch(error => {
@@ -70,6 +80,7 @@ export default {
 	components: {
 		FulfillingBouncingCircleSpinner,
 		DriverCard,
+		[Button.name]: Button,
 	}
 };
 </script>

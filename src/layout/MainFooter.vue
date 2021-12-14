@@ -5,31 +5,39 @@
     :data-background-color="backgroundColor"
   >
     <div class="container">
-      <nav>
-        <ul>
-          <li>
-            <router-link to="/championship">
-              Campeonato
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/about-us">
-              Sobre nós
-            </router-link>
-          </li>
-          <li>
-			<router-link to="/drivers">
-              Pilotos
-            </router-link>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright">
-        &copy; {{ year }}, Designed and Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
-          >Ricardo Schmidt</a
-        >
-      </div>
+		<h4>APOIADORES:</h4>
+		<div class="sponsor">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/barba-de-respeito.png" alt="Barba de Respeito">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/auts-branco.png" alt="Auts Store">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/jg-motos.png" alt="JG Motos">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/corte.png" alt="Côrte">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/ingleses-kart.png" alt="Ingleses Kart">
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<router-link to="/driver-championship">
+					Campeonato
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/about-us">
+					Sobre nós
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/drivers">
+					Pilotos
+					</router-link>
+				</li>
+			</ul>
+		</nav>
+		<div class="copyright">
+			&copy; {{ year }}, Designed and Coded by
+			<a href="https://github.com/ricardschmidt" target="_blank" rel="noopener"
+			>Ricardo Schmidt</a
+			>
+		</div>
     </div>
   </footer>
 </template>

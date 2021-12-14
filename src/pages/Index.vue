@@ -3,18 +3,18 @@
     <div class="page-header clear-filter" filter-color="blue">
       <parallax
         class="page-header-image"
-        style="background-image:url('img/header1.jpeg')"
+        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/header.jpeg')"
       >
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="img/now-logo.png" alt="" />
+          <img class="n-logo" src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo-neon.png" alt="Logo KDB" />
           <h1 class="h1-seo">Kart do Barbeiro</h1>
           <h3>Um novo modo de competir.</h3>
         </div>
         <h6 class="category category-absolute">
           Designed and Coded by
-          <a href="http://invisionapp.com/" target="_blank">
+          <a href="https://github.com/ricardschmidt" target="_blank">
             Ricardo Schmidt</a
           >.
         </h6>
@@ -30,10 +30,9 @@
           <div class="col-md-12 col-lg-8">
             <h2 class="title">Venha fazer parte desse Campeonato</h2>
             <h5 class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-			  facilis. Cumque molestias adipisci odio error ex maiores optio?
-			  Provident reprehenderit alias officia? Possimus aperiam facilis
-			  sapiente minus, rem explicabo doloribus?
+              Aqui você pode se inscrever para fazer parte da nossa próxima
+			  temporada, onde teremos mais 6 etapas em traçados distintos para
+			  aumentar a competitividade nesse esporte que nos move.
             </h5>
           </div>
         </div>

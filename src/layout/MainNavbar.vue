@@ -54,34 +54,22 @@
         </a>
       </drop-down>
       <li class="nav-item">
-			<router-link
+			<a
+				href="https://forms.gle/NwfinnkNXuPS2isb8"
 				class="nav-link btn btn-neutral"
-				to="/sing-up"
-				>
+				target="_blank"
+			>
 				<p>Inscreva-se</p>
-        	</router-link>
+        	</a>
       </li>
 
       <li class="nav-item">
         <a
           class="nav-link"
           rel="tooltip"
-          title="Follow us on Twitter"
-          data-placement="bottom"
-          href="https://twitter.com/CreativeTim"
-          target="_blank"
-        >
-          <i class="fab fa-twitter"></i>
-          <p class="d-lg-none d-xl-none">Twitter</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
           title="Like us on Youtube"
           data-placement="bottom"
-          href="https://www.facebook.com/CreativeTim"
+          href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
           target="_blank"
         >
           <i class="fab fa-youtube"></i>
@@ -94,7 +82,7 @@
           rel="tooltip"
           title="Follow us on Instagram"
           data-placement="bottom"
-          href="https://www.instagram.com/CreativeTimOfficial"
+          href="https://www.instagram.com/kartdobarbeiro.kdb"
           target="_blank"
         >
           <i class="fab fa-instagram"></i>
