@@ -102,17 +102,18 @@
 				</tab-pane>
 				<tab-pane>
 					<template slot="label">
-					<i class="now-ui-icons sport_trophy"></i> Tradicional
+					<i class="now-ui-icons sport_trophy"></i> Beto Carreiro
 					</template>
 					<div class="tab-tracado d-md-flex">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-tradicional.png" alt="">
+						<img style="padding: 30px 0 60px 0;"
+							 src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-beto-carreiro.png" alt="Pista do Beto Carreiro">
 						<div>
 							<p class="track-date">Data:<span>25/06/2022</span></p>
 							<p>
-							O traçado tradicional do Kartódromo dos Ingleses é o mais
-							conhecido por todos, um traçado que possibilita boas brigas
-							por posição, com curvas de alta velocidade, chicanes
-							estreitas e longas retas, além de proporcionar muita diversão.
+							A pista do Kartodromo Internacional do Beto Carreiro
+							é a sede de diversos campeonatos organizandos na região sul,
+							normalmente recebendo o sul-brasileiro de kart, corrida das estrelas
+							entre vários outros.
 							</p>
 						</div>
 					</div>
