@@ -308,6 +308,20 @@
             width: 90%;
         }
     }
+
+	.index-page {
+		.track-date {
+			font-size: $font-size-h5;
+			padding: 0;
+			text-align: center;
+		}
+		.tab-tracado {
+			padding: 0 30px;
+			p {
+				padding: 0;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 991px) and (max-width: 1200px){
