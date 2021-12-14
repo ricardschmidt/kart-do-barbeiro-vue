@@ -36,7 +36,9 @@
 				<h5>
 					1.1. A primeira edição do CAMPEONATO DO KART DO BARBEIRO será
 					realizada em 2022. O evento contará com as organizações de
-					Ricardo Schmidt e Caio Quirino, além do apoio do XXXXXXXXX.
+					Ricardo Schmidt e Caio Quirino, além do apoio do além do apoio
+					de Auts Store, Barba de Respeito, Côrte Visagismos para
+					Homens, Ingleses Kart, JG Motos e Keune.
 					A competição será realizada com a finalidade
 					de promover a integração entre pilotos amadores de kart de aluguel,
 					premiando os melhores colocados de cada categoria, conforme descrito
@@ -92,13 +94,13 @@
 						3.1.b. 2ª Etapa (19/02/2022) - Traçado Hamilton - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.c. 3ª Etapa (29/03/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
+						3.1.c. 3ª Etapa (27/03/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
 						3.1.d. 4ª Etapa (16/04/2022) - Traçado Ayrton Senna - Kartódromo dos Ingleses.
 					</h6>
 					<h6>
-						3.1.e. 5ª Etapa (21/05/2022) - Traçado Verstappen - Kartódromo do Beto Carreiro;
+						3.1.e. 5ª Etapa (22/05/2022) - Traçado Verstappen - Kartódromo do Beto Carreiro;
 					</h6>
 					<h6>
 						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses OU
@@ -552,18 +554,17 @@
 					1ª EDIÇÃO é de R$250,00 (Duzentos e Cinquenta reais). Esse
 					valor será PROMOCIONAL e será válido a partir da abertura
 					das inscrições , no dia 20 de DEZEMBRO de 2021 até o dia 22
-					de JANEIRO de 2022 , podendo ser PARCELADO EM 6x COM JUROS.
+					de JANEIRO de 2022 , podendo ser PARCELADO EM 12x COM JUROS.
 					As inscrições se encerrarão dia 22 de JANEIRO de 2022 ou no
 					momento que esgotarem as vagas.
-
 				</h5>
 				<h5>
 					13.2. As inscrições poderão ser pagas de duas maneiras:
 					<h6>
-						13.2.a. Através de Depósito/Transferência para a seguinte conta. PIX ricardschmidt@gmail.com
+						13.2.a. Através de Depósito/Transferência (R$250,00) para a seguinte conta. PIX ricardschmidt@gmail.com
 					</h6>
 					<h6>
-						13.2.b. Através do link do PAGSEGURO , com opções de pagamento em boleto bancário e parcelamento no cartão de crédito em até 6x.
+						13.2.b. Através do link do MERCADO PAGO (R$270,00), com opções de pagamento em boleto bancário e parcelamento no cartão de crédito em até 12x.
 					</h6>
 				</h5>
 				<h5>
