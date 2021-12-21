@@ -22,7 +22,7 @@
                 <i class="fab fa-youtube"></i>
               </a>
               <a
-                href="https://www.instagram.com/kartdobarbeiro.kdb"
+                href="https://www.instagram.com/ckdb.kart/"
                 class="btn btn-neutral btn-instagram btn-icon btn-round"
               >
                 <i class="fab fa-instagram"></i>

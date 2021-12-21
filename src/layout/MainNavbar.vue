@@ -82,7 +82,7 @@
           rel="tooltip"
           title="Follow us on Instagram"
           data-placement="bottom"
-          href="https://www.instagram.com/kartdobarbeiro.kdb"
+          href="https://www.instagram.com/ckdb.kart"
           target="_blank"
         >
           <i class="fab fa-instagram"></i>

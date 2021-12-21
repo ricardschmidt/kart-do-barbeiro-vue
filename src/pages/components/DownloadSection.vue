@@ -61,7 +61,7 @@
           </a>
           <a
             target="_blank"
-            href="https://www.instagram.com/kartdobarbeiro.kdb/"
+            href="https://www.instagram.com/ckdb.kart/"
             class="btn btn-neutral btn-icon btn-instagram btn-round btn-lg"
             rel="tooltip"
             title="Follow Us"
