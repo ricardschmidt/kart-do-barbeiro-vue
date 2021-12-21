@@ -11,24 +11,26 @@
 			<div class="section section-team text-center">
 				<div class="container">
 					<h2 class="title">Depoimentos</h2>
-					<div class="team">
-						<div class="row">
-							<div class="col-md-4" v-for="(deposition, index) in depositions" :key="'deposition'+index">
-								<div class="team-player">
-									<img
-										:src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+deposition.img+'.png'"
-										alt="Thumbnail Image"
-										class="rounded-circle img-fluid img-raised"
-									/>
-									<h4 class="title">{{deposition.name}}</h4>
-									<p class="category text-primary">{{deposition.number}}</p>
-									<p class="description">
-										{{deposition.deposition}}
-									</p>
+					<router-link to="/deposition">
+						<div class="team">
+							<div class="row">
+								<div class="col-md-4" v-for="(deposition, index) in depositions" :key="'deposition'+index">
+									<div class="team-player">
+										<img
+											:src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+deposition.img+'.png'"
+											alt="Thumbnail Image"
+											class="rounded-circle img-fluid img-raised"
+										/>
+										<h4 class="title">{{deposition.name}}</h4>
+										<p class="category text-primary">{{deposition.num}}</p>
+										<p class="description">
+											{{deposition.deposition}}
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</router-link>
 				</div>
 			</div>
     	</div>

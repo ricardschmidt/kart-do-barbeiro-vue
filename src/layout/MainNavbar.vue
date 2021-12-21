@@ -20,6 +20,14 @@
           <i class="now-ui-icons education_agenda-bookmark"></i>Regulamento
         </router-link>
       </li>
+      <li class="nav-item">
+        <router-link
+			class="nav-link"
+			to="/deposition"
+		>
+          <i class="now-ui-icons ui-2_like"></i>Depoimentos
+        </router-link>
+      </li>
       <drop-down
         tag="li"
         title="Campeonato"
