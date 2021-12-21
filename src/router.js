@@ -4,6 +4,7 @@ import Index from './pages/Index.vue';
 import DriverChampionship from './pages/DriverChampionship.vue';
 import TeamChampionship from './pages/TeamChampionship.vue';
 import SingUp from './pages/SingUp.vue';
+import DepositionPage from './pages/DepositionPage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Driver from './pages/Driver.vue';
 import Regulation from './pages/Regulation.vue';
@@ -28,6 +29,15 @@ export default new Router({
 		path: '/regulation',
 		name: 'regulation',
 		components: { default: Regulation, header: MainNavbar, footer: MainFooter },
+		props: {
+		  header: { colorOnScroll: 400 },
+		  footer: { backgroundColor: 'black' }
+		}
+	},
+	{
+		path: '/deposition',
+		name: 'deposition',
+		components: { default: DepositionPage, header: MainNavbar, footer: MainFooter },
 		props: {
 		  header: { colorOnScroll: 400 },
 		  footer: { backgroundColor: 'black' }

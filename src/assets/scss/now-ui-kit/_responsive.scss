@@ -247,6 +247,17 @@
 }
 
 @media screen and (max-width: 768px){
+	.deposition-wrap {
+		padding: 20px;
+		.team-player {
+			flex-direction: column;
+
+			.description {
+				padding-left: 0;
+			}
+		}
+	}
+
     .image-container{
         &.image-left{
             margin-bottom: 220px;
