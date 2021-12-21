@@ -39,6 +39,10 @@
 			flex-wrap: wrap;
 			width: 100%;
 			max-width: 1095px;
+
+			h3 {
+				text-align: start;
+			}
 		}
 
 		.drivers-table {
