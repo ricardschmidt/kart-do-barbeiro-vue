@@ -1,14 +1,14 @@
 <template>
 	<article class="driver-championship">
-		<div class="page-header champion clear-filter" filter-color="orange">
+		<div class="page-header champion clear-filter" filter-color="black">
 			<parallax
 				class="page-header-image"
-				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg02.jpg')"
+				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-driver.jpg')"
 			>
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.jpg" alt="" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-original.jpg" alt="" />
 				</div>
 				<h2 class="championship-title">Classificação Geral</h2>
 			</div>

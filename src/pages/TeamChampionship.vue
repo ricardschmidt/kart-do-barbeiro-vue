@@ -3,12 +3,12 @@
 		<div class="page-header champion clear-filter" filter-color="orange">
 			<parallax
 				class="page-header-image"
-				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg05.jpeg')"
+				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-team.jpeg')"
 			>
 			</parallax>
 			<div class="container">
 				<div class="photo-container">
-					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo.png" alt="Logo KDB" />
+					<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-white.jpg" alt="Logo KDB" />
 				</div>
 				<h2 class="championship-title">Classificação Geral de Equipes</h2>
 			</div>

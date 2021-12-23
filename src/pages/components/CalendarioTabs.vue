@@ -1,5 +1,5 @@
 <template>
-  <div class="section section-tabs" style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg04.jpg')">
+  <div class="section section-tabs" style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-calendario.jpg')">
     <div class="container">
       <div class="title">
         <h3 id="calendar">Calendário de 2022</h3>
