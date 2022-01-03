@@ -12,6 +12,7 @@
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/jg-motos.png" alt="JG Motos">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/corte.png" alt="Côrte">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/ingleses-kart.png" alt="Ingleses Kart">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/merco-energy.png" alt="Merco Energy">
 		</div>
 		<nav>
 			<ul>
