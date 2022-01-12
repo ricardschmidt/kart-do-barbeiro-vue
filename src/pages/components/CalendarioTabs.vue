@@ -22,7 +22,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-james.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>29/01/2022</span></p>
+							<p class="track-date">Data:<span>29/01/2022</span> 16:00hrs</p>
 							<p>
 							Esta é a Monza do calendário, uma pista muito rápida, mas
 							que cobra seu preço sendo muito desgastante, os pilotos
@@ -39,7 +39,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-hamilton.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>19/02/2022</span></p>
+							<p class="track-date">Data:<span>19/02/2022</span> 15:00hrs</p>
 							<p>
 							Este é um traçado novo, ainda desconhecido, mas montado
 							para ser rápido com pontos estratégicos de ultrapassagem
@@ -56,7 +56,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-tradicional.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>27/03/2022</span></p>
+							<p class="track-date">Data:<span>27/03/2022</span> 15:00hrs</p>
 							<p>
 							O traçado tradicional do Kartódromo dos Ingleses é o mais
 							conhecido por todos, um traçado que possibilita boas brigas
@@ -73,7 +73,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>16/04/2022</span></p>
+							<p class="track-date">Data:<span>16/04/2022</span> 15:00hrs</p>
 							<p>
 							Este é o traçado que mostra a habilidade dos pilotos, com
 							várias chicanes estreitas é necessário escolher muito bem a
@@ -90,7 +90,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-verstappen.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>22/05/2022</span></p>
+							<p class="track-date">Data:<span>22/05/2022</span> 15:00hrs</p>
 							<p>
 							O traçado que promete ser o mais rápido da temporada,
 							com curvas rápidas e poucos pontos de ultrapassagem
@@ -108,7 +108,7 @@
 						<img style="padding: 30px 0 60px 0;"
 							 src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-beto-carreiro.png" alt="Pista do Beto Carreiro">
 						<div>
-							<p class="track-date">Data:<span>25/06/2022</span></p>
+							<p class="track-date">Data:<span>25/06/2022</span> 15:00hrs</p>
 							<p>
 							A pista do Kartodromo Internacional do Beto Carreiro
 							é a sede de diversos campeonatos organizandos na região sul,
