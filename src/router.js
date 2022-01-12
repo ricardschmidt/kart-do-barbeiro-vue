@@ -7,6 +7,7 @@ import SingUp from './pages/SingUp.vue';
 import DepositionPage from './pages/DepositionPage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Driver from './pages/Driver.vue';
+import Statistics from './pages/Statistics.vue';
 import Regulation from './pages/Regulation.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
@@ -82,6 +83,15 @@ export default new Router({
       path: '/drivers',
       name: 'drivers',
       components: { default: Driver, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/statistics',
+      name: 'statistics',
+      components: { default: Statistics, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }

@@ -17,11 +17,11 @@
 			<div class="drivers-names">
 				<div class="driver-name">
 					<p>{{names1[0]}}</p>
-					<h3>{{names1[1]}}</h3>
+					<h3>{{names1[names1.length - 1]}}</h3>
 				</div>
 				<div class="driver-name">
 					<p>{{names2[0]}}</p>
-					<h3>{{names2[1]}}</h3>
+					<h3>{{names2[names2.length - 1]}}</h3>
 				</div>
 			</div>
 			<div>
@@ -48,8 +48,8 @@ export default {
 	},
 	methods: {
 		splitName() {
-			this.names1 = this.names1.split(/\s(.+)/)
-			this.names2 = this.names2.split(/\s(.+)/)
+			this.names1 = this.names1.trim().split(/\s/)
+			this.names2 = this.names2.trim().split(/\s/)
 		}
 	}
 }

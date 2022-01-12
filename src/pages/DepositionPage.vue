@@ -8,21 +8,21 @@
 		</parallax>
 		<div class="container">
 			<div class="photo-container">
-			<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo-original.jpg" alt="Logo CKDB" />
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-original.jpg" alt="Logo CKDB" />
 			</div>
 			<h3 class="title">Kart do Barbeiro</h3>
 			<p class="category">Depoimentos</p>
 			<div class="content">
 			<div class="social-description">
-				<h2>1</h2>
+				<h2>{{seasonsNum}}</h2>
 				<p>Temporadas</p>
 			</div>
 			<div class="social-description">
-				<h2>49</h2>
+				<h2>{{driversNum}}</h2>
 				<p>Pilotos</p>
 			</div>
 			<div class="social-description">
-				<h2>9</h2>
+				<h2>{{racesNum}}</h2>
 				<p>Corridas</p>
 			</div>
 			</div>
@@ -96,13 +96,13 @@
 				<div class="col-md-10 ml-auto mr-auto">
 					<div class="row collections">
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto01.png" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto02.png" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto03.png" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC0115.jpg" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC0287.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC8632.jpg" alt="" class="img-raised" />
 					</div>
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto04.png" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto05.png" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9288.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9481.jpg" alt="" class="img-raised" />
 					</div>
 					</div>
 				</div>
@@ -114,11 +114,11 @@
 				<div class="col-md-10 ml-auto mr-auto">
 					<div class="row collections">
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto06.png" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto07.png" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9491.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9503.jpg" alt="" class="img-raised" />
 					</div>
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/foto09.png" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9983.jpg" alt="" class="img-raised" />
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9838.jpg" alt="" class="img-raised" />
 					</div>
 					</div>
@@ -146,6 +146,9 @@ export default {
 	data() {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
+			driversNum: process.env.VUE_APP_DRIVERS_NUM,
+			racesNum: process.env.VUE_APP_RACES_NUM,
+			seasonsNum: process.env.VUE_APP_SEASONS_NUM,
 			loading: true,
 			depositions: [],
 		}

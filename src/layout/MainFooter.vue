@@ -13,6 +13,7 @@
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/corte.png" alt="Côrte">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/ingleses-kart.png" alt="Ingleses Kart">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/merco-energy.png" alt="Merco Energy">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/citta-branco.png" alt="Citta Engenharia">
 		</div>
 		<nav>
 			<ul>

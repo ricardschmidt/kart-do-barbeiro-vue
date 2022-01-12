@@ -8,7 +8,7 @@
       </parallax>
       <div class="container">
         <div class="photo-container">
-          <img src="img/logo-red.jpg" alt="Regulamento Imagem" />
+          <img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-red.jpg" alt="Regulamento Imagem" />
         </div>
         <h3 class="title">Regulamento</h3>
         <p class="category">Kart do Barbeiro</p>

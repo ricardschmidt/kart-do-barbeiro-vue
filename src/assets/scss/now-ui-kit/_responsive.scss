@@ -247,6 +247,9 @@
 }
 
 @media screen and (max-width: 768px){
+	.wrap-podium {
+		display: none;
+	}
 	.deposition-wrap {
 		padding: 20px;
 		.team-player {
