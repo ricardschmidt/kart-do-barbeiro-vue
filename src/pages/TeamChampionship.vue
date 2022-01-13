@@ -26,9 +26,16 @@
 				 <n-button type="primary" round :simple="season !== '2022/1'" @click="newRequest('2022/1')">Temporada 2022/1</n-button>
 			</div>
 			<h3 >Temporada de {{ season }}</h3>
-			<div class="champion-table" v->
-				<div class="drivers">
-					<team-card v-for="(team, index) in teams" :key="index" :team="team"></team-card>
+			<div class="category-select" v-show="f2teams.length > 0">
+				 <n-button type="warning" round :simple="category !== 'F1'" @click="changeCategory('F1')">F1</n-button>
+				 <n-button type="warning" round :simple="category !== 'F2'" @click="changeCategory('F2')">F2</n-button>
+			</div>
+			<div class="champion-table">
+				<div class="drivers" v-if='showF1'>
+					<team-card v-for="(team, index) in f1teams" :key="'f1' + index" :team="team"></team-card>
+				</div>
+				<div class="drivers" v-else>
+					<team-card v-for="(team, index) in f2teams" :key="'f2' + index" :team="team"></team-card>
 				</div>
 			</div>
 		</div>
@@ -45,8 +52,11 @@ export default {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			teams: [],
+			f1teams: [],
+			f2teams: [],
 			season: "2021/1",
+			category: "F1",
+			showF1: true
 		}
 	},
 	mounted() {
@@ -56,8 +66,16 @@ export default {
 		newRequest(season) {
 			if(season !== this.season) {
 				this.loading = true;
+				this.category = "F1"
+				this.showF1 = true
 				this.season = season
 				this.apiRequest()
+			}
+		},
+		changeCategory(category) {
+			if(category !== this.category) {
+				this.category = category
+				this.showF1 = !this.showF1
 			}
 		},
 		apiRequest() {
@@ -69,12 +87,20 @@ export default {
 				}
 			})
 			.then(response => {
-				this.teams = response.data.data
+				this.categorySplit(response.data.data)
 				this.loading = false
 			})
 			.catch(error => {
 				this.loading = false
 			})
+		},
+		categorySplit(teams) {
+			this.f1teams = teams.filter(function(value, index, arr){
+				return value.category === "F1";
+			});
+			this.f2teams = teams.filter(function(value, index, arr){
+				return value.category === "F2";
+			});
 		}
 	},
 	components: {

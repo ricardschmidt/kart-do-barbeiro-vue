@@ -62,6 +62,19 @@
 		border-bottom: 1px solid $black-color;
 		background: $transparent-bg;
 
+		.team-name {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			h4 {
+				margin: 0;
+				padding: 0;
+				font-weight: 600;
+			}
+		}
+
 		.team-color {
 			height: 40px;
 			width: 5px;
@@ -93,6 +106,16 @@
 		padding: 10px 0 0;
 		position: relative;
 		background: $transparent-bg;
+
+		.team-category {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.category {
+				font-weight: 600;
+			}
+		}
 
 		.drivers-names {
 			justify-content: space-between;

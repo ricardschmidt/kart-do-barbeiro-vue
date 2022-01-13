@@ -11,6 +11,7 @@
 			<div class="team-color" :style="'background-color:'+team.teamColor"></div>
 			<div class="team-name">
 				<h3>{{team.team}}</h3>
+				<h4>{{team.category}}</h4>
 			</div>
 		</div>
 		<div class="card-footer">
