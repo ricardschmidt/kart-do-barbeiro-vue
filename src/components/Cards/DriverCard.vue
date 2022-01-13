@@ -27,7 +27,10 @@
       		</el-popover>
 		</div>
 		<div class="card-footer">
-			<p>{{driver.team}}</p>
+			<div class="team-category">
+				<p>{{driver.team}}</p>
+				<p class="category">{{driver.category}}</p>
+			</div>
 			<div>
 				<h2 :style="'color:'+driver.teamColor">{{driver.number}}</h2>
 				<img :src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+driver.img+'.png'" alt="Foto do Piloto">

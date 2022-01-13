@@ -107,6 +107,16 @@
 		position: relative;
 		background: $transparent-bg;
 
+		.team-category {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.category {
+				font-weight: 600;
+			}
+		}
+
 		.drivers-names {
 			justify-content: space-between;
 
