@@ -79,7 +79,7 @@
 				<h4>2. CATEGORIAS</h4>
 
 				<h5>
-					2.1. A competição terá 1 categoria geral, com participação livre de qualquer
+					2.1. A competição terá 2 categorias gerais, com participação livre de qualquer
 					piloto, de qualquer peso e de ambos os sexos, com lastreamento de todos
 					os pilotos em 90 kg (considerando equipamento).
 				</h5>
@@ -103,8 +103,7 @@
 						3.1.e. 5ª Etapa (22/05/2022) - Traçado Verstappen - Kartódromo do Beto Carreiro;
 					</h6>
 					<h6>
-						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses OU
-						Traçado Tradicional - Kartódromo do Beto Carrero World;
+						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
 						3.1.g. As datas podem sofrer alteração por parte do kartódromo, no qual
