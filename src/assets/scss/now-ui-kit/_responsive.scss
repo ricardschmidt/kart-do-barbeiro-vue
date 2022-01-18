@@ -233,6 +233,11 @@
 }
 
 @media screen and (min-width: 768px){
+	.statistic-table {
+		tr:nth-child(-n+3) {
+			display: none;
+		}
+	}
     .image-container{
         &.image-right{
             top: 80px;
@@ -246,7 +251,7 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
 	.wrap-podium {
 		display: none;
 	}
