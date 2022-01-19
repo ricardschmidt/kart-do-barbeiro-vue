@@ -32,6 +32,11 @@
 					Pilotos
 					</router-link>
 				</li>
+				<li>
+					<router-link to="/teams">
+					Equipes
+					</router-link>
+				</li>
 			</ul>
 		</nav>
 		<div class="copyright">
