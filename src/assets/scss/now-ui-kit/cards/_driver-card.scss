@@ -27,6 +27,11 @@
 		background: $transparent-bg;
 		padding: 0;
 
+		h4 {
+			margin: 0;
+			padding: 0;
+		}
+
 		h2 {
 			font-weight: 700;
 			font-size: 50px;
@@ -144,6 +149,11 @@
 
 		.team-logo {
 			height: 150px;
+			padding: 20px 0 10px;
+		}
+
+		.team-info-logo {
+			height: 196px;
 			padding: 20px 0 10px;
 		}
 
