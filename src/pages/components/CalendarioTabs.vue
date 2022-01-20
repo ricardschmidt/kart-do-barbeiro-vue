@@ -51,34 +51,36 @@
 				</tab-pane>
 				<tab-pane>
 					<template slot="label">
-					<i class="now-ui-icons sport_trophy"></i> Tradicional
+					<i class="now-ui-icons sport_trophy"></i> Ayrton Senna
 					</template>
 					<div class="tab-tracado d-md-flex">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-tradicional.png" alt="">
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
 						<div>
 							<p class="track-date">Data:<span>27/03/2022</span> 15:00hrs</p>
 							<p>
-							O traçado tradicional do Kartódromo dos Ingleses é o mais
-							conhecido por todos, um traçado que possibilita boas brigas
-							por posição, com curvas de alta velocidade, chicanes
-							estreitas e longas retas, além de proporcionar muita diversão.
+							Este é o traçado que mostra a habilidade dos pilotos, com
+							várias chicanes estreitas é necessário escolher muito bem a
+							hora de ultrapassar, para não perder a chance, e acabar se
+							enroscando na próxima curva.
 							</p>
 						</div>
 					</div>
 				</tab-pane>
 				<tab-pane>
 					<template slot="label">
-					<i class="now-ui-icons sport_trophy"></i> Ayrton Senna
+					<i class="now-ui-icons sport_trophy"></i> Beto Carreiro
 					</template>
 					<div class="tab-tracado d-md-flex">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
+						<img style="padding: 60px 0 60px 0;"
+							 src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-beto-carreiro.png"
+							 alt="Kartodromo do Beto Carreiro">
 						<div>
-							<p class="track-date">Data:<span>16/04/2022</span> 15:00hrs</p>
+							<p class="track-date">Data:<span>23/04/2022</span> 15:00hrs</p>
 							<p>
-							Este é o traçado que mostra a habilidade dos pilotos, com
-							várias chicanes estreitas é necessário escolher muito bem a
-							hora de ultrapassar, para não perder a chance, e acabar se
-							enroscando na próxima curva.
+							A pista do Kartódromo Internacional do Beto Carreiro
+							é a sede de diversos campeonatos organizados na região
+							sul, normalmente recebendo o sul-brasileiro de kart,
+							corrida das estrelas entre vários outros.
 							</p>
 						</div>
 					</div>
