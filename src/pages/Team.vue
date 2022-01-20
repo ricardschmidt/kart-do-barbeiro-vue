@@ -52,7 +52,9 @@ export default {
 				}
 			})
 			.then(response => {
-				this.teams = response.data.data
+				this.teams = response.data.data.filter(function(value, index, arr){
+					return value.team !== "";
+				})
 				this.loading = false
 			})
 			.catch(error => {
