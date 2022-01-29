@@ -52,7 +52,7 @@ export default {
 				params: {
 					action: 'read',
 					table: 'Pontuação Pilotos',
-					season: '2021/1'
+					season: '2022/1'
 				}
 			})
 			.then(response => {

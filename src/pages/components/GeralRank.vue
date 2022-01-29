@@ -51,7 +51,7 @@ export default {
 				params: {
 					action: 'read',
 					table: 'Campeonato de Pilotos',
-					season: '2021/1',
+					season: '2022/1',
 				}
 			})
 			.then(response => {
