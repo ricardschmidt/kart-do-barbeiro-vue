@@ -54,7 +54,7 @@ export default {
 			loading: true,
 			f1drivers: [],
 			f2drivers: [],
-			season: "2021/1",
+			season: "2022/1",
 			category: "F1",
 			showF1: true
 		}
