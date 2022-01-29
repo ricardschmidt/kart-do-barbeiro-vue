@@ -38,7 +38,7 @@
 					realizada em 2022. O evento contará com as organizações de
 					Ricardo Schmidt e Caio Quirino, além do apoio do além do apoio
 					de Auts Store, Barba de Respeito, Côrte Visagismos para
-					Homens, Ingleses Kart, JG Motos e Keune.
+					Homens, JG Motos e Keune.
 					A competição será realizada com a finalidade
 					de promover a integração entre pilotos amadores de kart de aluguel,
 					premiando os melhores colocados de cada categoria, conforme descrito
