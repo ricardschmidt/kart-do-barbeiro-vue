@@ -10,6 +10,7 @@ import Driver from './pages/Driver.vue';
 import Team from './pages/Team.vue';
 import Statistics from './pages/Statistics.vue';
 import Regulation from './pages/Regulation.vue';
+import Album from './pages/Album.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -102,6 +103,15 @@ export default new Router({
       path: '/statistics',
       name: 'statistics',
       components: { default: Statistics, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/photos',
+      name: 'photos',
+      components: { default: Album, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }
