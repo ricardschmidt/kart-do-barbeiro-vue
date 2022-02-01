@@ -104,6 +104,20 @@
         >
           <i class="now-ui-icons ui-1_calendar-60"></i> Corrida 1
         </a>
+         <a
+          href="https://www.facebook.com/media/set/?set=a.108177971778764&type=3"
+          class="dropdown-item"
+		  target="_blank"
+        >
+          <i class="now-ui-icons ui-1_calendar-60"></i> F1 | Etapa 1 2022/1
+        </a>
+         <a
+          href="https://www.facebook.com/media/set/?set=a.108310611765500&type=3"
+          class="dropdown-item"
+		  target="_blank"
+        >
+          <i class="now-ui-icons ui-1_calendar-60"></i> F2 | Etapa 1 2022/1
+        </a>
       </drop-down>
 	  <drop-down
         tag="li"
@@ -111,6 +125,9 @@
         icon="now-ui-icons education_agenda-bookmark"
         class="nav-item"
       >
+	  	<nav-link to="/photos">
+          <i class="now-ui-icons design_image"></i>Fotos
+        </nav-link>
 	  	<nav-link to="/deposition">
           <i class="now-ui-icons ui-2_like"></i>Depoimentos
         </nav-link>
