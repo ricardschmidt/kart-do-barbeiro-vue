@@ -1,7 +1,7 @@
 <template>
   <div
     class="section section-signup"
-    style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg01.jpg'); background-size: cover; background-position: top center; min-height: 700px;"
+    style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-signup.jpg'); background-size: cover; background-position: top center; min-height: 700px;"
   >
     <div class="container">
       <div class="row">
@@ -22,7 +22,7 @@
                 <i class="fab fa-youtube"></i>
               </a>
               <a
-                href="https://www.instagram.com/kartdobarbeiro.kdb"
+                href="https://www.instagram.com/ckdb.kart/"
                 class="btn btn-neutral btn-instagram btn-icon btn-round"
               >
                 <i class="fab fa-instagram"></i>

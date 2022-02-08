@@ -5,6 +5,55 @@
 				height: 100px;
 				width: 100px;
 			}
+
+			.description {
+				max-height: 13em;
+				overflow: hidden;
+			}
+
+			.description:before {
+				content: '...';
+				position: absolute;
+				right: 0px;
+				bottom: 30px;
+				background-color: #ffffff;
+				padding: 0 0px 0 0.25em;
+			}
+		}
+
+	}
+}
+
+.deposition-wrap {
+	max-width: 900px;
+	margin: 50px auto;
+	background-color: #D9E5E7;
+	padding: 50px;
+	border-radius: 5px;
+
+	.team-player {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.driver-info {
+			width: 40%;
+
+			img {
+				margin-bottom: 30px;
+				position: relative;
+			}
+
+			p, h4{
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		.description {
+			max-width: 600px;
+			padding-left: 50px;
+			color: #0A1B1F;
 		}
 	}
 }

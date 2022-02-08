@@ -4,9 +4,13 @@ import Index from './pages/Index.vue';
 import DriverChampionship from './pages/DriverChampionship.vue';
 import TeamChampionship from './pages/TeamChampionship.vue';
 import SingUp from './pages/SingUp.vue';
+import DepositionPage from './pages/DepositionPage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Driver from './pages/Driver.vue';
+import Team from './pages/Team.vue';
+import Statistics from './pages/Statistics.vue';
 import Regulation from './pages/Regulation.vue';
+import Album from './pages/Album.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -28,6 +32,15 @@ export default new Router({
 		path: '/regulation',
 		name: 'regulation',
 		components: { default: Regulation, header: MainNavbar, footer: MainFooter },
+		props: {
+		  header: { colorOnScroll: 400 },
+		  footer: { backgroundColor: 'black' }
+		}
+	},
+	{
+		path: '/deposition',
+		name: 'deposition',
+		components: { default: DepositionPage, header: MainNavbar, footer: MainFooter },
 		props: {
 		  header: { colorOnScroll: 400 },
 		  footer: { backgroundColor: 'black' }
@@ -72,6 +85,33 @@ export default new Router({
       path: '/drivers',
       name: 'drivers',
       components: { default: Driver, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/teams',
+      name: 'teams',
+      components: { default: Team, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/statistics',
+      name: 'statistics',
+      components: { default: Statistics, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/photos',
+      name: 'photos',
+      components: { default: Album, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }

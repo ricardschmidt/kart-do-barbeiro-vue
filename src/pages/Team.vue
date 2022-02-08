@@ -1,13 +1,13 @@
 <template>
-  	<article class="driver-championship">
-		<div class="page-header champion clear-filter" filter-color="black">
+	<article class="driver-championship">
+		<div class="page-header champion clear-filter" filter-color="orange">
 			<parallax
 				class="page-header-image"
-				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-driver-info.jpeg')"
+				style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-teams.jpg')"
 			>
 			</parallax>
 			<div class="container">
-				<h2 class="championship-title">Pilotos Participantes</h2>
+				<h2 class="championship-title">Equipes Participantes</h2>
 			</div>
 		</div>
 		<div class="loading-spinner" v-if="loading">
@@ -17,12 +17,10 @@
 				color="#118AB2"
 			/>
 		</div>
-		<div class="content-drivers" v-else>
-			<div class="champion-table" >
-				<div class="driver-info">
-					<div class="drivers">
-						<driver-info-card v-for="(driver, index) in drivers" :key="index" :driver="driver"></driver-info-card>
-					</div>
+		<div class="content-championship" v-else>
+			<div class="champion-table">
+				<div class="drivers" >
+					<team-info-card v-for="(team, index) in teams" :key="'f1' + index" :team="team"></team-info-card>
 				</div>
 			</div>
 		</div>
@@ -31,15 +29,15 @@
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import DriverInfoCard from '../components/Cards/DriverInfoCard.vue';
+import { Button } from '@/components';
+import TeamInfoCard from '../components/Cards/TeamInfoCard.vue';
 
 export default {
-	name: 'driver',
 	data() {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			drivers: [],
+			teams: [],
 		}
 	},
 	mounted() {
@@ -50,21 +48,24 @@ export default {
 			axios.get(this.urlBase, {
 				params: {
 					action: 'read',
-					table: 'Pilotos',
+					table: 'Equipes',
 				}
 			})
 			.then(response => {
-				this.drivers = response.data.data
+				this.teams = response.data.data.filter(function(value, index, arr){
+					return value.team !== "";
+				})
 				this.loading = false
 			})
 			.catch(error => {
 				this.loading = false
 			})
-		}
+		},
 	},
 	components: {
 		FulfillingBouncingCircleSpinner,
-		DriverInfoCard,
+		TeamInfoCard,
+		[Button.name]: Button,
 	}
 };
 </script>

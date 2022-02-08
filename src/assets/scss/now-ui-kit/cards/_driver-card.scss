@@ -1,3 +1,10 @@
+.driver-info {
+	.driver-card {
+		height: 314px;
+	}
+
+}
+
 .driver-card, .team-card {
 	width: 315px;
 	height: 375px;
@@ -19,6 +26,11 @@
 		border-bottom: 1px solid $black-color;
 		background: $transparent-bg;
 		padding: 0;
+
+		h4 {
+			margin: 0;
+			padding: 0;
+		}
 
 		h2 {
 			font-weight: 700;
@@ -55,6 +67,19 @@
 		border-bottom: 1px solid $black-color;
 		background: $transparent-bg;
 
+		.team-name {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			h4 {
+				margin: 0;
+				padding: 0;
+				font-weight: 600;
+			}
+		}
+
 		.team-color {
 			height: 40px;
 			width: 5px;
@@ -87,6 +112,16 @@
 		position: relative;
 		background: $transparent-bg;
 
+		.team-category {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.category {
+				font-weight: 600;
+			}
+		}
+
 		.drivers-names {
 			justify-content: space-between;
 
@@ -113,7 +148,13 @@
 		}
 
 		.team-logo {
-			height: 160px;
+			height: 150px;
+			padding: 20px 0 10px;
+		}
+
+		.team-info-logo {
+			height: 196px;
+			padding: 20px 0 10px;
 		}
 
 		p {
@@ -137,6 +178,12 @@
 		}
 	}
 
+}
+
+.card-footer {
+	img {
+		max-height: 203px;
+	}
 }
 
 .team-card {

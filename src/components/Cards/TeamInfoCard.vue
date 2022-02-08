@@ -1,14 +1,10 @@
 <template>
 	<div class="team-card">
 		<div class="card-header">
-			<h2>{{team.position}}º</h2>
-			<div class="header-points">
-				<p>{{points}}</p>
-				<small>PTS</small>
-			</div>
+			<h4>{{team.temporada}}</h4>
 		</div>
 		<div class="team-info">
-			<div class="team-color" :style="'background-color:'+team.teamColor"></div>
+			<div class="team-color" :style="'background-color:'+team.color"></div>
 			<div class="team-name">
 				<h3>{{team.team}}</h3>
 				<h4>{{team.category}}</h4>
@@ -26,7 +22,7 @@
 				</div>
 			</div>
 			<div>
-				<img class="team-logo" :src="team.img" alt="Logo da Equipe">
+				<img class="team-info-logo" :src="team.img" alt="Logo da Equipe">
 			</div>
 		</div>
 	</div>

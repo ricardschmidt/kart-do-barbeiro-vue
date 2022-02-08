@@ -11,7 +11,8 @@
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/auts-branco.png" alt="Auts Store">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/jg-motos.png" alt="JG Motos">
 			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/corte.png" alt="Côrte">
-			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/ingleses-kart.png" alt="Ingleses Kart">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/merco-energy.png" alt="Merco Energy">
+			<img src="https://ras-upload.s3.amazonaws.com/ckdb/sponsor/citta-branco.png" alt="Citta Engenharia">
 		</div>
 		<nav>
 			<ul>
@@ -28,6 +29,11 @@
 				<li>
 					<router-link to="/drivers">
 					Pilotos
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/teams">
+					Equipes
 					</router-link>
 				</li>
 			</ul>

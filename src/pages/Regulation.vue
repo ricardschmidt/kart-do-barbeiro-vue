@@ -3,12 +3,12 @@
     <div class="page-header clear-filter" filter-color="orange">
       <parallax
         class="page-header-image"
-        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/bg03.jpg')"
+        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-regulation.jpg')"
       >
       </parallax>
       <div class="container">
         <div class="photo-container">
-          <img src="https://ras-upload.s3.amazonaws.com/ckdb/img/avatar-regulation.jpeg" alt="Regulamento Image" />
+          <img src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-red.jpg" alt="Regulamento Imagem" />
         </div>
         <h3 class="title">Regulamento</h3>
         <p class="category">Kart do Barbeiro</p>
@@ -38,7 +38,7 @@
 					realizada em 2022. O evento contará com as organizações de
 					Ricardo Schmidt e Caio Quirino, além do apoio do além do apoio
 					de Auts Store, Barba de Respeito, Côrte Visagismos para
-					Homens, Ingleses Kart, JG Motos e Keune.
+					Homens, JG Motos e Keune.
 					A competição será realizada com a finalidade
 					de promover a integração entre pilotos amadores de kart de aluguel,
 					premiando os melhores colocados de cada categoria, conforme descrito
@@ -49,7 +49,7 @@
 					localizado na Cidade de Florianópolis-SC, podendo ter etapas em outros
 					kartódromos da região. Os horários das baterias e o cronograma geral
 					serão informados através do site oficial do evento
-					(www.kartdobarbeiro.com.br) e das mídias sociais.
+					(https://kartdobarbeiro.herokuapp.com/) e das mídias sociais.
 				</h5>
 				<h5>
 					1.3. Poderá participar deste torneio qualquer pessoa, de ambos os sexos, com
@@ -72,14 +72,14 @@
 				<h5>
 					1.6. As regras para inscrição, pagamento, valores e notícias importantes sobre
 					o evento deverão ser acompanhadas sempre no site oficial do KART DO
-					BARBEIRO, (www.kartdobarbeiro.com.br) e mídias sociais. Considera-se,
+					BARBEIRO, (https://kartdobarbeiro.herokuapp.com/) e mídias sociais. Considera-se,
 					ainda, que os pilotos que não cumprirem os prazos de pagamento
 					perderão o direito de participação.
 				</h5>
 				<h4>2. CATEGORIAS</h4>
 
 				<h5>
-					2.1. A competição terá 1 categoria geral, com participação livre de qualquer
+					2.1. A competição terá 2 categorias gerais, com participação livre de qualquer
 					piloto, de qualquer peso e de ambos os sexos, com lastreamento de todos
 					os pilotos em 90 kg (considerando equipamento).
 				</h5>
@@ -94,17 +94,16 @@
 						3.1.b. 2ª Etapa (19/02/2022) - Traçado Hamilton - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.c. 3ª Etapa (27/03/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
+						3.1.c. 3ª Etapa (27/03/2022) - Traçado Ayrton Senna - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.d. 4ª Etapa (16/04/2022) - Traçado Ayrton Senna - Kartódromo dos Ingleses.
+						3.1.d. 4ª Etapa (23/04/2022) - Traçado Tradicional - Kartódromo do Beto Carrero World
 					</h6>
 					<h6>
-						3.1.e. 5ª Etapa (22/05/2022) - Traçado Verstappen - Kartódromo do Beto Carreiro;
+						3.1.e. 5ª Etapa (22/05/2022) - Traçado Verstappen - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
-						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses OU
-						Traçado Tradicional - Kartódromo do Beto Carrero World;
+						3.1.f. 6ª Etapa (25/06/2022) - Traçado Tradicional - Kartódromo dos Ingleses;
 					</h6>
 					<h6>
 						3.1.g. As datas podem sofrer alteração por parte do kartódromo, no qual

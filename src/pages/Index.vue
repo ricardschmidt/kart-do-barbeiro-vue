@@ -8,7 +8,7 @@
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo-neon.png" alt="Logo KDB" />
+          <img class="n-logo" src="https://ras-upload.s3.amazonaws.com/ckdb/img/logo/logo-original.png" alt="Logo KDB" />
           <h1 class="h1-seo">Kart do Barbeiro</h1>
           <h3>Um novo modo de competir.</h3>
         </div>
@@ -38,14 +38,12 @@
         </div>
       </div>
     </div>
-    <signup-form></signup-form>
     <download-section></download-section>
   </div>
 </template>
 <script>
 import { Parallax } from '@/components';
 import CalendarioTabs from './components/CalendarioTabs';
-import SignupForm from './components/SignupForm';
 import DownloadSection from './components/DownloadSection';
 import GeralRank from './components/GeralRank';
 import RaceRank from './components/RaceRank';
@@ -57,7 +55,6 @@ export default {
   components: {
     Parallax,
 	CalendarioTabs,
-    SignupForm,
     DownloadSection,
 	GeralRank,
 	RaceRank,

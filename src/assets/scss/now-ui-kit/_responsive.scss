@@ -233,6 +233,11 @@
 }
 
 @media screen and (min-width: 768px){
+	.statistic-table {
+		tr:nth-child(-n+3) {
+			display: none;
+		}
+	}
     .image-container{
         &.image-right{
             top: 80px;
@@ -246,7 +251,21 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
+	.wrap-podium {
+		display: none;
+	}
+	.deposition-wrap {
+		padding: 20px;
+		.team-player {
+			flex-direction: column;
+
+			.description {
+				padding-left: 0;
+			}
+		}
+	}
+
     .image-container{
         &.image-left{
             margin-bottom: 220px;
