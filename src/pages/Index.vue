@@ -38,6 +38,7 @@
         </div>
       </div>
     </div>
+	<signup-form></signup-form>
     <download-section></download-section>
   </div>
 </template>
@@ -48,6 +49,7 @@ import DownloadSection from './components/DownloadSection';
 import GeralRank from './components/GeralRank';
 import RaceRank from './components/RaceRank';
 import Deposition from './components/Deposition';
+import SignupForm from './components/SignupForm';
 
 export default {
   name: 'index',
@@ -58,7 +60,8 @@ export default {
     DownloadSection,
 	GeralRank,
 	RaceRank,
-	Deposition
+	Deposition,
+	SignupForm,
   }
 };
 </script>

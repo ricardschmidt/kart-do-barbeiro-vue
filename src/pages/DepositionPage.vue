@@ -66,12 +66,12 @@
 					<div class="team-player">
 						<div class="driver-info">
 							<img
-								:src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+deposition.img+'.png'"
+								:src="deposition.image"
 								alt="Thumbnail Image"
 								class="rounded-circle img-fluid img-raised"
 							/>
-							<h4 class="title">{{deposition.name}}</h4>
-							<p class="category text-primary">{{deposition.num}}</p>
+							<h4 class="title">{{deposition.nickname}}</h4>
+							<p class="category text-primary">{{deposition.number}}</p>
 						</div>
 						<p class="description">
 							{{deposition.deposition}}
@@ -158,14 +158,9 @@ export default {
 	},
  	methods: {
 		getDeposition() {
-			axios.get(this.urlBase, {
-				params: {
-					action: 'read',
-					table: 'Depoimentos'
-				}
-			})
+			axios.get(`${this.urlBase}/drivers/depositions`, {})
 			.then(response => {
-				this.depositions = response.data.data
+				this.depositions = response.data
 				this.loading = false
 			})
 			.catch(error => {

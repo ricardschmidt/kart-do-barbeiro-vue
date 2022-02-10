@@ -1,16 +1,16 @@
 <template>
 	<div class="team-card">
 		<div class="card-header">
-			<h2>{{team.position}}º</h2>
+			<h2>{{index + 1}}º</h2>
 			<div class="header-points">
-				<p>{{points}}</p>
+				<p>{{score}}</p>
 				<small>PTS</small>
 			</div>
 		</div>
 		<div class="team-info">
-			<div class="team-color" :style="'background-color:'+team.teamColor"></div>
+			<div class="team-color" :style="'background-color:'+team.color"></div>
 			<div class="team-name">
-				<h3>{{team.team}}</h3>
+				<h3>{{team.name}}</h3>
 				<h4>{{team.category}}</h4>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div>
-				<img class="team-logo" :src="team.img" alt="Logo da Equipe">
+				<img class="team-logo" :src="team.image" alt="Logo da Equipe">
 			</div>
 		</div>
 	</div>
@@ -34,13 +34,14 @@
 <script>
 export default {
 	props: {
-		team: Object
+		team: Object,
+		index: Number,
 	},
 	data() {
 		return {
-			points: this.team.points >= 1 ? parseInt(this.team.points) : 0,
-			names1: this.team.driver1,
-			names2: this.team.driver2,
+			score: this.team.currentScore >= 1 ? parseInt(this.team.currentScore) : 0,
+			names1: this.team.drivers[0] ? this.team.drivers[0].nickname : "",
+			names2: this.team.drivers[1] ? this.team.drivers[1].nickname : "",
 		}
 	},
 	mounted() {

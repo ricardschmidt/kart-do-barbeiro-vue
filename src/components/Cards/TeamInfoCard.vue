@@ -1,12 +1,12 @@
 <template>
 	<div class="team-card">
 		<div class="card-header">
-			<h4>{{team.temporada}}</h4>
+			<h4>{{team.scores.length > 0 ? team.scores[team.scores.length -1].season : ""}}</h4>
 		</div>
 		<div class="team-info">
 			<div class="team-color" :style="'background-color:'+team.color"></div>
 			<div class="team-name">
-				<h3>{{team.team}}</h3>
+				<h3>{{team.name}}</h3>
 				<h4>{{team.category}}</h4>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div>
-				<img class="team-info-logo" :src="team.img" alt="Logo da Equipe">
+				<img class="team-info-logo" :src="team.image" alt="Logo da Equipe">
 			</div>
 		</div>
 	</div>
@@ -34,9 +34,9 @@ export default {
 	},
 	data() {
 		return {
-			points: this.team.points >= 1 ? parseInt(this.team.points) : 0,
-			names1: this.team.driver1,
-			names2: this.team.driver2,
+			points: this.team.currentScore >= 1 ? parseInt(this.team.currentScore) : 0,
+			names1: this.team.drivers[0] ? this.team.drivers[0].nickname : "",
+			names2: this.team.drivers[1] ? this.team.drivers[1].nickname : "",
 		}
 	},
 	mounted() {
