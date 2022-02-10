@@ -87,7 +87,6 @@ export default {
 				this.loading = false
 			})
 			.catch(error => {
-				console.error(error)
 				this.loading = false
 			})
 			axios.get(`${this.urlBase}/drivers`, {
@@ -102,7 +101,6 @@ export default {
 				this.loading = false
 			})
 			.catch(error => {
-				console.error(error)
 				this.loading = false
 			})
 		}
