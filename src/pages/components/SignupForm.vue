@@ -159,7 +159,6 @@ export default {
 				this.success = true
 			})
 			.catch(error => {
-				console.error(error.response.data)
 				this.error = true
 				this.errorMsg = error.response.data.errorMsgUser
 				if(error.response.data.errorCode === 409) {
