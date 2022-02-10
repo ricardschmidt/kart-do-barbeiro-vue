@@ -14,17 +14,17 @@
 					<router-link to="/deposition">
 						<div class="team">
 							<div class="row">
-								<div class="col-md-4" v-for="(deposition, index) in depositions" :key="'deposition'+index">
+								<div class="col-md-4" v-for="(driver, index) in drivers" :key="'deposition'+index">
 									<div class="team-player">
 										<img
-											:src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+deposition.img+'.png'"
+											:src="driver.image"
 											alt="Thumbnail Image"
 											class="rounded-circle img-fluid img-raised"
 										/>
-										<h4 class="title">{{deposition.name}}</h4>
-										<p class="category text-primary">{{deposition.num}}</p>
+										<h4 class="title">{{driver.nickname}}</h4>
+										<p class="category text-primary">{{driver.number}}</p>
 										<p class="description">
-											{{deposition.deposition}}
+											{{driver.deposition}}
 										</p>
 									</div>
 								</div>
@@ -45,7 +45,7 @@ export default {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			loading: true,
-			depositions: [],
+			drivers: [],
 		}
 	},
 	mounted() {
@@ -53,18 +53,13 @@ export default {
 	},
 	methods: {
 		getDeposition() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/drivers/depositions`, {
 				params: {
-					action: 'read',
-					table: 'Depoimentos'
+					random: true
 				}
 			})
 			.then(response => {
-				let allDepositions = response.data.data
-				allDepositions = allDepositions.sort(() => Math.random() - 0.5)
-				this.depositions.push(allDepositions[0])
-				this.depositions.push(allDepositions[1])
-				this.depositions.push(allDepositions[2])
+				this.drivers = response.data
 				this.loading = false
 			})
 			.catch(error => {

@@ -3,8 +3,8 @@
 		<div class="driver-info">
 			<div class="team-color" :style="'background-color:'+driver.teamColor"></div>
 			<div class="driver-name">
-				<p>{{driver.name}}</p>
-				<h3>{{driver.lastName}}</h3>
+				<p>{{name}}</p>
+				<h3>{{lastname}}</h3>
 			</div>
 			<img v-popover:popover1 :src="'https://ras-upload.s3.amazonaws.com/ckdb/img/state-flags/'+driver.state+'.png'" :alt="'Bandeira do '+driver.state">
 			<el-popover
@@ -21,12 +21,12 @@
 		</div>
 		<div class="card-footer">
 			<div class="team-category">
-				<p>{{driver.team}}</p>
+				<p>{{team.name}}</p>
 				<p class="category">{{driver.category}}</p>
 			</div>
 			<div>
-				<h2 :style="'color:'+driver.color">{{driver.number}}</h2>
-				<img :src="'https://ras-upload.s3.amazonaws.com/ckdb/img/drivers/'+driver.img+'.png'" alt="Foto do Piloto">
+				<h2 :style="'color:'+team.color">{{driver.number}}</h2>
+				<img :src="driver.image" alt="Foto do Piloto">
 			</div>
 		</div>
 	</div>
@@ -34,11 +34,33 @@
 <script>
 import { Popover } from 'element-ui';
 export default {
+	data() {
+		return {
+			name: "",
+			lastname: "",
+			team: this.driver.team_id ? this.driver.team_id : {name: "Independente", color: "#000"},
+		}
+	},
+	mounted() {
+		this.splitName();
+	},
 	props: {
-		driver: Object
+		driver: Object,
 	},
 	components: {
 		[Popover.name]: Popover
+	},
+	methods: {
+		splitName() {
+			let splitedName = this.driver.nickname.split(" ")
+			splitedName.forEach((name, index) => {
+				if(index === splitedName.length -1) {
+					this.lastname = name
+					return
+				}
+				this.name += `${name} `
+			})
+		}
 	}
 }
 </script>

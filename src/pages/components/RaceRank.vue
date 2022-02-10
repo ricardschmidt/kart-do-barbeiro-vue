@@ -14,13 +14,13 @@
 				<n-button type="warning" round :simple="category !== 'F2'" @click="changeCategory('F2')">F2</n-button>
 			</div>
 			<tabs type="primary" vertical class="row race-rank-content" v-if='showF1'>
-				<tab-pane v-for="(drivers, index) in f1races" :key="'f1-' + index" :label="'Corrida '+(index + 1)">
-					<tables-driver :drivers="drivers" :index="index"></tables-driver>
+				<tab-pane v-for="(races, index) in f1races" :key="'f1-' + index" :label="races.name">
+					<tables-driver :drivers="races.drivers" :index="index"></tables-driver>
 				</tab-pane>
 			</tabs>
 			<tabs type="primary" vertical class="row race-rank-content" v-else>
-				<tab-pane v-for="(drivers, index) in f2races" :key="'f2-' + index" :label="'Corrida '+(index + 1)">
-					<tables-driver :drivers="drivers" :index="index"></tables-driver>
+				<tab-pane v-for="(races, index) in f2races" :key="'f2-' + index" :label="races.name">
+					<tables-driver :drivers="races.drivers" :index="index"></tables-driver>
 				</tab-pane>
 			</tabs>
 		</div>
@@ -48,15 +48,27 @@ export default {
 	},
 	methods: {
 		raceRank() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/results`, {
 				params: {
-					action: 'read',
-					table: 'Pontuação Pilotos',
+					category: "F1",
 					season: '2022/1'
 				}
 			})
 			.then(response => {
-				this.createRaceData(response.data.data)
+				this.f1races = response.data
+				this.loading = false
+			})
+			.catch(error => {
+				this.loading = false
+			})
+			axios.get(`${this.urlBase}/results`, {
+				params: {
+					category: "F2",
+					season: '2022/1'
+				}
+			})
+			.then(response => {
+				this.f2races = response.data
 				this.loading = false
 			})
 			.catch(error => {
@@ -69,46 +81,6 @@ export default {
 				this.showF1 = !this.showF1
 			}
 		},
-		createRaceData(results) {
-			let keys = Object.keys(results[0])
-			let count = 0
-			keys.forEach((key) => {
-				if(key.startsWith('bateria')){
-					count++;
-				}
-			})
-			count = count/2
-			for(let i = 0; i < count; i++) {
-				let f1corrida = []
-				let f2corrida = []
-				results.forEach((result) => {
-					if(result[keys[(4 + i * 2)]] + result[keys[(5 + i * 2)]] > 0){
-						if(result.category === "F1") {
-							f1corrida.push( {
-								number: result.number,
-								driver: result.name,
-								points: result[keys[(4 + i * 2)]] + result[keys[(5 + i * 2)]]
-							})
-						} else {
-							f2corrida.push( {
-								number: result[keys[0]],
-								driver: result[keys[1]],
-								points: result[keys[(4 + i * 2)]] + result[keys[(5 + i * 2)]]
-							})
-
-						}
-					}
-				})
-				f1corrida.sort((a,b) => (a.points > b.points) ? -1: 1)
-				f2corrida.sort((a,b) => (a.points > b.points) ? -1: 1)
-				if(f1corrida[0].points !== 0){
-					this.f1races.push(f1corrida)
-				}
-				if(f2corrida.length > 0 && f2corrida[0].points !== 0){
-					this.f2races.push(f2corrida)
-				}
-			}
-		}
 	},
 	components: {
 		FulfillingBouncingCircleSpinner,

@@ -14,8 +14,9 @@
               tab-nav-wrapper-classes="card-header"
               tab-content-classes="card-body text-center"
               data-background-color="orange"
+			  v-model="activeTab"
             >
-				<tab-pane>
+				<tab-pane label="James Hunt">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i> James Hunt
 					</template>
@@ -32,7 +33,7 @@
 						</div>
 					</div>
 				</tab-pane>
-				<tab-pane>
+				<tab-pane label="Hamilton">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i> Hamilton
 					</template>
@@ -49,7 +50,7 @@
 						</div>
 					</div>
 				</tab-pane>
-				<tab-pane>
+				<tab-pane label="Ayrton Senna">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i> Ayrton Senna
 					</template>
@@ -66,7 +67,7 @@
 						</div>
 					</div>
 				</tab-pane>
-				<tab-pane>
+				<tab-pane label="Beto Carreiro">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i> Beto Carreiro
 					</template>
@@ -85,7 +86,7 @@
 						</div>
 					</div>
 				</tab-pane>
-				<tab-pane>
+				<tab-pane label="Verstappen">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i>Verstappen
 					</template>
@@ -102,7 +103,7 @@
 						</div>
 					</div>
 				</tab-pane>
-				<tab-pane>
+				<tab-pane label="Tradicional">
 					<template slot="label">
 					<i class="now-ui-icons sport_trophy"></i> Tradicional
 					</template>
@@ -134,6 +135,27 @@ export default {
   components: {
     Tabs,
     TabPane
+  },
+  data() {
+      return {
+        activeTab: this.getActiveTab(),
+
+      }
+  },
+  methods: {
+		getActiveTab() {
+			if(new Date().getTime() < new Date("2022-02-19")) {
+				return "Hamilton"
+			} else if(new Date().getTime() < new Date("2022-03-27")) {
+				return  "Ayrton Senna"
+			} else if(new Date().getTime() < new Date("2022-04-23")) {
+				return  "Beto Carreiro"
+			} else if(new Date().getTime() < new Date("2022-05-22")) {
+				return  "Verstappen"
+			} else if(new Date().getTime() < new Date("2022-06-25")) {
+				return  "Tradicional"
+			}
+		}
   }
 };
 </script>

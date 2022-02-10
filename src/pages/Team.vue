@@ -20,7 +20,7 @@
 		<div class="content-championship" v-else>
 			<div class="champion-table">
 				<div class="drivers" >
-					<team-info-card v-for="(team, index) in teams" :key="'f1' + index" :team="team"></team-info-card>
+					<team-info-card v-for="(team, index) in teams" :key="index" :team="team"></team-info-card>
 				</div>
 			</div>
 		</div>
@@ -45,16 +45,13 @@ export default {
 	},
 	methods: {
 		apiRequest() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/teams`, {
 				params: {
-					action: 'read',
-					table: 'Equipes',
+					sort: "name"
 				}
 			})
 			.then(response => {
-				this.teams = response.data.data.filter(function(value, index, arr){
-					return value.team !== "";
-				})
+				this.teams = response.data;
 				this.loading = false
 			})
 			.catch(error => {
