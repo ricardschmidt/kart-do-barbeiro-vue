@@ -1,0 +1,54 @@
+.create-race-xlsx {
+	.container {
+		max-width: 800px;
+		padding: 20px;
+
+		#submit-file {
+			margin: 0 auto;
+		}
+	}
+
+	.input-line {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.form-group:nth-of-type(1) {
+			margin-right: 10px;
+		}
+
+		.form-group:nth-of-type(2) {
+			margin-left: 10px;
+		}
+	}
+
+	.drivers-title {
+		text-align: center;
+		text-transform: uppercase;
+
+	}
+
+	.text-center {
+		p {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		.inline-info {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+	}
+
+
+	.section-no-exist-drivers, .section-race {
+		.drivers-table{
+			margin: 0 10px;
+		}
+		margin: 0 auto;
+		padding: 20px 0;
+		max-width: 600px;
+	}
+}

@@ -23,6 +23,10 @@ import Slider from './Slider.vue';
 
 import Pagination from './Pagination.vue';
 
+import Attachment from './Attachment.vue';
+import TablesDriver from './TablesDriver.vue';
+import DriverRaceTable from './DriverRaceTable.vue';
+
 export {
   Alert,
   Collapse,
@@ -44,5 +48,8 @@ export {
   Modal,
   Parallax,
   Slider,
-  Button
+  Button,
+  Attachment,
+  TablesDriver,
+  DriverRaceTable
 };
