@@ -47,7 +47,8 @@ export default {
 		apiRequest() {
 			axios.get(`${this.urlBase}/teams`, {
 				params: {
-					sort: "name"
+					sort: "name",
+					select: "driverPopulate"
 				}
 			})
 			.then(response => {

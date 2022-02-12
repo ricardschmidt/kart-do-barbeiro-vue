@@ -49,7 +49,8 @@ export default {
 		apiRequest() {
 			axios.get(`${this.urlBase}/drivers`, {
 				params: {
-					sort: 'nickname'
+					sort: 'nickname',
+					select: "team"
 				}
 			})
 			.then(response => {

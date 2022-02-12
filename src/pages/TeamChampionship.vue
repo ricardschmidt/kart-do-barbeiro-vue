@@ -69,7 +69,8 @@ export default {
 			axios.get(`${this.urlBase}/teams/`, {
 				params: {
 					category: 'F1',
-					sort: "-currentScore"
+					sort: "-currentScore",
+					select: "driverPopulate"
 				}
 			})
 			.then(response => {
@@ -82,7 +83,8 @@ export default {
 			axios.get(`${this.urlBase}/teams/`, {
 				params: {
 					category: 'F2',
-					sort: "-currentScore"
+					sort: "-currentScore",
+					select: "driverPopulate"
 				}
 			})
 			.then(response => {
