@@ -71,7 +71,7 @@ export default {
 					category: 'F1',
 					season: this.season,
 					sort: "-currentScore",
-					select: "team"
+					teamPopulate: true
 				}
 			})
 			.then(response => {
@@ -85,7 +85,7 @@ export default {
 				params: {
 					category: 'F2',
 					sort: "-currentScore",
-					select: "team"
+					teamPopulate: true
 				}
 			})
 			.then(response => {
