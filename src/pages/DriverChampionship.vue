@@ -21,10 +21,6 @@
 			/>
 		</div>
 		<div class="content-championship" v-else>
-			<div class="content">
-				 <n-button type="primary" round :simple="season !== '2021/1'" @click="newRequest('2021/1')">Temporada 2021/1</n-button>
-				 <n-button type="primary" round :simple="season !== '2022/1'" @click="newRequest('2022/1')">Temporada 2022/1</n-button>
-			</div>
 			<h3 >Temporada de {{ season }}</h3>
 			<div class="category-select" v-show="f2drivers.length > 0">
 				 <n-button type="warning" round :simple="category !== 'F1'" @click="changeCategory('F1')">F1</n-button>
@@ -32,10 +28,10 @@
 			</div>
 			<div class="champion-table" >
 				<div class="drivers" v-if='showF1'>
-					<driver-card v-for="(driver, index) in f1drivers" :key="'f1' + index" :driver="driver"></driver-card>
+					<driver-card v-for="(driver, index) in f1drivers" :key="'f1' + index" :driver="driver" :index="index"></driver-card>
 				</div>
 				<div class="drivers" v-else>
-					<driver-card v-for="(driver, index) in f2drivers" :key="'f2' + index" :driver="driver"></driver-card>
+					<driver-card v-for="(driver, index) in f2drivers" :key="'f2' + index" :driver="driver" :index="index"></driver-card>
 				</div>
 			</div>
 		</div>
@@ -63,15 +59,6 @@ export default {
 		this.apiRequest();
 	},
 	methods: {
-		newRequest(season) {
-			if(season !== this.season) {
-				this.loading = true;
-				this.category = "F1"
-				this.showF1 = true
-				this.season = season
-				this.apiRequest()
-			}
-		},
 		changeCategory(category) {
 			if(category !== this.category) {
 				this.category = category
@@ -79,15 +66,30 @@ export default {
 			}
 		},
 		apiRequest() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/drivers/`, {
 				params: {
-					action: 'read',
-					table: 'Campeonato de Pilotos',
+					category: 'F1',
 					season: this.season,
+					sort: "-currentScore",
+					teamPopulate: true
 				}
 			})
 			.then(response => {
-				this.categorySplit(response.data.data)
+				this.f1drivers = response.data
+				this.loading = false
+			})
+			.catch(error => {
+				this.loading = false
+			})
+			axios.get(`${this.urlBase}/drivers/`, {
+				params: {
+					category: 'F2',
+					sort: "-currentScore",
+					teamPopulate: true
+				}
+			})
+			.then(response => {
+				this.f2drivers = response.data
 				this.loading = false
 			})
 			.catch(error => {

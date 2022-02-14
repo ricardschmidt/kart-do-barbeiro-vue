@@ -47,14 +47,14 @@ export default {
 	},
 	methods: {
 		apiRequest() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/drivers`, {
 				params: {
-					action: 'read',
-					table: 'Pilotos',
+					sort: 'nickname',
+					teamPopulate: true
 				}
 			})
 			.then(response => {
-				this.drivers = response.data.data
+				this.drivers = response.data
 				this.loading = false
 			})
 			.catch(error => {

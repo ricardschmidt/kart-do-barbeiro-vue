@@ -36,6 +36,11 @@
 					Equipes
 					</router-link>
 				</li>
+				<li>
+					<router-link to="/upload-xlsx">
+					Upload
+					</router-link>
+				</li>
 			</ul>
 		</nav>
 		<div class="copyright">

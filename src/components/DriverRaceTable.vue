@@ -9,14 +9,14 @@
 			<tr class="race-table" :class="trClasses" v-for="(driver, i) in drivers" :key="index + i">
 				<td>{{driver.position}}º</td>
 				<td>{{driver.driverName}}</td>
-				<td>{{driver.score >= 1 ? parseInt(driver.score) : 0}}</td>
+				<td>{{parseInt(driver.score)}}</td>
 			</tr>
 		</table>
 	</div>
 </template>
 <script>
 export default {
-	name: 'table-driver',
+	name: 'driver-race-table',
 	props: {
 		tableClasses: String,
 		trClasses: String,

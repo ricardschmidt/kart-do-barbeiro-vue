@@ -1,110 +1,110 @@
 <template>
-  <div
-    class="section section-signup"
-    style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-signup.jpg'); background-size: cover; background-position: top center; min-height: 700px;"
-  >
-    <div class="container">
-      <div class="row">
-        <card class="card-signup" header-classes="text-center" color="orange">
-          <template slot="header">
-            <h3 class="card-title title-up">Inscreva-se</h3>
-            <div class="social-line">
-              <a
-                href="#"
-                class="btn btn-neutral btn-facebook btn-icon btn-round"
-              >
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
-                class="btn btn-neutral btn-youtube btn-icon btn-lg btn-round"
-              >
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/ckdb.kart/"
-                class="btn btn-neutral btn-instagram btn-icon btn-round"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </template>
-		  <div class="sing-up-form-success" v-if="success" >
-			  <p>
-                Você concluiu o seu cadastro para o Campeonato do Kart do Barbeiro 2022/1
-              </p>
-		  </div>
-		  <div class="sing-up-form"  v-else >
-			  <alert type="danger" dismissible :visible="error" >Preencha todos os campos!</alert>
-			<template>
-				<fg-input
-				id="input-name"
-				class="no-border"
-				:class="{'has-danger': errors.name}"
-				placeholder="Nome..."
-				addon-left-icon="now-ui-icons users_circle-08"
-				v-model="name"
+	<div
+		class="section section-signup"
+		style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-signup.jpg'); background-size: cover; background-position: top center; min-height: 700px;"
+	>
+		<div class="container">
+		<div class="row">
+			<card class="card-signup" header-classes="text-center" color="orange">
+			<template slot="header">
+				<h3 class="card-title title-up">Inscreva-se</h3>
+				<div class="social-line">
+				<a
+					href="https://www.facebook.com/ckdb.kart"
+					class="btn btn-neutral btn-facebook btn-icon btn-round"
 				>
-				</fg-input>
-
-				<fg-input
-				id="input-lastname"
-				class="no-border"
-				:class="{'has-danger': errors.lastName}"
-				placeholder="Sobrenome..."
-				addon-left-icon="now-ui-icons users_circle-08"
-				v-model="lastName"
+					<i class="fab fa-facebook-square"></i>
+				</a>
+				<a
+					href="https://www.youtube.com/channel/UCtUaJ4bE1hhPBKtXXT1zyZA"
+					class="btn btn-neutral btn-youtube btn-icon btn-lg btn-round"
 				>
-				</fg-input>
-
-				<fg-input
-				id="input-number"
-				class="no-border"
-				:class="{'has-danger': errors.number}"
-				placeholder="Número"
-				addon-left-icon="now-ui-icons sport_trophy"
-				v-model="number"
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a
+					href="https://www.instagram.com/ckdb.kart/"
+					class="btn btn-neutral btn-instagram btn-icon btn-round"
 				>
-				</fg-input>
-
-				<fg-input
-				class="no-border"
-				:class="{'has-danger': errors.team}"
-				placeholder="Equipe"
-				addon-left-icon="now-ui-icons ui-1_send"
-				v-model="team"
-				>
-				</fg-input>
-
-				<fg-input
-				id="input-state"
-				class="no-border"
-				:class="{'has-danger': errors.state}"
-				placeholder="Estado"
-				addon-left-icon="now-ui-icons location_world"
-				v-model="state"
-				>
-				</fg-input>
-
-				<fg-input
-				id="input-email"
-				class="no-border"
-				:class="{'has-danger': errors.email}"
-				placeholder="E-mail"
-				addon-left-icon="now-ui-icons ui-1_email-85"
-				v-model="email"
-				>
-				</fg-input>
-
+					<i class="fab fa-instagram"></i>
+				</a>
+				</div>
 			</template>
-			<div class="card-footer text-center">
-				<n-button :type="typeButton" round size="lg" v-on:click="insertDriver" >Inscrever-se</n-button>
+			<div class="sing-up-form" >
+				<alert type="success" dismissible :visible="success">
+					Você concluiu o seu cadastro para o Campeonato do Kart do Barbeiro 2022/1
+				</alert>
+				<alert type="danger" dismissible :visible="error" >{{errorMsg}}</alert>
+				<template>
+					<fg-input
+					id="input-name"
+					class="no-border"
+					:class="{'has-danger': errors.name}"
+					placeholder="Nome...(Conforme cadastro no kartódromo)"
+					addon-left-icon="now-ui-icons users_circle-08"
+					v-model="name"
+					>
+					</fg-input>
+
+					<fg-input
+					id="input-lastname"
+					class="no-border"
+					:class="{'has-danger': errors.nickname}"
+					placeholder="Apelido..."
+					addon-left-icon="now-ui-icons users_circle-08"
+					v-model="nickname"
+					>
+					</fg-input>
+
+					<fg-input
+					id="input-number"
+					class="no-border"
+					:class="{'has-danger': errors.number}"
+					placeholder="Número"
+					type="number"
+					addon-left-icon="now-ui-icons sport_trophy"
+					v-model="number"
+					>
+					</fg-input>
+
+					<fg-input
+					id="input-state"
+					class="no-border"
+					:class="{'has-danger': errors.state}"
+					placeholder="Estado"
+					addon-left-icon="now-ui-icons location_world"
+					v-model="state"
+					>
+					</fg-input>
+
+					<fg-input
+					id="input-email"
+					class="no-border"
+					:class="{'has-danger': errors.email}"
+					placeholder="E-mail"
+					addon-left-icon="now-ui-icons ui-1_email-85"
+					v-model="email"
+					>
+					</fg-input>
+
+					<fg-input
+					id="input-phone"
+					class="no-border"
+					:class="{'has-danger': errors.phone}"
+					placeholder="Telefone"
+					addon-left-icon="now-ui-icons tech_mobile"
+					v-model="phone"
+					>
+					</fg-input>
+
+				</template>
+				<div class="card-footer text-center">
+					<n-button :type="typeButton" round size="lg" v-on:click="insertDriver" >Inscrever-se</n-button>
+				</div>
 			</div>
-		  </div>
-        </card>
-      </div>
-    </div>
-  </div>
+			</card>
+		</div>
+		</div>
+	</div>
 </template>
 <script>
 import axios from 'axios'
@@ -115,21 +115,23 @@ export default {
 	Alert,
 	Card,
 	[Button.name]: Button,
-	[FormGroupInput.name]: FormGroupInput
+	[FormGroupInput.name]: FormGroupInput,
   },
   data() {
 	  return{
-		  urlBase: process.env.VUE_APP_API_URL,
-		  typeButton: "neutral",
-		  error: false,
-		  errors: {},
-		  success: false,
-		  name: null,
-		  lastName: null,
-		  number: null,
-		  team: null,
-		  state: null,
-		  email: null,
+		urlBase: process.env.VUE_APP_API_URL,
+		typeButton: "neutral",
+		error: false,
+		errors: {},
+		success: false,
+		name: null,
+		nickname: null,
+		number: null,
+		phone: null,
+		state: null,
+		email: null,
+		category: null,
+		errorMsg: "",
 	  }
   },
   methods: {
@@ -137,41 +139,31 @@ export default {
 			if(this.checkForm()){
 				return
 			}
-			let now = new Date()
-			axios.get(this.urlBase, {
-				params: {
-					action: 'insert',
-					table: 'Inscrição',
-					data: {
-						"Carimbo de data/hora": `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`,
-						"Número de Piloto": "#" + this.number,
-						"Nome": this.name,
-						"Sobrenome": this.lastName,
-						"Nome Completo": `${this.name} ${this.lastName}`,
-						"Estado": this.state,
-						"Equipe": this.team,
-						"Cor do Time": "",
-						"Foto": "",
-						"Insira sua foto aqui":"",
-						"Email": this.email,
-						"Temporada": "2022/1",
-						"Pagamento": false,
-						}
-				}
+			axios.post(`${this.urlBase}/drivers`, {
+				"number": "#" + this.number,
+				"name": this.name,
+				"nickname": this.nickname,
+				"state": this.state,
+				"email": this.email,
+				"phone": this.phone,
+				"category": this.category,
+				"season": "2022/1",
 			})
 			.then(response => {
 				this.name = null
-				this.lastName = null
+				this.nickname = null
 				this.number = null
 				this.state = null
-				this.team = null
 				this.email = null
-				this.typeButton = "success"
+				this.phone = null
 				this.success = true
-
 			})
 			.catch(error => {
-				this.typeButton = "danger"
+				this.error = true
+				this.errorMsg = error.response.data.errorMsgUser
+				if(error.response.data.errorCode === 409) {
+					this.errors["number"] = true
+				}
 			})
 		},
 
@@ -180,8 +172,8 @@ export default {
 			if(!this.name) {
 				this.errors['name'] = true
 			}
-			if(!this.lastName) {
-				this.errors['lastName'] = true
+			if(!this.nickname) {
+				this.errors['nickname'] = true
 			}
 			if(!this.number) {
 				this.errors['number'] = true
@@ -192,8 +184,12 @@ export default {
 			if(!this.email) {
 				this.errors['email'] = true
 			}
+			if(!this.phone) {
+				this.errors['phone'] = true
+			}
 
 			if (!this.isEmpty(this.errors)) {
+				this.errorMsg = "Preencha todos os campos."
 				this.error = true
 				return true;
 			} else {
@@ -210,7 +206,7 @@ export default {
 			}
 
 			return JSON.stringify(obj) === JSON.stringify({});
-		}
+		},
   }
 };
 </script>
