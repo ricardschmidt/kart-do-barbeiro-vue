@@ -176,7 +176,7 @@ export default {
 			}).catch(error => {
 				this.loading = false
 				this.error = true
-				this.errorMsg = error.response.data.error.messageUser
+				this.errorMsg = error.response.data.error.messageUser ? error.response.data.error.messageUser : error.response.data.error.message
 			});
 
 			this.clearFieds()
