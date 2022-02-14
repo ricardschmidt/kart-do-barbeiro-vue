@@ -174,6 +174,7 @@ export default {
 					this.noExistDrivers = res.data.driverNoExist
 				}
 			}).catch(error => {
+				this.loading = false
 				this.error = true
 				this.errorMsg = error.response.data.error.messageUser
 			});

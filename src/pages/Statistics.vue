@@ -39,7 +39,7 @@
 			<div class="statistics-content" v-else>
 				<div>
 					<h2>Melhores Voltas</h2>
-					<statistics-table :drivers="bestLaps" :index="0" suffix="x" cardColor="yellow" attribute="bestLap"></statistics-table>
+					<statistics-table :drivers="bestLaps" :index="0" suffix="x" cardColor="yellow" attribute="bestlap"></statistics-table>
 				</div>
 				<div>
 					<h2>Número de Podiuns</h2>
@@ -47,11 +47,11 @@
 				</div>
 				<div>
 					<h2>Número de Pole Position</h2>
-					<statistics-table :drivers="polepositions" :index="2" suffix="x" attribute="polePosition"></statistics-table>
+					<statistics-table :drivers="polepositions" :index="2" suffix="x" attribute="poleposition"></statistics-table>
 				</div>
 				<div>
 					<h2>Pontuação Geral</h2>
-					<statistics-table :drivers="points" :index="3" suffix="pts" cardColor="red" attribute="points"></statistics-table>
+					<statistics-table :drivers="points" :index="3" suffix="pts" cardColor="red" attribute="allScore"></statistics-table>
 				</div>
 			</div>
 		</div>
@@ -88,14 +88,13 @@ export default {
 	},
  	methods: {
 		getStatistics() {
-			axios.get(this.urlBase, {
+			axios.get(`${this.urlBase}/drivers/`, {
 				params: {
-					action: 'read',
-					table: 'Estatísticas'
+					select: 'nickname,image,poleposition,bestlap,allScore,podium'
 				}
 			})
 			.then(response => {
-				this.statistics = response.data.data
+				this.statistics = response.data
 				this.loading = false
 				this.createList();
 			})
@@ -106,16 +105,17 @@ export default {
 
 		createList() {
 			this.points = this.statistics.filter(function(value, index, arr){
-				return value.points >= 1;
+				return value.allScore >= 1;
 			});
+			this.points.sort((a,b) => (a.allScore > b.allScore) ? -1: 1)
 			this.bestLaps = this.statistics.filter(function(value, index, arr){
-				return value.bestLap >= 1;
+				return value.bestlap >= 1;
 			});
-			this.bestLaps.sort((a,b) => (a.bestLap > b.bestLap) ? -1: 1)
+			this.bestLaps.sort((a,b) => (a.bestlap > b.bestlap) ? -1: 1)
 			this.polepositions = this.statistics.filter(function(value, index, arr){
-				return value.polePosition >= 1;
+				return value.poleposition >= 1;
 			});
-			this.polepositions.sort((a,b) => (a.polePosition > b.polePosition ? -1: 1))
+			this.polepositions.sort((a,b) => (a.poleposition > b.poleposition ? -1: 1))
 			this.podiuns = this.statistics.filter(function(value, index, arr){
 				return value.podium >= 1;
 			});
