@@ -125,9 +125,6 @@
         icon="now-ui-icons education_agenda-bookmark"
         class="nav-item"
       >
-	  	<nav-link to="/photos">
-          <i class="now-ui-icons design_image"></i>Fotos
-        </nav-link>
 	  	<nav-link to="/deposition">
           <i class="now-ui-icons ui-2_like"></i>Depoimentos
         </nav-link>
