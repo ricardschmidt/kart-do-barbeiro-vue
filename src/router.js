@@ -18,115 +18,116 @@ import MainFooter from './layout/MainFooter.vue';
 Vue.use(Router);
 
 export default new Router({
-  linkExactActiveClass: 'active',
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-	{
-		path: '/regulation',
-		name: 'regulation',
-		components: { default: Regulation, header: MainNavbar, footer: MainFooter },
+	mode: 'history',
+	linkExactActiveClass: 'active',
+	routes: [
+		{
+		path: '/',
+		name: 'index',
+		components: { default: Index, header: MainNavbar, footer: MainFooter },
 		props: {
-		  header: { colorOnScroll: 400 },
-		  footer: { backgroundColor: 'black' }
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
 		}
-	},
-	{
-		path: '/deposition',
-		name: 'deposition',
-		components: { default: DepositionPage, header: MainNavbar, footer: MainFooter },
+		},
+		{
+			path: '/regulation',
+			name: 'regulation',
+			components: { default: Regulation, header: MainNavbar, footer: MainFooter },
+			props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+			}
+		},
+		{
+			path: '/deposition',
+			name: 'deposition',
+			components: { default: DepositionPage, header: MainNavbar, footer: MainFooter },
+			props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+			}
+		},
+		{
+		path: '/driver-championship',
+		name: 'driver championship',
+		components: { default: DriverChampionship, header: MainNavbar, footer: MainFooter },
 		props: {
-		  header: { colorOnScroll: 400 },
-		  footer: { backgroundColor: 'black' }
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
 		}
-	},
-    {
-      path: '/driver-championship',
-      name: 'driver championship',
-      components: { default: DriverChampionship, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/team-championship',
-      name: 'team championship',
-      components: { default: TeamChampionship, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/sing-up',
-      name: 'sing up',
-      components: { default: SingUp, header: MainNavbar },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
-      path: '/about-us',
-      name: 'about-us',
-      components: { default: AboutUs, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/drivers',
-      name: 'drivers',
-      components: { default: Driver, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/teams',
-      name: 'teams',
-      components: { default: Team, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/statistics',
-      name: 'statistics',
-      components: { default: Statistics, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/photos',
-      name: 'photos',
-      components: { default: Album, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
-    {
-      path: '/upload-xlsx',
-      name: 'upload',
-      components: { default: UploadXlsx, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
+		},
+		{
+		path: '/team-championship',
+		name: 'team championship',
+		components: { default: TeamChampionship, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/sing-up',
+		name: 'sing up',
+		components: { default: SingUp, header: MainNavbar },
+		props: {
+			header: { colorOnScroll: 400 }
+		}
+		},
+		{
+		path: '/about-us',
+		name: 'about-us',
+		components: { default: AboutUs, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/drivers',
+		name: 'drivers',
+		components: { default: Driver, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/teams',
+		name: 'teams',
+		components: { default: Team, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/statistics',
+		name: 'statistics',
+		components: { default: Statistics, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/photos',
+		name: 'photos',
+		components: { default: Album, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/upload-xlsx',
+		name: 'upload',
+		components: { default: UploadXlsx, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
 ],
   scrollBehavior: to => {
     if (to.hash) {
