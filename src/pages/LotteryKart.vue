@@ -121,9 +121,9 @@ export default {
 	data() {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
-			name: 'Test',
-			category: 'F1',
-			driversText: 'Ricardo Schmidt,Elcio Schmidt,Paulo Crestani,Juliano de Souza,Leonir Baggio,Maria Bedin,Caio Quirino,Augusto Vieira,Vini Marques,Guto Hass,Henrique Burato,Jorginho Gambatto,Mateus Mordin,Robert Orza,Miguel Orza',
+			name: '',
+			category: '',
+			driversText: '',
 			kartsText: '',
 			drivers: null,
 			reserves: null,
@@ -143,6 +143,20 @@ export default {
 				let driversNames = this.driversText.split(",")
 				let kartsNumbersOne = this.kartsText.split(",").sort((a, b) => 0.5 - Math.random())
 				let kartsNumbersTwo = this.kartsText.split(",").sort((a, b) => 0.5 - Math.random())
+				let same = true
+
+				while (same) {
+					same = false
+					for (let index = 0; index < kartsNumbersOne.length; index++) {
+						if(kartsNumbersOne[index] === kartsNumbersTwo[index]) {
+							same = true
+							break
+						}
+					}
+					if(same) {
+						kartsNumbersOne = kartsNumbersOne.sort((a, b) => 0.5 - Math.random())
+					}
+				}
 
 				console.log(`Karts Numbers:${kartsNumbersOne.length}\nDrivers: ${driversNames.length}`)
 				if(kartsNumbersOne.length < driversNames.length) {
