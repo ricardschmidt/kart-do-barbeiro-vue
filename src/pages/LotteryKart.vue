@@ -158,7 +158,6 @@ export default {
 					}
 				}
 
-				console.log(`Karts Numbers:${kartsNumbersOne.length}\nDrivers: ${driversNames.length}`)
 				if(kartsNumbersOne.length < driversNames.length) {
 					this.errorMsg = "Número de Karts deve ser maior ou igual ao de pilotos"
 					this.error = true
