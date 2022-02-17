@@ -16,7 +16,9 @@
 		color: $light-black;
 	}
 	td:nth-child(2) {
-		text-align: start;
+		&:not(.kart) {
+			text-align: start;
+		}
 	}
 
 	tr:nth-child(even) {

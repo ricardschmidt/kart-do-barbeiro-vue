@@ -134,6 +134,9 @@
         <nav-link to="/statistics">
           <i class="now-ui-icons business_chart-bar-32"></i>Estatísticas
         </nav-link>
+        <nav-link to="/lottery-kart">
+          <i class="now-ui-icons loader_refresh"></i>Sorteio de Kart
+        </nav-link>
       </drop-down>
       <li class="nav-item">
 			<a

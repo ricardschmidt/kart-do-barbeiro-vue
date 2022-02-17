@@ -26,6 +26,8 @@ import Pagination from './Pagination.vue';
 import Attachment from './Attachment.vue';
 import TablesDriver from './TablesDriver.vue';
 import DriverRaceTable from './DriverRaceTable.vue';
+import DriverKartTable from './DriverKartTable.vue';
+import KartTable from './KartTable.vue';
 
 export {
   Alert,
@@ -51,5 +53,7 @@ export {
   Button,
   Attachment,
   TablesDriver,
-  DriverRaceTable
+  DriverRaceTable,
+  DriverKartTable,
+  KartTable,
 };

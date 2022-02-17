@@ -12,6 +12,7 @@ import Statistics from './pages/Statistics.vue';
 import Regulation from './pages/Regulation.vue';
 import Album from './pages/Album.vue';
 import UploadXlsx from './pages/UploadXlsx.vue';
+import LotteryKart from './pages/LotteryKart.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -123,6 +124,15 @@ export default new Router({
 		path: '/upload-xlsx',
 		name: 'upload',
 		components: { default: UploadXlsx, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/lottery-kart',
+		name: 'lottery kart',
+		components: { default: LotteryKart, header: MainNavbar, footer: MainFooter },
 		props: {
 			header: { colorOnScroll: 400 },
 			footer: { backgroundColor: 'black' }
