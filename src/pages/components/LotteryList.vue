@@ -7,7 +7,7 @@
 				</div>
 				<div class="text-center">
 					<div class="col-md-12">
-						<h4>KARST POR PILOTO</h4>
+						<h4>KARTS POR PILOTO</h4>
 						<driver-kart-table :drivers="lottery.drivers" :index="10"></driver-kart-table>
 					</div>
 					<div class="col-md-12">
