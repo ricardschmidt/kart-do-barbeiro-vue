@@ -3,7 +3,7 @@
 		<div class="page-header page-header-small">
 			<parallax
 				class="page-header-image"
-				style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-xlsx.jpg')"
+				style="background-image: url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-lottery.jpeg')"
 			>
 			</parallax>
 		<div class="content-center">
