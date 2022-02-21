@@ -102,9 +102,9 @@
           class="dropdown-item"
 		  target="_blank"
         >
-          <i class="now-ui-icons ui-1_calendar-60"></i> Corrida 1
+          <i class="now-ui-icons ui-1_calendar-60"></i> 2021/1
         </a>
-         <a
+        <a
           href="https://www.facebook.com/media/set/?set=a.108177971778764&type=3"
           class="dropdown-item"
 		  target="_blank"
@@ -117,6 +117,20 @@
 		  target="_blank"
         >
           <i class="now-ui-icons ui-1_calendar-60"></i> F2 | Etapa 1 2022/1
+        </a>
+        <a
+          href="https://www.facebook.com/media/set/?set=a.131196609476900&type=3"
+          class="dropdown-item"
+		  target="_blank"
+        >
+          <i class="now-ui-icons ui-1_calendar-60"></i> F1 | Etapa 2 2022/1
+        </a>
+         <a
+          href="https://www.facebook.com/media/set/?set=a.131221476141080&type=3"
+          class="dropdown-item"
+		  target="_blank"
+        >
+          <i class="now-ui-icons ui-1_calendar-60"></i> F2 | Etapa 2 2022/1
         </a>
       </drop-down>
 	  <drop-down
