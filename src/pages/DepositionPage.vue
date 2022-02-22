@@ -134,6 +134,7 @@
 import { Tabs, TabPane } from '@/components';
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
+import { page } from 'vue-analytics'
 
 export default {
 	name: 'depositions-page',
@@ -157,6 +158,9 @@ export default {
 		this.getDeposition()
 	},
  	methods: {
+		 track () {
+			page('/deposition')
+		},
 		getDeposition() {
 			axios.get(`${this.urlBase}/drivers/depositions`, {})
 			.then(response => {

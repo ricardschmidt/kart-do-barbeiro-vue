@@ -125,6 +125,7 @@
 </template>
 <script>
 import { Tabs, TabPane } from '@/components';
+import { page } from 'vue-analytics'
 
 export default {
   name: 'profile',
@@ -132,6 +133,11 @@ export default {
   components: {
     Tabs,
     TabPane
+  },
+  methods: {
+    track () {
+      page('/profile')
+    }
   }
 };
 </script>

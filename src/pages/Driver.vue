@@ -32,6 +32,7 @@
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import DriverInfoCard from '../components/Cards/DriverInfoCard.vue';
+import { page } from 'vue-analytics'
 
 export default {
 	name: 'driver',
@@ -46,6 +47,9 @@ export default {
 		this.apiRequest();
 	},
 	methods: {
+		track () {
+			page('/driver')
+		},
 		apiRequest() {
 			axios.get(`${this.urlBase}/drivers`, {
 				params: {

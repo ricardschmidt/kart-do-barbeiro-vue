@@ -117,6 +117,7 @@ import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import { Alert, Button, FormGroupInput, Attachment } from '@/components';
 import { DriverRaceTable } from '@/components';
+import { page } from 'vue-analytics'
 
 export default {
 	name: 'upload-xlsx',
@@ -148,6 +149,9 @@ export default {
 		};
 	},
 	methods: {
+		track () {
+			page('/upload-xlsx')
+		},
 		handleFileUpload (file) {
 			this.file = file
 		},
