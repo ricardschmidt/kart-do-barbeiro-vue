@@ -633,10 +633,16 @@
   </div>
 </template>
 <script>
+import { page } from 'vue-analytics'
 
 export default {
   name: 'regulation',
   bodyClass: 'profile-page',
+  methods: {
+    track () {
+      page('/regulation')
+    }
+  }
 };
 </script>
 <style></style>

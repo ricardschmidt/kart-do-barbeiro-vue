@@ -6,8 +6,15 @@
   </div>
 </template>
 <script>
+import { page } from 'vue-analytics'
+
 export default {
-  name: 'starter'
+  name: 'starter',
+	methods: {
+		track () {
+			page('/starter-page')
+		}
+	}
 };
 </script>
 <style>

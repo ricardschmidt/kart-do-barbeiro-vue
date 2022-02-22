@@ -4,11 +4,18 @@
   </div>
 </template>
 <script>
+import { page } from 'vue-analytics'
+
 export default {
   name: 'driver-championship',
   data() {
     return {
   	}
+  },
+  methods: {
+    track () {
+      page('/sing-up')
+    }
   }
 };
 </script>

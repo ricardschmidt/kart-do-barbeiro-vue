@@ -116,6 +116,7 @@
 </template>
 <script>
 import { Tabs, TabPane } from '@/components';
+import { page } from 'vue-analytics'
 
 export default {
   name: 'about-us',
@@ -123,6 +124,11 @@ export default {
   components: {
     Tabs,
     TabPane,
+  },
+  methods: {
+    track () {
+      page('/about-us')
+    }
   }
 };
 </script>
