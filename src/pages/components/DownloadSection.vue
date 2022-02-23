@@ -43,12 +43,12 @@
         <div class="text-center col-md-12 col-lg-8">
           <a
             target="_blank"
-            href="#"
+            href="https://www.facebook.com/ckdb.kart/"
             class="btn btn-neutral btn-icon btn-twitter btn-round btn-lg"
             rel="tooltip"
             title="Follow us"
           >
-            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook"></i>
           </a>
           <a
             target="_blank"
