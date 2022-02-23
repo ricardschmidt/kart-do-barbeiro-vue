@@ -6,6 +6,7 @@ import TeamChampionship from './pages/TeamChampionship.vue';
 import SingUp from './pages/SingUp.vue';
 import DepositionPage from './pages/DepositionPage.vue';
 import AboutUs from './pages/AboutUs.vue';
+import AboutUs2 from './pages/AboutUs2.vue';
 import Driver from './pages/Driver.vue';
 import Team from './pages/Team.vue';
 import Statistics from './pages/Statistics.vue';
@@ -79,6 +80,15 @@ export default new Router({
 		path: '/about-us',
 		name: 'about-us',
 		components: { default: AboutUs, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/about-us-2',
+		name: 'about-us-2',
+		components: { default: AboutUs2, header: MainNavbar, footer: MainFooter },
 		props: {
 			header: { colorOnScroll: 400 },
 			footer: { backgroundColor: 'black' }

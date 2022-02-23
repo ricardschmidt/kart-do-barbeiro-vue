@@ -3,7 +3,7 @@
     <div class="page-header clear-filter" filter-color="blue">
       <parallax
         class="page-header-image"
-        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/header.jpeg')"
+        style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/header.jpg')"
       >
       </parallax>
       <div class="container">
