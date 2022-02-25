@@ -160,7 +160,6 @@ export default {
 	},
 	computed: {
 		currentUser() {
-			console.log(getUser())
 			return getUser()
 		}
 	},
