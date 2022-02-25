@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		</div>
-		<div class="auth" v-if="currentUser.roles !== 'ROLES_ADMIN' || password === 'UPLOAD'">
+		<div class="auth" v-if="(currentUser.roles !== 'ROLES_ADMIN' && password !== 'UPLOAD')">
 			<fg-input
 				id="input-phone"
 				class="no-border"
@@ -160,7 +160,7 @@ export default {
 	},
 	computed: {
 		currentUser() {
-			return getUser()
+			return getUser() ? getUser() : {}
 		}
 	},
 	methods: {
