@@ -1,144 +1,173 @@
 <template>
-  <div>
-    <div class="page-header clear-filter" filter-color="orange">
-      <parallax
-        class="page-header-image"
-        style="background-image:url('img/bg5.jpg')"
-      >
-      </parallax>
-      <div class="container">
-        <div class="photo-container">
-          <img src="img/ryan.jpg" alt="" />
-        </div>
-        <h3 class="title">Ryan Scheinder</h3>
-        <p class="category">Photographer</p>
-        <div class="content">
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
-          </div>
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
-          </div>
-          <div class="social-description">
-            <h2>48</h2>
-            <p>Bookmarks</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <h3 class="title">About me</h3>
-        <h5 class="description">
-          An artist of considerable range, Ryan — the name taken by
-          Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
-          records all of his own music, giving it a warm, intimate feel with a
-          solid groove structure. An artist of considerable range.
-        </h5>
-        <div class="row">
-          <div class="col-md-6 ml-auto mr-auto">
-            <h4 class="title text-center">My Portfolio</h4>
-          </div>
-          <tabs
-            pills
-            class="nav-align-center"
-            tab-content-classes="gallery"
-            tab-nav-classes="nav-pills-just-icons"
-            type="primary"
-          >
-            <tab-pane title="Profile">
-              <i slot="label" class="now-ui-icons design_image"></i>
-
-              <div class="col-md-10 ml-auto mr-auto">
-                <div class="row collections">
-                  <div class="col-md-6">
-                    <img src="img/bg6.jpg" class="img-raised" />
-                    <img src="img/bg11.jpg" alt="" class="img-raised" />
-                  </div>
-                  <div class="col-md-6">
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
-                  </div>
-                </div>
-              </div>
-            </tab-pane>
-
-            <tab-pane title="Home">
-              <i slot="label" class="now-ui-icons location_world"></i>
-
-              <div class="col-md-10 ml-auto mr-auto">
-                <div class="row collections">
-                  <div class="col-md-6">
-                    <img src="img/bg1.jpg" alt="" class="img-raised" />
-                    <img src="img/bg3.jpg" alt="" class="img-raised" />
-                  </div>
-                  <div class="col-md-6">
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
-                  </div>
-                </div>
-              </div>
-            </tab-pane>
-
-            <tab-pane title="Messages">
-              <i slot="label" class="now-ui-icons sport_user-run"></i>
-
-              <div class="col-md-10 ml-auto mr-auto">
-                <div class="row collections">
-                  <div class="col-md-6">
-                    <img src="img/bg3.jpg" alt="" class="img-raised" />
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
-                  </div>
-                  <div class="col-md-6">
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
-                    <img src="img/bg6.jpg" class="img-raised" />
-                  </div>
-                </div>
-              </div>
-            </tab-pane>
-          </tabs>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div>
+		<div class="page-header clear-filter" filter-color="orange">
+		<parallax
+			class="page-header-image"
+			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-profile.jpeg')"
+		>
+		</parallax>
+		<div class="container">
+			<div class="photo-container" style="background-color: #FFF">
+			<img :src="currentUser.image" alt="" />
+			</div>
+			<h3 class="title">{{currentUser.nickname}}</h3>
+			<p class="category">{{currentUser.name}}</p>
+			<div class="content">
+			<div class="social-description">
+				<h2>{{parseInt(currentUser.allScore)}}</h2>
+				<p>Pontos na Carreira</p>
+			</div>
+			<div class="social-description">
+				<h2>{{currentUser.podium}}</h2>
+				<p>Podiuns na Carreira</p>
+			</div>
+			<div class="social-description">
+				<h2>{{currentUser.poleposition}}</h2>
+				<p>Total de <br/>Pole Posistions</p>
+			</div>
+			<div class="social-description">
+				<h2>{{currentUser.bestlap}}</h2>
+				<p>Total de <br/>Melhores Voltas</p>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="button-container">
+					<router-link to="/edit-profile" class="btn btn-primary btn-round btn-lg">Editar Perfil</router-link>
+				</div>
+				<p class="category">Dados Cadastrais</p>
+				<table class="vue-table" style="max-width: 400px; margin: 0 auto">
+					<tr>
+						<th>Telefone</th>
+						<td class="kart">{{currentUser.phone}}</td>
+					</tr>
+					<tr class="race-table">
+						<th>Email</th>
+						<td class="kart">{{currentUser.email}}</td>
+					</tr>
+				</table>
+				<div class="col-md-10 ml-auto col-xl-6 mr-auto">
+					<h3 class="title">Campeonato Atual</h3>
+					<!-- Tabs with Background on Card -->
+					<div class="card">
+						<tabs
+						centered
+						type="neutral"
+						tab-nav-wrapper-classes="card-header"
+						tab-content-classes="card-body text-center"
+						data-background-color="orange"
+						>
+							<tab-pane>
+								<template slot="label">
+								<i class="now-ui-icons sport_trophy"></i> Pontuação
+								</template>
+								<div class="row">
+									<div>
+										<h4>Pontuação Atual</h4>
+										<p>
+										{{parseInt(currentUser.currentScore)}}
+										</p>
+									</div>
+									<div>
+										<h4>Baterias Corridas</h4>
+										<p>
+										{{results.length}}
+										</p>
+									</div>
+								</div>
+							</tab-pane>
+							<tab-pane v-show="currentUser.team_id">
+								<template slot="label">
+								<i class="now-ui-icons objects_spaceship"></i> Equipe
+								</template>
+								<div class="row">
+									<div>
+										<h4>Equipe Atual</h4>
+										<p>
+										{{currentUser.team_id ? currentUser.team_id.name : "Independente"}}
+										</p>
+									</div>
+									<div>
+										<h4>Pontuação da Equipe</h4>
+										<p>
+										{{currentUser.team_id ? parseInt(currentUser.team_id.currentScore) : 0}}
+										</p>
+									</div>
+								</div>
+							</tab-pane>
+						</tabs>
+					</div>
+					<!-- End Tabs on plain Card -->
+				</div>
+				<h3 class="title">Depoimento</h3>
+				<h5 class="description">
+				{{currentUser.deposition}}
+				</h5>
+				<div class="col-md-6 ml-auto mr-auto">
+					<h4 class="title text-center">Minha Corridas</h4>
+				</div>
+				<results-table :results="results"></results-table>
+			</div>
+		</div>
+	</div>
 </template>
 <script>
-import { Tabs, TabPane } from '@/components';
-import { page } from 'vue-analytics'
+import { ResultsTable, Tabs, TabPane } from '@/components';
+import { getUser } from '../services/auth'
+import axios from '../services/api'
 
 export default {
-  name: 'profile',
-  bodyClass: 'profile-page',
-  components: {
-    Tabs,
-    TabPane
-  },
-  methods: {
-    track () {
-      page('/profile')
-    }
-  }
+	name: 'profile',
+	bodyClass: 'profile-page',
+	components: {
+		ResultsTable,
+		Tabs,
+    	TabPane
+	},
+	data() {
+		return {
+			alert: {
+				type: "success",
+				visible: false,
+				message: ""
+			},
+			results: []
+		}
+	},
+	computed: {
+		currentUser() {
+			return getUser()
+		}
+	},
+	mounted() {
+		if (!this.currentUser) {
+			this.$router.push('/login');
+		}
+	},
+	created() {
+		this.getDriver()
+	},
+	methods: {
+		logout() {
+			this.$store.dispatch('auth/logout');
+      		this.$router.push('/login');
+		},
+		async getDriver() {
+			await axios.get("/drivers/races", {
+				params: {
+					"driverName": this.currentUser.name
+				}
+			}).then(response => {
+				this.results = response.data
+			}).catch(error => {
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.alert.visible = true
+			})
+		},
+	}
 };
 </script>
 <style></style>

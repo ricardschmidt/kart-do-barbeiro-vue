@@ -106,7 +106,6 @@ import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import { Alert, Button, FormGroupInput } from '@/components';
 import LotteryList from './components/LotteryList'
 import { DatePicker } from 'element-ui';
-import { page } from 'vue-analytics'
 
 export default {
 	name: 'lottery-kart',
@@ -139,9 +138,6 @@ export default {
 		};
 	},
 	methods: {
-		track () {
-			page('/lottery-kart')
-		},
 		lotteryKart() {
 			try {
 				let driversNames = this.driversText.split(",")

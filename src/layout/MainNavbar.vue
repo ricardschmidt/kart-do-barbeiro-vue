@@ -152,14 +152,33 @@
           <i class="now-ui-icons loader_refresh"></i>Sorteio de Kart
         </nav-link>
       </drop-down>
-      <li class="nav-item">
-			<a
-				href="https://forms.gle/NwfinnkNXuPS2isb8"
+      <drop-down
+        tag="li"
+        title="Perfil"
+        icon="now-ui-icons users_circle-08"
+        class="nav-item"
+		v-if="currentUser"
+      >
+		<nav-link to="/profile">
+		<i class="now-ui-icons users_single-02"></i>Meus Dados
+		</nav-link>
+		<a href="#" class="dropdown-item" @click="logOut">
+		<i class="now-ui-icons ui-1_simple-remove"></i>Logout
+		</a>
+      </drop-down>
+      <li class="nav-item" v-else>
+			<router-link to="/login"
 				class="nav-link btn btn-neutral"
-				target="_blank"
+			>
+				<p>Login</p>
+        	</router-link>
+      </li>
+      <li class="nav-item" v-show="!currentUser">
+			<router-link to="/sign-up"
+				class="nav-link btn btn-neutral"
 			>
 				<p>Inscreva-se</p>
-        	</a>
+        	</router-link>
       </li>
 
       <li class="nav-item">
@@ -193,20 +212,33 @@
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from '@/components';
+import { DropDown, Navbar, NavLink, Button } from '@/components';
+import { getUser } from '../services/auth'
 import { Popover } from 'element-ui';
 export default {
-  name: 'main-navbar',
-  props: {
-    transparent: Boolean,
-    colorOnScroll: Number
-  },
-  components: {
-    DropDown,
-    Navbar,
-    NavLink,
-    [Popover.name]: Popover
-  }
+	name: 'main-navbar',
+	props: {
+		transparent: Boolean,
+		colorOnScroll: Number
+	},
+	components: {
+		DropDown,
+		Navbar,
+		NavLink,
+		[Popover.name]: Popover,
+		[Button.name]: Button,
+	},
+	computed: {
+		currentUser() {
+			return getUser();
+		},
+	},
+	methods: {
+		logOut() {
+			this.$store.dispatch('auth/logout');
+			this.$router.push('/');
+		}
+	}
 };
 </script>
 

@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		</div>
-		<div class="auth" v-if="password !== 'UPLOAD'">
+		<div class="auth" v-if="currentUser.roles !== 'ROLES_ADMIN' || password === 'UPLOAD'">
 			<fg-input
 				id="input-phone"
 				class="no-border"
@@ -28,21 +28,13 @@
 				{{errorMsg}}
 			</alert>
 			<div class="container">
-				<fg-input
-					id="input-phone"
-					class="no-border"
-					placeholder="Nome"
-					addon-left-icon="now-ui-icons text_caps-small"
-					v-model="name"
-				>
-				</fg-input>
 				<div class="input-line">
 					<fg-input
 						id="input-phone"
 						class="no-border"
-						placeholder="Categoria"
-						addon-left-icon="now-ui-icons design_bullet-list-67"
-						v-model="category"
+						placeholder="Nome"
+						addon-left-icon="now-ui-icons text_caps-small"
+						v-model="name"
 					>
 					</fg-input>
 					<fg-input
@@ -54,15 +46,27 @@
 					>
 					</fg-input>
 				</div>
+				<div class="switch-line">
+					<div>
+						<h5>Categoria</h5>
+						<n-switch
+							class="category"
+							v-model="switchesCategory.defaultOn"
+							on-text="F1"
+							off-text="F2"
+						></n-switch>
+					</div>
+					<div>
+						<h5>Bateria</h5>
+						<n-switch
+							class="bateria"
+							v-model="switchesBateria.defaultOn"
+							on-text="1"
+							off-text="2"
+						></n-switch>
+					</div>
+				</div>
 				<div class="input-line">
-					<fg-input
-						id="input-phone"
-						class="no-border"
-						placeholder="Bateria"
-						addon-left-icon="now-ui-icons objects_spaceship"
-						v-model="bateria"
-					>
-					</fg-input>
 					<fg-input
 						id="input-phone"
 						class="no-border"
@@ -71,9 +75,8 @@
 						v-model="bestlap"
 					>
 					</fg-input>
-				</div>
 					<fg-input
-						v-show="bateria === '2' ? false : true"
+						v-show="switchesBateria.defaultOn"
 						id="input-phone"
 						class="no-border"
 						placeholder="Pole Position"
@@ -81,6 +84,7 @@
 						v-model="poleposition"
 					>
 					</fg-input>
+				</div>
 				<attachment ref="attachment" @change="handleFileUpload"></attachment>
 				<div class="text-center">
 					<n-button id="submit-file" type="primary" round size="lg" @click="submitFile" >Cadastrar Bateria</n-button>
@@ -114,10 +118,9 @@
 </template>
 <script>
 import axios from 'axios'
+import { getUser } from '../services/auth'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import { Alert, Button, FormGroupInput, Attachment } from '@/components';
-import { DriverRaceTable } from '@/components';
-import { page } from 'vue-analytics'
+import { Alert, Button, FormGroupInput, Attachment, Switch, DriverRaceTable } from '@/components';
 
 export default {
 	name: 'upload-xlsx',
@@ -127,6 +130,7 @@ export default {
 		DriverRaceTable,
 		[Button.name]: Button,
 		[FormGroupInput.name]: FormGroupInput,
+		[Switch.name]: Switch,
 		attachment: Attachment,
 		FulfillingBouncingCircleSpinner,
 	},
@@ -134,9 +138,7 @@ export default {
 		return {
 			urlBase: process.env.VUE_APP_API_URL,
 			name: '',
-			bateria: '',
 			season: '',
-			category: '',
 			poleposition: '',
 			bestlap: '',
 			noExistDrivers: [],
@@ -145,13 +147,23 @@ export default {
 			error: false,
 			file: null,
 			password: '',
-			loading: false
+			loading: false,
+			switchesCategory: {
+				defaultOn: true,
+				defaultOff: false
+			},
+			switchesBateria: {
+				defaultOn: true,
+				defaultOff: false
+			},
 		};
 	},
+	computed: {
+		currentUser() {
+			return getUser()
+		}
+	},
 	methods: {
-		track () {
-			page('/upload-xlsx')
-		},
 		handleFileUpload (file) {
 			this.file = file
 		},
@@ -162,9 +174,9 @@ export default {
 			let formData = new FormData();
 			formData.append('file', this.file);
 			formData.append('name', this.name);
-			formData.append('bateria', this.bateria);
+			formData.append('bateria', this.switchesBateria.defaultOn ? "1" : "2");
 			formData.append('season', this.season);
-			formData.append('category', this.category);
+			formData.append('category', this.switchesCategory.defaultOn ? "F1" : "F2");
 			formData.append('bestlap', this.bestlap);
 			formData.append('poleposition', this.poleposition);
 
@@ -187,9 +199,9 @@ export default {
 		},
 		clearFieds() {
 			this.name = ''
-			this.bateria = ''
 			this.season = ''
-			this.category = ''
+			this.switchesBateria.defaultOn = true
+			this.switchesCategory.defaultOn = true
 			this.poleposition = ''
 			this.bestlap = ''
 			this.file = null

@@ -6,42 +6,35 @@
   >
     <div class="container">
       <nav>
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https:///presentation.creative-tim.com">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              License
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright">
-        &copy; {{ year }}, Designed by
-        <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
-          >Invision</a
-        >. Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
-          >BinarCode</a
-        >
-        and
-        <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
-          >Creative Tim</a
-        >.
-      </div>
+			<ul>
+				<li>
+					<router-link to="/driver-championship">
+					Campeonato
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/about-us">
+					Sobre nós
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/drivers">
+					Pilotos
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/teams">
+					Equipes
+					</router-link>
+				</li>
+			</ul>
+		</nav>
+		<div class="copyright">
+			&copy; {{ year }}, Designed and Coded by
+			<a href="https://github.com/ricardschmidt" target="_blank" rel="noopener"
+			>Ricardo Schmidt</a
+			>
+		</div>
     </div>
   </footer>
 </template>

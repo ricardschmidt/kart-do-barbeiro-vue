@@ -228,7 +228,7 @@
 </template>
 <script>
 import { Button, FormGroupInput } from '@/components';
-import { page } from 'vue-analytics'
+
 export default {
   name: 'landing',
   bodyClass: 'landing-page',
@@ -245,11 +245,6 @@ export default {
       }
     };
   },
-  methods: {
-    track () {
-      page('/landing')
-    }
-  }
 };
 </script>
 <style></style>

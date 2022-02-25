@@ -3,7 +3,8 @@ import Router from 'vue-router';
 import Index from './pages/Index.vue';
 import DriverChampionship from './pages/DriverChampionship.vue';
 import TeamChampionship from './pages/TeamChampionship.vue';
-import SingUp from './pages/SingUp.vue';
+import SignUp from './pages/SignUp.vue';
+import Login from './pages/Login.vue';
 import DepositionPage from './pages/DepositionPage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import AboutUs2 from './pages/AboutUs2.vue';
@@ -14,6 +15,8 @@ import Regulation from './pages/Regulation.vue';
 import Album from './pages/Album.vue';
 import UploadXlsx from './pages/UploadXlsx.vue';
 import LotteryKart from './pages/LotteryKart.vue';
+import Profile from './pages/Profile.vue';
+import EditProfile from './pages/EditProfile.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -27,6 +30,24 @@ export default new Router({
 		path: '/',
 		name: 'index',
 		components: { default: Index, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/profile',
+		name: 'profile',
+		components: { default: Profile, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/edit-profile',
+		name: 'edit profile',
+		components: { default: EditProfile, header: MainNavbar, footer: MainFooter },
 		props: {
 			header: { colorOnScroll: 400 },
 			footer: { backgroundColor: 'black' }
@@ -69,9 +90,17 @@ export default new Router({
 		}
 		},
 		{
-		path: '/sing-up',
-		name: 'sing up',
-		components: { default: SingUp, header: MainNavbar },
+		path: '/sign-up',
+		name: 'sign up',
+		components: { default: SignUp, header: MainNavbar },
+		props: {
+			header: { colorOnScroll: 400 }
+		}
+		},
+		{
+		path: '/login',
+		name: 'login',
+		components: { default: Login, header: MainNavbar },
 		props: {
 			header: { colorOnScroll: 400 }
 		}

@@ -8,6 +8,24 @@
 		}
 	}
 
+	.switch-line {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 20px;
+
+		> div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			.bootstrap-switch {
+				margin: 0;
+			}
+		}
+	}
+
 	.input-line {
 		display: flex;
 		justify-content: space-between;
@@ -50,6 +68,14 @@
 		margin: 0 auto;
 		padding: 20px 0;
 		max-width: 600px;
+	}
+
+	.bootstrap-switch.category{
+		background: $info-color-alert;
+	}
+
+	.bootstrap-switch.bateria{
+		background: $warning-color-alert;
 	}
 }
 

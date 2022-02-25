@@ -1,0 +1,55 @@
+.row {
+	justify-content: space-around;
+	@media screen  and (min-width: 992px) {
+		.form-group {
+			width: 47%;
+		}
+	}
+}
+
+.card-body {
+	.v-select {
+		background-color: rgba(255, 255, 255, 0.1);
+        border: medium none;
+		border-radius: $btn-round-radius;
+		color: $white-color;
+		line-height: normal;
+		font-size: $font-size-small;
+    	height: 45px;
+		margin-bottom: 20px;
+		&:focus,
+        &:active,
+        &:active{
+            border: medium none;
+            background-color: $opacity-gray-3;
+        }
+
+		.vs__dropdown-toggle {
+			width: 95%;
+		}
+
+		.vs__selected {
+			color: $white-color;
+			padding-left: 45px;
+		}
+
+		.vs__search {
+			color: $white-color;
+			padding-left: 45px;
+			font-size: 1em;
+		}
+
+		.vs__clear {
+			fill: $primary-color
+		}
+		.vs__open-indicator {
+			fill: $primary-color
+		}
+
+		.vs__dropdown-menu {
+			background-color: $light-black;
+			color: $white-color;
+			border-radius: $btn-round-radius;
+		}
+	}
+}

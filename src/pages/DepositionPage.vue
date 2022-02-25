@@ -96,13 +96,13 @@
 				<div class="col-md-10 ml-auto mr-auto">
 					<div class="row collections">
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC0115.jpg" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC0287.jpg" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC8632.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/_DSC0115.jpg" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-10.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-6.jpg" alt="" class="img-raised" />
 					</div>
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9288.jpg" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9481.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-12.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-7.jpg" alt="" class="img-raised" />
 					</div>
 					</div>
 				</div>
@@ -114,12 +114,13 @@
 				<div class="col-md-10 ml-auto mr-auto">
 					<div class="row collections">
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9491.jpg" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9503.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-8.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-9.jpg" alt="" class="img-raised" />
 					</div>
 					<div class="col-md-6">
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9983.jpg" alt="" class="img-raised" />
-						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/_DSC9838.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-11.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-14.jpg" alt="" class="img-raised" />
+						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/about-us/about-us-13.jpg" alt="" class="img-raised" />
 					</div>
 					</div>
 				</div>
@@ -134,7 +135,6 @@
 import { Tabs, TabPane } from '@/components';
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import { page } from 'vue-analytics'
 
 export default {
 	name: 'depositions-page',
@@ -158,9 +158,6 @@ export default {
 		this.getDeposition()
 	},
  	methods: {
-		 track () {
-			page('/deposition')
-		},
 		getDeposition() {
 			axios.get(`${this.urlBase}/drivers/depositions`, {})
 			.then(response => {

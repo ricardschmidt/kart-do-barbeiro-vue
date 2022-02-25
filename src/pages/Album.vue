@@ -110,7 +110,6 @@
 import { Tabs, TabPane } from '@/components';
 import CarouselSection from './components/CarouselSection';
 import axios from 'axios';
-import { page } from 'vue-analytics'
 
 export default {
 	name: 'depositions-page',
@@ -149,9 +148,6 @@ export default {
 				this.loading = false
 			})
 		},
-		track () {
-			page('/album')
-		}
 	},
 };
 </script>

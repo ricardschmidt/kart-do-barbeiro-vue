@@ -50,7 +50,6 @@ import GeralRank from './components/GeralRank';
 import RaceRank from './components/RaceRank';
 import Deposition from './components/Deposition';
 import SignupForm from './components/SignupForm';
-import { page } from 'vue-analytics'
 
 export default {
   name: 'index',
@@ -64,11 +63,6 @@ export default {
 	Deposition,
 	SignupForm,
   },
-  methods: {
-    track () {
-      page('/')
-    }
-  }
 };
 </script>
 <style></style>
