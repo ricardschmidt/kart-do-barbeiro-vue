@@ -24,10 +24,12 @@ import Slider from './Slider.vue';
 import Pagination from './Pagination.vue';
 
 import Attachment from './Attachment.vue';
-import TablesDriver from './TablesDriver.vue';
-import DriverRaceTable from './DriverRaceTable.vue';
-import DriverKartTable from './DriverKartTable.vue';
-import KartTable from './KartTable.vue';
+import TablesDriver from './Tables/TablesDriver.vue';
+import DriverRaceTable from './Tables/DriverRaceTable.vue';
+import DriverKartTable from './Tables/DriverKartTable.vue';
+import KartTable from './Tables/KartTable.vue';
+import StatisticsTable from './Tables/StatisticsTable.vue';
+import ResultsTable from './Tables/ResultsTable.vue';
 
 export {
   Alert,
@@ -56,4 +58,6 @@ export {
   DriverRaceTable,
   DriverKartTable,
   KartTable,
+  StatisticsTable,
+  ResultsTable,
 };

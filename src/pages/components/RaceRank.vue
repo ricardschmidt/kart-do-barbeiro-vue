@@ -29,8 +29,7 @@
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import { Tabs, TabPane, Button } from '@/components';
-import TablesDriver from '../../components/TablesDriver.vue';
+import { Tabs, TabPane, Button, TablesDriver } from '@/components';
 
 export default {
 	data() {

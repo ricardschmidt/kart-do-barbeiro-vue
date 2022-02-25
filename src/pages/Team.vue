@@ -31,7 +31,6 @@ import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import { Button } from '@/components';
 import TeamInfoCard from '../components/Cards/TeamInfoCard.vue';
-import { page } from 'vue-analytics'
 
 export default {
 	data() {
@@ -45,9 +44,6 @@ export default {
 		this.apiRequest();
 	},
 	methods: {
-		track () {
-			page('/team')
-		},
 		apiRequest() {
 			axios.get(`${this.urlBase}/teams`, {
 				params: {

@@ -60,8 +60,7 @@
 <script>
 import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
-import StatisticsTable from '../components/StatisticsTable.vue';
-import { page } from 'vue-analytics'
+import { StatisticsTable } from '@/components';
 
 export default {
 	name: 'statistics',
@@ -88,9 +87,6 @@ export default {
 		this.getStatistics()
 	},
  	methods: {
-		 track () {
-			page('/statistics')
-		},
 		getStatistics() {
 			axios.get(`${this.urlBase}/drivers/`, {
 				params: {

@@ -42,7 +42,6 @@ import axios from 'axios'
 import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
 import DriverCard from '../components/Cards/DriverCard.vue';
 import { Button } from '@/components';
-import { page } from 'vue-analytics'
 
 export default {
 	data() {
@@ -60,9 +59,6 @@ export default {
 		this.apiRequest();
 	},
 	methods: {
-		track () {
-			page('/driver-championship')
-		},
 		changeCategory(category) {
 			if(category !== this.category) {
 				this.category = category
