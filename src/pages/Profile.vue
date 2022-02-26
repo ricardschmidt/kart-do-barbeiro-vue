@@ -184,7 +184,6 @@ export default {
 				this.alert.message = response.data.confirm.message
 				this.alert.visible = true
 			}).catch(error => {
-				console.log(error.response.data.error)
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
 				this.alert.visible = true
