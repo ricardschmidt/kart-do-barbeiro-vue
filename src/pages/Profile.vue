@@ -10,7 +10,7 @@
 			<div class="photo-container" style="background-color: #FFF">
 			<img :src="currentUser.image" alt="" />
 			</div>
-			<h3 class="title">{{currentUser.nickname}}</h3>
+			<h3 class="title" style="text-transform: uppercase">{{currentUser.nickname}} {{currentUser.number}}</h3>
 			<p class="category">{{currentUser.name}}</p>
 			<div class="content">
 			<div class="social-description">
@@ -35,8 +35,16 @@
 		<div class="section">
 			<div class="container">
 				<div class="button-container">
-					<router-link to="/edit-profile" class="btn btn-primary btn-round btn-lg">Editar Perfil</router-link>
+					<a href="#" class="btn btn-primary btn-round btn-lg" @click="confirmRace">
+						Confirmar Etapa
+					</a>
+					<router-link to="/edit-profile" class="btn btn-default btn-round btn-lg btn-icon">
+						<i class="now-ui-icons users_single-02"></i>
+					</router-link>
 				</div>
+				<alert :type="alert.type" dismissible :visible="alert.visible">
+					{{alert.message}}
+				</alert>
 				<p class="category">Dados Cadastrais</p>
 				<table class="vue-table" style="max-width: 400px; margin: 0 auto">
 					<tr>
@@ -114,7 +122,7 @@
 	</div>
 </template>
 <script>
-import { ResultsTable, Tabs, TabPane } from '@/components';
+import { ResultsTable, Tabs, TabPane, Alert } from '@/components';
 import { getUser } from '../services/auth'
 import axios from '../services/api'
 
@@ -123,6 +131,7 @@ export default {
 	bodyClass: 'profile-page',
 	components: {
 		ResultsTable,
+		Alert,
 		Tabs,
     	TabPane
 	},
@@ -167,6 +176,20 @@ export default {
 				this.alert.visible = true
 			})
 		},
+
+		async confirmRace() {
+			await axios.post("/confirm")
+			.then(response => {
+				this.alert.type = "success"
+				this.alert.message = response.data.confirm.message
+				this.alert.visible = true
+			}).catch(error => {
+				console.log(error.response.data.error)
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.alert.visible = true
+			})
+		}
 	}
 };
 </script>

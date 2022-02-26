@@ -55,26 +55,27 @@
 					>
 					</fg-input>
 
-					<fg-input
+					<masked-input
 					id="input-number"
 					class="no-border"
 					:class="{'has-danger': errors.number}"
 					placeholder="Número"
-					type="number"
 					addon-left-icon="now-ui-icons sport_trophy"
 					v-model="number"
+					maskPattern="!###"
 					>
-					</fg-input>
+					</masked-input>
 
-					<fg-input
+					<masked-input
 					id="input-state"
 					class="no-border"
 					:class="{'has-danger': errors.state}"
 					placeholder="Estado"
 					addon-left-icon="now-ui-icons location_world"
 					v-model="state"
+					maskPattern="AA"
 					>
-					</fg-input>
+					</masked-input>
 
 					<fg-input
 					id="input-email"
@@ -86,15 +87,16 @@
 					>
 					</fg-input>
 
-					<fg-input
+					<masked-input
 					id="input-phone"
 					class="no-border"
 					:class="{'has-danger': errors.phone}"
 					placeholder="Telefone"
 					addon-left-icon="now-ui-icons tech_mobile"
 					v-model="phone"
+					maskPattern="(##) #####-####"
 					>
-					</fg-input>
+					</masked-input>
 
 				</template>
 				<div class="card-footer text-center">
@@ -108,13 +110,14 @@
 </template>
 <script>
 import axios from 'axios'
-import { Alert, Card, FormGroupInput, Button } from '@/components';
+import { Alert, Card, FormGroupInput, FormGroupInputMasked, Button } from '@/components';
 
 export default {
   components: {
 	Alert,
 	Card,
 	[Button.name]: Button,
+	[FormGroupInputMasked.name]: FormGroupInputMasked,
 	[FormGroupInput.name]: FormGroupInput,
   },
   data() {

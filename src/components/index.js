@@ -2,6 +2,7 @@ import Alert from './Alert';
 import Checkbox from './Inputs/Checkbox.vue';
 import Radio from './Inputs/Radio.vue';
 import FormGroupInput from './Inputs/formGroupInput.vue';
+import FormGroupInputMasked from './Inputs/formGroupInputMasked.vue';
 import Switch from './Switch.vue';
 import Badge from './Badge';
 import Progress from './Progress.vue';
@@ -42,6 +43,7 @@ export {
   Pagination,
   Radio,
   FormGroupInput,
+  FormGroupInputMasked,
   Card,
   DropDown,
   Navbar,
