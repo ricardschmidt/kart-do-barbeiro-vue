@@ -29,6 +29,7 @@
           class="form-control"
           :class="[{ valid: value && !error }, inputClasses]"
           aria-describedby="addon-right addon-left"
+		  v-mask="hasMask"
         />
       </slot>
       <slot name="addonRight">
@@ -55,10 +56,11 @@
   </div>
 </template>
 <script>
+import {mask} from 'vue-the-mask'
 
 export default {
 	inheritAttrs: false,
-	name: 'fg-input',
+	name: 'masked-input',
 	props: {
 		required: Boolean,
 		label: String,
@@ -71,6 +73,10 @@ export default {
 		},
 		addonRightIcon: String,
 		addonLeftIcon: String,
+		maskPattern: String,
+	},
+	directives: {
+		mask
 	},
 	data() {
 		return {
@@ -94,6 +100,9 @@ export default {
 			this.addonRightIcon !== undefined ||
 			this.addonLeftIcon !== undefined
 		);
+		},
+		hasMask() {
+			return this.maskPattern ? this.maskPattern : ''
 		},
 	},
 	methods: {

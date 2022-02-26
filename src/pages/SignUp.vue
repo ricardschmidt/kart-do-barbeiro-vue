@@ -28,14 +28,15 @@
 					v-model="driver.nickname"
 					>
 					</fg-input>
-					<fg-input
+					<masked-input
 					class="no-border input-lg"
 					:class="{'has-danger': errors.number}"
 					addon-left-icon="now-ui-icons sport_trophy"
 					placeholder="Número..."
 					v-model="driver.number"
+					maskPattern="!###"
 					>
-					</fg-input>
+					</masked-input>
 				</div>
 				<div class="row">
 					<fg-input
@@ -65,14 +66,15 @@
 					v-model="driver.email"
 					>
 					</fg-input>
-					<fg-input
+					<masked-input
 					class="no-border input-lg"
 					:class="{'has-danger': errors.phone}"
 					addon-left-icon="now-ui-icons tech_mobile"
 					placeholder="Telefone..."
 					v-model="driver.phone"
+					maskPattern="(##) #####-####"
 					>
-					</fg-input>
+					</masked-input>
 				</div>
 				<v-select
 					class="form-group no-border input-lg input-group"
@@ -113,7 +115,7 @@ import 'vue-select/dist/vue-select.css';
 
 import axios from 'axios'
 import vSelect from "vue-select";
-import { Card, Button, FormGroupInput, Radio, Alert, } from '@/components';
+import { Card, Button, FormGroupInput, FormGroupInputMasked, Radio, Alert, } from '@/components';
 
 export default {
 	name: 'login-page',
@@ -124,6 +126,7 @@ export default {
 		[Radio.name]: Radio,
 		[Button.name]: Button,
 		[FormGroupInput.name]: FormGroupInput,
+		[FormGroupInputMasked.name]: FormGroupInputMasked,
 		vSelect
 	},
 	data() {
@@ -135,14 +138,14 @@ export default {
 				message: ""
 			},
 			driver: {
-				name: "Ricardo Schmidt",
-				nickname: "Ricardo Schmidt",
-				number: "23",
-				login: "ricardschmidt",
-				password: "123456",
-				email: "ricardschmidt@gmail.com",
-				phone: "48988360053",
-				state: "SC",
+				name: "",
+				nickname: "",
+				number: "",
+				login: "",
+				password: "",
+				email: "",
+				phone: "",
+				state: "",
 				season: '2022/2',
 			},
 			states: [

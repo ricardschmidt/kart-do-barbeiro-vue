@@ -46,14 +46,15 @@
 					v-model="driver.nickname"
 					>
 					</fg-input>
-					<fg-input
+					<masked-input
 					class="no-border input-lg"
 					:class="{'has-danger': errors.number}"
 					addon-left-icon="now-ui-icons sport_trophy"
 					placeholder="Número..."
 					v-model="driver.number"
+					maskPattern="!###"
 					>
-					</fg-input>
+					</masked-input>
 				</div>
 				<div class="row">
 					<fg-input
@@ -65,14 +66,15 @@
 					v-model="driver.email"
 					>
 					</fg-input>
-					<fg-input
+					<masked-input
 					class="no-border input-lg"
 					:class="{'has-danger': errors.phone}"
 					addon-left-icon="now-ui-icons tech_mobile"
 					placeholder="Telefone..."
 					v-model="driver.phone"
+					maskPattern="(##) #####-####"
 					>
-					</fg-input>
+					</masked-input>
 				</div>
 				<div class="row">
 					<fg-input
@@ -83,14 +85,15 @@
 					v-model="driver.login"
 					>
 					</fg-input>
-					<fg-input
+					<masked-input
 					class="no-border input-lg"
 					:class="{'has-danger': errors.state}"
 					addon-left-icon="now-ui-icons location_pin"
-					placeholder="Login..."
+					placeholder="Estado..."
 					v-model="driver.state"
+					maskPattern="AA"
 					>
-					</fg-input>
+					</masked-input>
 				</div>
 				<textarea
 					class="form-control"
@@ -145,7 +148,7 @@
 	</div>
 </template>
 <script>
-import { Alert,FormGroupInput, Button } from '@/components';
+import { Alert, FormGroupInput, FormGroupInputMasked, Button } from '@/components';
 import { getUser, setUser } from '../services/auth'
 import axios from '../services/api'
 
@@ -155,6 +158,7 @@ export default {
 	components: {
 		Alert,
 		[FormGroupInput.name]: FormGroupInput,
+		[FormGroupInputMasked.name]: FormGroupInputMasked,
 		[Button.name]: Button,
 	},
 	data() {
@@ -231,11 +235,7 @@ export default {
 		checkForm() {
 			this.errors = {}
 			if(!this.driver.nickname) this.errors['nickname'] = true
-			if(!this.driver.number) {
-				this.errors['number'] = true
-			} else if(!this.driver.number.startsWith("#")) {
-				this.driver.number = `#${this.driver.number}`
-			}
+			if(!this.driver.number) this.errors['number'] = true
 			if(!this.driver.state || this.driver.state.length !== 2) this.errors['state'] = true
 			if(!this.validateEmail(this.driver.email)) this.errors['email'] = true
 			if(!this.driver.phone) this.errors['phone'] = true

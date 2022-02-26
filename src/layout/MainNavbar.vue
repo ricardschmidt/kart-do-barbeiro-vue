@@ -157,29 +157,31 @@
         title="Perfil"
         icon="now-ui-icons users_circle-08"
         class="nav-item"
-		v-if="currentUser"
+		v-if="loggedIn"
       >
 		<nav-link to="/profile">
 		<i class="now-ui-icons users_single-02"></i>Meus Dados
 		</nav-link>
 		<a href="#" class="dropdown-item" @click="logOut">
-		<i class="now-ui-icons ui-1_simple-remove"></i>Logout
+		<i class="now-ui-icons media-1_button-power"></i>Logout
 		</a>
       </drop-down>
-      <li class="nav-item" v-else>
-			<router-link to="/login"
-				class="nav-link btn btn-neutral"
-			>
-				<p>Login</p>
-        	</router-link>
-      </li>
-      <li class="nav-item" v-show="!currentUser">
-			<router-link to="/sign-up"
-				class="nav-link btn btn-neutral"
-			>
-				<p>Inscreva-se</p>
-        	</router-link>
-      </li>
+	  <div class="row" style="margin:0" v-else>
+		<li class="nav-item" >
+				<router-link to="/login"
+					class="nav-link btn btn-neutral"
+				>
+					<p>Login</p>
+				</router-link>
+		</li>
+		<li class="nav-item">
+				<router-link to="/sign-up"
+					class="nav-link btn btn-neutral"
+				>
+					<p>Inscreva-se</p>
+				</router-link>
+		</li>
+	  </div>
 
       <li class="nav-item">
         <a
@@ -229,15 +231,15 @@ export default {
 		[Button.name]: Button,
 	},
 	computed: {
-		currentUser() {
-			return getUser();
-		},
-	},
+		loggedIn() {
+			return this.$store.state.auth.status.loggedIn;
+		}
+  	},
 	methods: {
 		logOut() {
 			this.$store.dispatch('auth/logout');
 			this.$router.push('/');
-		}
+		},
 	}
 };
 </script>
