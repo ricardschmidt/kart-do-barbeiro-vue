@@ -121,6 +121,25 @@
 					</div>
 				</tab-pane>
             </tabs>
+			<div class="text-center">
+				<n-button type="info" size="lg" @click.native="modals.classic = true">
+					Verificar confirmados da próxima etapa.
+				</n-button>
+			</div>
+			<modal :show.sync="modals.classic" headerClasses="justify-content-center">
+				<h4 slot="header" class="title title-up">Lista de Confirmados <br/> {{confirm.name}}</h4>
+				<h5>F1</h5>
+				<p v-for="(driver, i) in confirm.drivers" :key="'driver-'+i">
+					{{driver.endsWith("F1") ? driver : null}}
+				</p>
+				<h5>F2</h5>
+				<p v-for="(driver, i) in confirm.drivers" :key="'driver2-'+i">
+					{{driver.endsWith("F2") ? driver : null}}
+				</p>
+				<template slot="footer">
+					<n-button type="danger" @click.native="modals.classic = false">Close</n-button>
+				</template>
+			</modal>
           </div>
           <!-- End Tabs on plain Card -->
         </div>
@@ -129,20 +148,29 @@
   </div>
 </template>
 <script>
-import { Tabs, TabPane } from '@/components';
+import { Tabs, TabPane, Modal, Button } from '@/components';
+import axios from '../../services/api'
 
 export default {
-  components: {
-    Tabs,
-    TabPane
-  },
-  data() {
-      return {
-        activeTab: this.getActiveTab(),
-
-      }
-  },
-  methods: {
+	components: {
+		Tabs,
+		Modal,
+		TabPane,
+		[Button.name]: Button,
+	},
+	data() {
+		return {
+			activeTab: this.getActiveTab(),
+			confirm: "",
+			modals: {
+				classic: false,
+			},
+		}
+	},
+	mounted() {
+		this.handleConfirmation()
+	},
+	methods: {
 		getActiveTab() {
 			if(new Date().getTime() < new Date("2022-02-19")) {
 				return "Hamilton"
@@ -155,8 +183,22 @@ export default {
 			} else if(new Date().getTime() < new Date("2022-06-25")) {
 				return  "Tradicional"
 			}
+		},
+
+		handleConfirmation() {
+			axios.get("/confirm/next", {
+				params: {
+					name: this.activeTab
+				}
+			})
+			.then(response => {
+				this.confirm = response.data
+			})
+			.catch(error => {
+				this.confirm = error.response.data.error.userMessage
+			})
 		}
-  }
+	}
 };
 </script>
 <style>
