@@ -183,6 +183,13 @@ export default {
 		async confirmRace() {
 			await axios.post("/confirm")
 			.then(response => {
+				if(response.data.confirm.message.endsWith("encerrada!")) {
+					this.alert.type = "danger"
+					this.alert.message = response.data.confirm.message
+					this.alert.visible = true
+					this.alert.icon = "health_ambulance"
+					return
+				}
 				this.alert.type = "success"
 				this.alert.message = response.data.confirm.message
 				this.alert.visible = true
@@ -201,6 +208,13 @@ export default {
 		async deleteConfirmRace() {
 			await axios.delete("/confirm")
 			.then(response => {
+				if(response.data.confirm.message.endsWith("encerrada!")) {
+					this.alert.type = "danger"
+					this.alert.message = response.data.confirm.message
+					this.alert.visible = true
+					this.alert.icon = "health_ambulance"
+					return
+				}
 				this.alert.type = "success"
 				this.alert.message = response.data.confirm.message
 				this.alert.visible = true
