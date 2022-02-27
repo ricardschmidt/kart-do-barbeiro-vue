@@ -196,10 +196,10 @@ export default {
 			if(this.checkForm()) return
 
 			this.$store.dispatch('auth/register', {
-				"number": "#" + this.driver.number,
+				"number": this.driver.number,
 				"name": this.driver.name,
 				"nickname": this.driver.nickname,
-				"state": this.driver.state,
+				"state": this.driver.state.sigla,
 				"email": this.driver.email,
 				"phone": this.driver.phone,
 				"season": this.driver.season,

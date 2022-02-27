@@ -19,7 +19,7 @@ class AuthService {
 	}
 	register(user) {
 		return axios.post('/signup', {
-			number: "#" + user.number,
+			number: user.number,
 			name: user.name,
 			nickname: user.nickname,
 			state: user.state,
@@ -33,12 +33,6 @@ class AuthService {
 			if (response.data.token) {
 				loginAccess(response.data);
 			}
-			this.$router.push("/profile")
-		})
-		.catch(error => {
-			this.alert.type = error.response.status === 400 ? "warning" : "danger"
-			this.alert.message = error.response.data.error.userMessage
-			this.alert.visible = true
 		})
 	}
 }
