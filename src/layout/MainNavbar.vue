@@ -162,6 +162,9 @@
 		<nav-link to="/profile">
 		<i class="now-ui-icons users_single-02"></i>Meus Dados
 		</nav-link>
+		<nav-link to="/edit-profile">
+		<i class="now-ui-icons loader_gear"></i>Editar Perfil
+		</nav-link>
 		<a href="#" class="dropdown-item" @click="logOut">
 		<i class="now-ui-icons media-1_button-power"></i>Logout
 		</a>

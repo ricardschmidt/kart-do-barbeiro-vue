@@ -38,9 +38,6 @@
 					<a href="#" class="btn btn-primary btn-round btn-lg" @click="confirmRace">
 						Confirmar Etapa
 					</a>
-					<router-link to="/edit-profile" class="btn btn-default btn-round btn-lg btn-icon">
-						<i class="now-ui-icons users_single-02"></i>
-					</router-link>
 				</div>
 				<alert :type="alert.type" dismissible :visible="alert.visible">
 					{{alert.message}}

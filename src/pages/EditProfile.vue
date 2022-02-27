@@ -39,7 +39,7 @@
 				<p class="category">Dados Cadastrais</p>
 				<div class="row">
 					<fg-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.nickname}"
 					addon-left-icon="now-ui-icons text_caps-small"
 					placeholder="Apelido..."
@@ -47,7 +47,7 @@
 					>
 					</fg-input>
 					<masked-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.number}"
 					addon-left-icon="now-ui-icons sport_trophy"
 					placeholder="Número..."
@@ -58,7 +58,7 @@
 				</div>
 				<div class="row">
 					<fg-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.email}"
 					addon-left-icon="now-ui-icons ui-1_email-85"
 					placeholder="Email..."
@@ -67,7 +67,7 @@
 					>
 					</fg-input>
 					<masked-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.phone}"
 					addon-left-icon="now-ui-icons tech_mobile"
 					placeholder="Telefone..."
@@ -78,7 +78,7 @@
 				</div>
 				<div class="row">
 					<fg-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.login}"
 					addon-left-icon="now-ui-icons users_single-02"
 					placeholder="Login..."
@@ -86,7 +86,7 @@
 					>
 					</fg-input>
 					<masked-input
-					class="no-border input-lg"
+					class="input-lg"
 					:class="{'has-danger': errors.state}"
 					addon-left-icon="now-ui-icons location_pin"
 					placeholder="Estado..."
@@ -105,7 +105,7 @@
 				</textarea>
 				<div class="text-center">
 					<n-button type="primary" round size="lg" @click="updateDriver" >Atualizar</n-button>
-					<n-button type="primary" round size="lg" @click="changePassword" >Trocar Senha</n-button>
+					<n-button type="neutral" round size="lg" @click="changePassword" >Trocar Senha</n-button>
 				</div>
 			</div>
 			<div class="container" v-else>
