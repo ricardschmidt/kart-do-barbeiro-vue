@@ -174,6 +174,10 @@ export default {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
 				this.alert.visible = true
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
 			})
 		},
 
@@ -187,6 +191,10 @@ export default {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
 				this.alert.visible = true
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
 			})
 		}
 	}

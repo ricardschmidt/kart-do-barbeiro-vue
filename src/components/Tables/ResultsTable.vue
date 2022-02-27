@@ -1,5 +1,5 @@
 <template>
-	<div class="drivers-table">
+	<div class="results-table">
 		<table class="vue-table" :class="tableClasses">
 			<tr>
 				<th>Etapa</th>
@@ -34,7 +34,7 @@ export default {
 }
 </script>
 <style>
-	.drivers-table {
+	.results-table {
 		max-width: 500px;
 		margin: 0 auto
 	}
