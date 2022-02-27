@@ -1,5 +1,4 @@
 .rank-geral {
-	background-color: $orange-bg;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -53,8 +52,7 @@ ol.podium-rank {
 		}
 		.driver-image {
 			margin: 0 auto;
-			border: 3px solid $brand-primary;
-			background-color: $brand-primary;
+			background-color: $white-color;
 			border-radius: 100%;
 			position: relative;
 			height: 170px;

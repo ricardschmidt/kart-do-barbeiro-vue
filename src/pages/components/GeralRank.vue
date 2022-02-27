@@ -1,5 +1,7 @@
 <template>
-	<article class="rank-geral">
+	<article class="rank-geral"
+			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-rank-geral.jpg')"
+	>
 		<div class="loading-spinner" v-if="loading">
 			<fulfilling-bouncing-circle-spinner
 				:animation-duration="4000"
