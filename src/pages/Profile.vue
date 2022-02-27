@@ -35,12 +35,16 @@
 		<div class="section">
 			<div class="container">
 				<div class="button-container">
-					<a href="#" class="btn btn-primary btn-round btn-lg" @click="confirmRace">
-						Confirmar Etapa
-					</a>
+					<n-button type="success" round size="lg" @click="confirmRace">
+						<i class="now-ui-icons ui-1_check"></i> Confirmar Etapa
+					</n-button>
+					<n-button type="danger" round icon size="lg" @click="deleteConfirmRace">
+						<i class="now-ui-icons ui-1_simple-remove"></i>
+					</n-button>
 				</div>
 				<alert :type="alert.type" dismissible :visible="alert.visible">
-					{{alert.message}}
+					 <i class="now-ui-icons" :class="alert.icon"></i>
+					 {{alert.message}}
 				</alert>
 				<p class="category">Dados Cadastrais</p>
 				<table class="vue-table" style="max-width: 400px; margin: 0 auto">
@@ -119,7 +123,7 @@
 	</div>
 </template>
 <script>
-import { ResultsTable, Tabs, TabPane, Alert } from '@/components';
+import { ResultsTable, Tabs, TabPane, Alert, Button } from '@/components';
 import { getUser } from '../services/auth'
 import axios from '../services/api'
 
@@ -130,14 +134,16 @@ export default {
 		ResultsTable,
 		Alert,
 		Tabs,
-    	TabPane
+    	TabPane,
+		[Button.name]: Button,
 	},
 	data() {
 		return {
 			alert: {
 				type: "success",
 				visible: false,
-				message: ""
+				message: "",
+				icon: "objects_support-17"
 			},
 			results: []
 		}
@@ -156,10 +162,6 @@ export default {
 		this.getDriver()
 	},
 	methods: {
-		logout() {
-			this.$store.dispatch('auth/logout');
-      		this.$router.push('/login');
-		},
 		async getDriver() {
 			await axios.get("/drivers/races", {
 				params: {
@@ -184,8 +186,28 @@ export default {
 				this.alert.type = "success"
 				this.alert.message = response.data.confirm.message
 				this.alert.visible = true
+				this.alert.icon = "ui-2_like"
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.alert.visible = true
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
+			})
+		},
+
+		async deleteConfirmRace() {
+			await axios.delete("/confirm")
+			.then(response => {
+				this.alert.type = "success"
+				this.alert.message = response.data.confirm.message
+				this.alert.visible = true
+				this.alert.icon = "ui-2_like"
+			}).catch(error => {
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.icon = error.response.status === 400 ? "travel_info" : "objects_support-17"
 				this.alert.message = error.response.data.error.userMessage
 				this.alert.visible = true
 				if(this.alert.message.includes("faça o login novamente")) {
