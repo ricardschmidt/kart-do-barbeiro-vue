@@ -70,7 +70,7 @@ export default {
 				params: {
 					category: 'F1',
 					sort: "-currentScore",
-					driverPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {
@@ -84,7 +84,7 @@ export default {
 				params: {
 					category: 'F2',
 					sort: "-currentScore",
-					driverPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {

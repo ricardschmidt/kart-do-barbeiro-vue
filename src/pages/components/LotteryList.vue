@@ -4,6 +4,7 @@
 			<tab-pane v-for="(lottery, i) in lotterys" :key="'kart' + i" :label="lottery.category">
 				<div class="text-center">
 					<h2>Nome: {{lottery.name}}</h2>
+					<h4>Data: {{new Date(lottery.date).toLocaleDateString("pt-BR")}}</h4>
 				</div>
 				<div class="text-center">
 					<div class="col-md-12">

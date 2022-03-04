@@ -24,8 +24,9 @@
 			</fg-input>
 		</div>
 		<div class="section create-race-xlsx" v-else>
-			<alert type="danger" dismissible :visible="error">
-				{{errorMsg}}
+			<alert :type="alert.type" dismissible :visible="alert.visible">
+				<i class="now-ui-icons" :class="alert.icon"></i>
+				{{alert.message}}
 			</alert>
 			<div class="container">
 				<div class="input-line">
@@ -143,8 +144,6 @@ export default {
 			bestlap: '',
 			noExistDrivers: [],
 			race: {name: "", bateria: "", season: "", category: "", drivers: []},
-			errorMsg: null,
-			error: false,
 			file: null,
 			password: '',
 			loading: false,
@@ -155,6 +154,12 @@ export default {
 			switchesBateria: {
 				defaultOn: true,
 				defaultOff: false
+			},
+			alert: {
+				type: "success",
+				visible: false,
+				message: "",
+				icon: "objects_support-17"
 			},
 		};
 	},
@@ -170,7 +175,6 @@ export default {
 		submitFile() {
 			this.noExistDrivers = []
 			this.race = {name: "", bateria: "", season: "", category: "", drivers: []}
-			this.errorMsg = null
 			let formData = new FormData();
 			formData.append('file', this.file);
 			formData.append('name', this.name);
@@ -183,16 +187,16 @@ export default {
 			this.loading = true
 			axios.post(`${this.urlBase}/races/xlsx`, formData)
 			.then((res) => {
-				this.error = false
 				if(res.data) {
 					this.loading = false
 					this.race = res.data.race
 					this.noExistDrivers = res.data.driverNoExist
 				}
 			}).catch(error => {
-				this.loading = false
-				this.error = true
-				this.errorMsg = error.response ? error.response.data.error.messageUser : error
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.icon = error.response.status === 400 ? "travel_info" : "objects_support-17"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
 			});
 
 			this.clearFieds()
@@ -206,6 +210,12 @@ export default {
 			this.bestlap = ''
 			this.file = null
 			this.$refs.attachment.file = null;
+		},
+		visibleAlert() {
+			this.alert.visible = true
+			setTimeout(() => {
+				this.alert.visible = false
+			}, 5000);
 		}
 	}
 };

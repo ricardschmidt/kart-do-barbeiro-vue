@@ -50,7 +50,7 @@ export default {
 			axios.get(`${this.urlBase}/drivers`, {
 				params: {
 					sort: 'nickname',
-					teamPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {

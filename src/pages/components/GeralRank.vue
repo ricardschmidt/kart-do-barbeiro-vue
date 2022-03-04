@@ -1,6 +1,6 @@
 <template>
 	<article class="rank-geral"
-			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-rank-geral.jpg')"
+			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-rank-geral.jpg'); background-size: cover;"
 	>
 		<div class="loading-spinner" v-if="loading">
 			<fulfilling-bouncing-circle-spinner
@@ -82,7 +82,7 @@ export default {
 					category: 'F1',
 					pageSize: 5,
 					sort: '-scores.score',
-					teamPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {
@@ -97,7 +97,7 @@ export default {
 					category: 'F2',
 					pageSize: 5,
 					sort: '-scores.score',
-					teamPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {

@@ -150,6 +150,15 @@ p{
         }
     }
 
+    &.blockquote-warning{
+        border-color: $warning-color;
+        color: $warning-color;
+
+        small{
+            color: $warning-color;
+        }
+    }
+
     &.blockquote-white{
         border-color: $opacity-8;
         color: $white-color;
