@@ -1,6 +1,6 @@
 <template>
 	<article class="rank-geral"
-			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-rank-geral.jpg')"
+			style="background-image:url('https://ras-upload.s3.amazonaws.com/ckdb/img/background/bg-rank-geral.jpg'); background-size: cover;"
 	>
 		<div class="loading-spinner" v-if="loading">
 			<fulfilling-bouncing-circle-spinner

@@ -43,8 +43,8 @@
 					</n-button>
 				</div>
 				<alert :type="alert.type" dismissible :visible="alert.visible">
-					 <i class="now-ui-icons" :class="alert.icon"></i>
-					 {{alert.message}}
+					<i class="now-ui-icons" :class="alert.icon"></i>
+					{{alert.message}}
 				</alert>
 				<p class="category">Dados Cadastrais</p>
 				<table class="vue-table" style="max-width: 400px; margin: 0 auto">
@@ -118,12 +118,47 @@
 					<h4 class="title text-center">Minha Corridas</h4>
 				</div>
 				<results-table :results="results"></results-table>
+				<div class="text-center" style="margin-top: 100px">
+					<n-button type="info" size="lg" block @click.native="modals.classic = true">
+						INSCRIÇÃO PARA ETAPA 2022/2
+					</n-button>
+				</div>
+				<modal :show.sync="modals.classic" headerClasses="justify-content-center">
+					<h4 slot="header" class="title title-up">Muito Obrigado!</h4>
+					<p>
+						Parabéns, você se inscreveu para a 2º Temporada do
+						Campeoanto do Kart do Barbeiro, para confirmar a sua vaga
+						basta realizar o pagamento da inscrição que pode ser feito
+						de 2 modos.
+						<br />
+						PIX ou link do Mercado Pago.
+						Os valores são de R$250,00 no PIX e R$270,00 em até 12x
+						pelo Mercado Pago.
+					</p>
+					<h4 class="blockquote blockquote-warning">
+						1 - PIX - ricardschmidt@gmail.com
+						<br />
+						<br />
+						<small>Obs. Enviar comprovante para mesmo
+							<a class="link" href="mailto:ricardschmidt@gmail.com">email</a>
+						</small>
+					</h4>
+					<template slot="footer">
+						<n-button type="success">Mercado Pago</n-button>
+						<n-button
+							type="danger"
+							@click.native="modals.classic = false"
+							@click="subscriptionNextSeason"
+						>Close</n-button
+						>
+					</template>
+				</modal>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-import { ResultsTable, Tabs, TabPane, Alert, Button } from '@/components';
+import { ResultsTable, Tabs, TabPane, Alert, Button, Modal } from '@/components';
 import { getUser } from '../services/auth'
 import axios from '../services/api'
 
@@ -131,6 +166,7 @@ export default {
 	name: 'profile',
 	bodyClass: 'profile-page',
 	components: {
+		Modal,
 		ResultsTable,
 		Alert,
 		Tabs,
@@ -145,7 +181,10 @@ export default {
 				message: "",
 				icon: "objects_support-17"
 			},
-			results: []
+			results: [],
+			modals: {
+				classic: false,
+			},
 		}
 	},
 	computed: {
@@ -172,7 +211,7 @@ export default {
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
-				this.alert.visible = true
+				this.visibleAlert()
 				if(this.alert.message.includes("faça o login novamente")) {
 					this.$store.dispatch('auth/logout');
 					this.$router.push('/login');
@@ -186,18 +225,18 @@ export default {
 				if(response.data.confirm.message.endsWith("encerrada!")) {
 					this.alert.type = "danger"
 					this.alert.message = response.data.confirm.message
-					this.alert.visible = true
+					this.visibleAlert()
 					this.alert.icon = "health_ambulance"
 					return
 				}
 				this.alert.type = "success"
 				this.alert.message = response.data.confirm.message
-				this.alert.visible = true
+				this.visibleAlert()
 				this.alert.icon = "ui-2_like"
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
-				this.alert.visible = true
+				this.visibleAlert()
 				if(this.alert.message.includes("faça o login novamente")) {
 					this.$store.dispatch('auth/logout');
 					this.$router.push('/login');
@@ -211,25 +250,63 @@ export default {
 				if(response.data.confirm.message.endsWith("encerrada!")) {
 					this.alert.type = "danger"
 					this.alert.message = response.data.confirm.message
-					this.alert.visible = true
+					this.visibleAlert()
 					this.alert.icon = "health_ambulance"
 					return
 				}
 				this.alert.type = "success"
 				this.alert.message = response.data.confirm.message
-				this.alert.visible = true
+				this.visibleAlert()
 				this.alert.icon = "ui-2_like"
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.icon = error.response.status === 400 ? "travel_info" : "objects_support-17"
 				this.alert.message = error.response.data.error.userMessage
-				this.alert.visible = true
+				this.visibleAlert()
 				if(this.alert.message.includes("faça o login novamente")) {
 					this.$store.dispatch('auth/logout');
 					this.$router.push('/login');
 				}
 			})
+		},
+
+		async subscriptionNextSeason() {
+			await axios.post("/drivers/registration", {
+				params: {
+					season: "2022/2"
+				}
+			})
+			.then(response => {
+				if(response.data.confirm.message.endsWith("encerrada!")) {
+					this.alert.type = "danger"
+					this.alert.message = response.data.confirm.message
+					this.visibleAlert()
+					this.alert.icon = "health_ambulance"
+					return
+				}
+				this.alert.type = "success"
+				this.alert.message = response.data.confirm.message
+				this.visibleAlert()
+				this.alert.icon = "ui-2_like"
+			}).catch(error => {
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.icon = error.response.status === 400 ? "travel_info" : "objects_support-17"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
+			})
+		},
+
+		visibleAlert() {
+			this.alert.visible = true
+			setTimeout(() => {
+				this.alert.visible = false
+			}, 5000);
 		}
+
 	}
 };
 </script>

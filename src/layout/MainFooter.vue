@@ -42,6 +42,11 @@
 					Upload
 					</router-link>
 				</li>
+				<li>
+					<router-link to="/lottery-kart">
+					Sorteio de Kart
+					</router-link>
+				</li>
 			</ul>
 		</nav>
 		<div class="copyright">
