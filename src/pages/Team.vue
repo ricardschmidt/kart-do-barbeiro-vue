@@ -48,7 +48,7 @@ export default {
 			axios.get(`${this.urlBase}/teams`, {
 				params: {
 					sort: "name",
-					driverPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {

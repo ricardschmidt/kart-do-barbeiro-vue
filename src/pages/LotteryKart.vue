@@ -203,6 +203,7 @@ export default {
 				})
 			}
 		},
+
 		submitLottery() {
 			this.alert.message = ""
 			this.alert.visible = false
@@ -210,7 +211,7 @@ export default {
 				this.lotteryKart()
 			} catch (error) {
 				this.alert.message = error.message
-				this.alert.visible = true
+				this.visibleAlert()
 				return
 			}
 
@@ -236,14 +237,17 @@ export default {
 
 			this.clearFieds()
 		},
+
 		async splitDrivers() {
 			this.alert.visible = false
 			let category = this.category
 			await this.handleDrivers()
+			if(this.allDriver)
 			this.driversText = this.allDrivers.filter(function(value){
 				return value.endsWith(category);
 			})
 		},
+
 		async handleDrivers() {
 			await axios.get('/confirm/date', {
 				params: {
@@ -254,16 +258,24 @@ export default {
 				this.allDrivers = response.data.drivers
 			}).catch((error) => {
 				this.loading = false
-				this.alert.visible = true
+				this.visibleAlert()
 				this.alert.message = error.response ? error.response.data.error.messageUser : error.message
 			})
 		},
+
 		clearFieds() {
 			this.name = ''
 			this.category = ''
 			this.driversText = ''
 			this.kartsText = ''
 			this.pickers.datePicker = ''
+		},
+
+		visibleAlert() {
+			this.alert.visible = true
+			setTimeout(() => {
+				this.alert.visible = false
+			}, 5000);
 		}
 	},
 };

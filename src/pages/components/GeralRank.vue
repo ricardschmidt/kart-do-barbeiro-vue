@@ -82,7 +82,7 @@ export default {
 					category: 'F1',
 					pageSize: 5,
 					sort: '-scores.score',
-					teamPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {
@@ -97,7 +97,7 @@ export default {
 					category: 'F2',
 					pageSize: 5,
 					sort: '-scores.score',
-					teamPopulate: true
+					expand: true
 				}
 			})
 			.then(response => {

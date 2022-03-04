@@ -207,7 +207,7 @@ export default {
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
-				this.alert.visible = true
+				this.visibleAlert()
 				if(this.alert.message === "Senha Incorreta") this.errors['oldpassword'] = true
 			})
 		},
@@ -224,11 +224,13 @@ export default {
 				deposition: this.driver.deposition,
 			}).then(response => {
 				setUser(this.driver)
-				this.$router.push('/profile');
+				this.alert.type = "success"
+				this.alert.message = "Perfil atualizado com sucesso."
+				this.alert.visible = true
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
-				this.alert.visible = true
+				this.visibleAlert()
 			})
 		},
 
@@ -244,9 +246,9 @@ export default {
 			if (!this.isEmpty(this.errors)) {
 				this.alert = {
 					type: "warning",
-					visible: true,
 					message: "Preencha todos os Campos"
 				}
+				this.visibleAlert()
 				return true
 			}
 			return false
@@ -291,6 +293,13 @@ export default {
 
 			return JSON.stringify(obj) === JSON.stringify({});
 		},
+
+		visibleAlert() {
+			this.alert.visible = true
+			setTimeout(() => {
+				this.alert.visible = false
+			}, 5000);
+		}
 	}
 };
 </script>
