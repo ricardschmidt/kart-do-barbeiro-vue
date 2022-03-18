@@ -92,20 +92,23 @@ export default {
 	computed: {
 		loggedIn() {
 			return this.$store.state.auth.status.loggedIn;
+		},
+		userInLowerCase() {
+			return this.login.user.toLowerCase().trim();
 		}
 	},
 	created() {
 		if (this.loggedIn) {
 			this.$router.push('/profile');
 		}
-  }	,
+  	},
 	methods: {
 		authenticate() {
 			this.alert.visible = false
 			if(this.checkForm()) return
 
 			this.$store.dispatch('auth/login', {
-				"login": this.login.user,
+				"login": this.userInLowerCase,
 				"password": this.login.password,
 			})
 			.then(response => {
