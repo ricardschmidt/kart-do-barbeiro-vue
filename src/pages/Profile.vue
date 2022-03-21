@@ -46,6 +46,13 @@
 					<i class="now-ui-icons" :class="alert.icon"></i>
 					{{alert.message}}
 				</alert>
+				<div class="alert alert-info" v-if="!paid">
+					<p style="margin: 0">
+						<i class="now-ui-icons travel_info"></i>
+						Aguardando pagamento, caso já tenha realizado, enviar o comprovante para
+						<a href="mailto:ricardschmidt@gmail.com">ricardschmidt@gmail.com</a>
+					</p>
+				</div>
 				<p class="category">Dados Cadastrais</p>
 				<table class="vue-table" style="max-width: 400px; margin: 0 auto">
 					<tr>
@@ -144,7 +151,12 @@
 						</small>
 					</h4>
 					<template slot="footer">
-						<n-button type="success">Mercado Pago</n-button>
+						<a
+						href="https://mpago.la/1RBgkhP"
+						target="_blank"
+						class="btn btn-success">
+						 	Mercado Pago
+						</a>
 						<n-button
 							type="danger"
 							@click.native="modals.classic = false"
@@ -181,6 +193,7 @@ export default {
 				message: "",
 				icon: "objects_support-17"
 			},
+			paid: true,
 			results: [],
 			modals: {
 				classic: false,
@@ -199,6 +212,7 @@ export default {
 	},
 	created() {
 		this.getDriver()
+		this.getPaid()
 	},
 	methods: {
 		async getDriver() {
@@ -208,6 +222,25 @@ export default {
 				}
 			}).then(response => {
 				this.results = response.data
+			}).catch(error => {
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
+			})
+		},
+
+		async getPaid() {
+			await axios.get("/drivers", {
+				params: {
+					"_id": this.currentUser._id,
+					"select": "paid"
+				}
+			}).then(response => {
+				this.paid = response.data[0].paid
 			}).catch(error => {
 				this.alert.type = error.response.status === 400 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
@@ -234,7 +267,7 @@ export default {
 				this.visibleAlert()
 				this.alert.icon = "ui-2_like"
 			}).catch(error => {
-				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.type = error.response.status < 500 ? "warning" : "danger"
 				this.alert.message = error.response.data.error.userMessage
 				this.visibleAlert()
 				if(this.alert.message.includes("faça o login novamente")) {

@@ -242,7 +242,7 @@ export default {
 			this.alert.visible = false
 			let category = this.category
 			await this.handleDrivers()
-			if(this.allDriver)
+			if(this.allDrivers)
 			this.driversText = this.allDrivers.filter(function(value){
 				return value.endsWith(category);
 			})
