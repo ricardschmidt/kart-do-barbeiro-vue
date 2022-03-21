@@ -57,7 +57,7 @@
 					<div class="tab-tracado d-md-flex">
 						<img src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-senna.png" alt="">
 						<div>
-							<p class="track-date">Data:<span>27/03/2022</span> 15:00hrs</p>
+							<p class="track-date">Data:<span>27/03/2022</span> 16:00hrs</p>
 							<p>
 							Este é o traçado que mostra a habilidade dos pilotos, com
 							várias chicanes estreitas é necessário escolher muito bem a
