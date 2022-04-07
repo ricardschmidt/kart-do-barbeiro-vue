@@ -8,6 +8,10 @@
         <div class="col-md-12 ml-auto col-xl-12 mr-auto">
           <!-- Tabs with Background on Card -->
           <div class="card calendario-tabs-content">
+			<alert :type="alert.type" dismissible :visible="alert.visible">
+				<i class="now-ui-icons" :class="alert.icon"></i>
+				{{alert.message}}
+			</alert>
             <tabs
               centered
               type="neutral"
@@ -122,7 +126,7 @@
 				</tab-pane>
             </tabs>
 			<div class="text-center">
-				<n-button type="info" size="lg" @click.native="modals.classic = true">
+				<n-button type="info" size="lg" @click="handleConfirmation" @click.native="modals.classic = true">
 					Verificar confirmados da próxima etapa.
 				</n-button>
 			</div>
@@ -136,8 +140,20 @@
 				<p v-for="(driver, i) in confirm.drivers" :key="'driver2-'+i">
 					{{driver.endsWith("F2") ? driver : null}}
 				</p>
+				<div>
+					<h5>Pilotos Etapa Única</h5>
+					<p v-for="(driver, i) in confirm.drivers" :key="'driver2-'+i">
+						{{driver.endsWith("A Definir") ? driver : null}}
+					</p>
+				</div>
 				<template slot="footer">
-					<n-button type="danger" @click.native="modals.classic = false">Close</n-button>
+					<n-button v-show="currentUser" type="success" @click="confirmRace">
+						<i class="now-ui-icons ui-1_check"></i> Confirmar Etapa
+					</n-button>
+					<n-button v-show="currentUser" type="danger" @click="deleteConfirmRace">
+						<i class="now-ui-icons ui-1_simple-remove"></i> Remover Confirmação
+					</n-button>
+					<n-button type="info" @click.native="modals.classic = false">Close</n-button>
 				</template>
 			</modal>
           </div>
@@ -148,11 +164,13 @@
   </div>
 </template>
 <script>
-import { Tabs, TabPane, Modal, Button } from '@/components';
+import { Tabs, TabPane, Modal, Button, Alert } from '@/components';
+import { getUser } from '../../services/auth'
 import axios from '../../services/api'
 
 export default {
 	components: {
+		Alert,
 		Tabs,
 		Modal,
 		TabPane,
@@ -162,6 +180,12 @@ export default {
 		return {
 			activeTab: this.getActiveTab(),
 			confirm: "",
+			alert: {
+				type: "success",
+				visible: false,
+				message: "",
+				icon: "objects_support-17"
+			},
 			modals: {
 				classic: false,
 			},
@@ -169,6 +193,11 @@ export default {
 	},
 	mounted() {
 		this.handleConfirmation()
+	},
+	computed: {
+		currentUser() {
+			return getUser()
+		}
 	},
 	methods: {
 		getActiveTab() {
@@ -195,9 +224,74 @@ export default {
 				this.confirm = response.data
 			})
 			.catch(error => {
-				this.confirm = error.response.data.error.userMessage
+				this.alert.type = error.response.status < 500 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
 			})
-		}
+		},
+
+		async confirmRace() {
+			await axios.post("/confirm")
+			.then(response => {
+				if(response.data.confirm.message.endsWith("encerrada!")) {
+					this.alert.type = "danger"
+					this.alert.message = response.data.confirm.message
+					this.visibleAlert()
+					this.alert.icon = "health_ambulance"
+					return
+				}
+				this.alert.type = "success"
+				this.alert.message = response.data.confirm.message
+				this.alert.icon = "ui-2_like"
+				this.visibleAlert()
+				this.handleConfirmation()
+			}).catch(error => {
+				this.alert.type = error.response.status < 500 ? "warning" : "danger"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
+			})
+		},
+
+		async deleteConfirmRace() {
+			await axios.delete("/confirm")
+			.then(response => {
+				if(response.data.confirm.message.endsWith("encerrada!")) {
+					this.alert.type = "danger"
+					this.alert.message = response.data.confirm.message
+					this.visibleAlert()
+					this.alert.icon = "health_ambulance"
+					return
+				}
+				this.alert.type = "success"
+				this.alert.message = response.data.confirm.message
+				this.visibleAlert()
+				this.alert.icon = "ui-2_like"
+			}).catch(error => {
+				this.alert.type = error.response.status === 400 ? "warning" : "danger"
+				this.alert.icon = error.response.status === 400 ? "travel_info" : "objects_support-17"
+				this.alert.message = error.response.data.error.userMessage
+				this.visibleAlert()
+				if(this.alert.message.includes("faça o login novamente")) {
+					this.$store.dispatch('auth/logout');
+					this.$router.push('/login');
+				}
+			})
+		},
+
+		visibleAlert() {
+			this.alert.visible = true
+			setTimeout(() => {
+				this.alert.visible = false
+			}, 5000);
+		},
 	}
 };
 </script>
