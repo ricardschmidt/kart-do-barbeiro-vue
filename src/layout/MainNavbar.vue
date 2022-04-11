@@ -165,6 +165,9 @@
 		<nav-link to="/edit-profile">
 		<i class="now-ui-icons loader_gear"></i>Editar Perfil
 		</nav-link>
+		<nav-link to="/dashboard" v-show="superUser">
+		<i class="now-ui-icons travel_istanbul"></i>Dashboard
+		</nav-link>
 		<a href="#" class="dropdown-item" @click="logOut">
 		<i class="now-ui-icons media-1_button-power"></i>Logout
 		</a>
@@ -236,6 +239,9 @@ export default {
 	computed: {
 		loggedIn() {
 			return this.$store.state.auth.status.loggedIn;
+		},
+		superUser() {
+			return this.$store.state.auth.user && this.$store.state.auth.user.roles === "ROLES_ADMIN" ? true : false;
 		}
   	},
 	methods: {

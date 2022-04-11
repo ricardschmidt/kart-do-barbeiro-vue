@@ -8,10 +8,6 @@
         <div class="col-md-12 ml-auto col-xl-12 mr-auto">
           <!-- Tabs with Background on Card -->
           <div class="card calendario-tabs-content">
-			<alert :type="alert.type" dismissible :visible="alert.visible">
-				<i class="now-ui-icons" :class="alert.icon"></i>
-				{{alert.message}}
-			</alert>
             <tabs
               centered
               type="neutral"
@@ -131,6 +127,10 @@
 				</n-button>
 			</div>
 			<modal :show.sync="modals.classic" headerClasses="justify-content-center">
+				<alert :type="alert.type" dismissible :visible="alert.visible">
+					<i class="now-ui-icons" :class="alert.icon"></i>
+					{{alert.message}}
+				</alert>
 				<h4 slot="header" class="title title-up">Lista de Confirmados <br/> {{confirm.name}}</h4>
 				<h5>F1</h5>
 				<p v-for="(driver, i) in confirm.drivers" :key="'driver-'+i">

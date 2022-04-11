@@ -17,6 +17,7 @@ import UploadXlsx from './pages/UploadXlsx.vue';
 import LotteryKart from './pages/LotteryKart.vue';
 import Profile from './pages/Profile.vue';
 import EditProfile from './pages/EditProfile.vue';
+import Dashboard from './pages/Dashboard.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -172,6 +173,15 @@ export default new Router({
 		path: '/lottery-kart',
 		name: 'lottery kart',
 		components: { default: LotteryKart, header: MainNavbar, footer: MainFooter },
+		props: {
+			header: { colorOnScroll: 400 },
+			footer: { backgroundColor: 'black' }
+		}
+		},
+		{
+		path: '/dashboard',
+		name: 'dashboard',
+		components: { default: Dashboard, header: MainNavbar, footer: MainFooter },
 		props: {
 			header: { colorOnScroll: 400 },
 			footer: { backgroundColor: 'black' }
