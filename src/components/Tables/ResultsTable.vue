@@ -35,7 +35,12 @@ export default {
 </script>
 <style>
 	.results-table {
-		max-width: 500px;
-		margin: 0 auto
+		max-width: 550px;
+		margin: 0 auto;
+	}
+
+	.race-table td:first-child {
+		padding-left: 20px;
+		text-align: left;
 	}
 </style>

@@ -80,13 +80,16 @@ export default {
 			axios.get(`${this.urlBase}/drivers`, {
 				params: {
 					category: 'F1',
-					pageSize: 5,
 					sort: '-scores.score',
 					expand: true
 				}
 			})
 			.then(response => {
-				this.f1drivers = response.data
+				let drivers = response.data
+				drivers.forEach(driver => {
+					driver.currentScore -= driver.deletedScore
+				})
+				this.f1drivers = drivers.sort((a, b) => a.currentScore > b.currentScore ? -1 : 1).slice(0, 5)
 				this.loading = false
 			})
 			.catch(error => {
@@ -95,13 +98,16 @@ export default {
 			axios.get(`${this.urlBase}/drivers`, {
 				params: {
 					category: 'F2',
-					pageSize: 5,
 					sort: '-scores.score',
 					expand: true
 				}
 			})
 			.then(response => {
-				this.f2drivers = response.data
+				let drivers = response.data
+				drivers.forEach(driver => {
+					driver.currentScore -= driver.deletedScore
+				})
+				this.f2drivers =  drivers.sort((a, b) => a.currentScore > b.currentScore ? -1 : 1).slice(0, 5)
 				this.loading = false
 			})
 			.catch(error => {

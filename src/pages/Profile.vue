@@ -46,8 +46,8 @@
 					<i class="now-ui-icons" :class="alert.icon"></i>
 					{{alert.message}}
 				</alert>
-				<div class="alert alert-info" v-if="!paid">
-					<p style="margin: 0">
+				<div class="alert alert-warning" v-if="!paid">
+					<p style="margin: 0; font-weight: 500;">
 						<i class="now-ui-icons travel_info"></i>
 						Aguardando pagamento, caso já tenha realizado, enviar o comprovante para
 						<a href="mailto:ricardschmidt@gmail.com">ricardschmidt@gmail.com</a>
@@ -64,7 +64,7 @@
 						<td class="kart">{{currentUser.email}}</td>
 					</tr>
 				</table>
-				<div class="col-md-10 ml-auto col-xl-6 mr-auto">
+				<div class="col-md-10 ml-auto col-xl-10 mr-auto">
 					<h3 class="title">Campeonato Atual</h3>
 					<!-- Tabs with Background on Card -->
 					<div class="card">
@@ -82,15 +82,21 @@
 								<div class="row">
 									<div>
 										<h4>Pontuação Atual</h4>
-										<p>
+										<h3>
 										{{parseInt(currentUser.currentScore)}}
-										</p>
+										</h3>
 									</div>
 									<div>
 										<h4>Baterias Corridas</h4>
-										<p>
+										<h3>
 										{{results.length}}
-										</p>
+										</h3>
+									</div>
+									<div>
+										<h4>Pontuação Deletada</h4>
+										<h3>
+										{{parseInt(currentUser.deletedScore)}}
+										</h3>
 									</div>
 								</div>
 							</tab-pane>
@@ -160,9 +166,12 @@
 						<n-button
 							type="danger"
 							@click.native="modals.classic = false"
+						>Close</n-button>
+						<n-button
+							type="info"
+							@click.native="modals.classic = false"
 							@click="subscriptionNextSeason"
-						>Close</n-button
-						>
+						>Inscrever-se</n-button>
 					</template>
 				</modal>
 			</div>
