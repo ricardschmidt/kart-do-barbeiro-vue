@@ -85,8 +85,8 @@
 					v-model="driver.state"
 				>
 				</v-select>
-				<n-radio v-model="driver.season" label="2022/1" disabled>Temporada 2022/1</n-radio>
 				<n-radio v-model="driver.season" label="2022/2">Temporada 2022/2</n-radio>
+				<n-radio v-model="driver.season" label="">Corrida Única</n-radio>
 				<template slot="raw-content">
 				<div class="card-footer text-center">
 					<n-button type="primary" round size="lg" v-on:click="register" >Inscrever-se</n-button>

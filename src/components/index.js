@@ -30,6 +30,7 @@ import DriverRaceTable from './Tables/DriverRaceTable.vue';
 import DriverKartTable from './Tables/DriverKartTable.vue';
 import KartTable from './Tables/KartTable.vue';
 import StatisticsTable from './Tables/StatisticsTable.vue';
+import RaceDeleteTable from './Tables/RaceDeleteTable.vue';
 import ResultsTable from './Tables/ResultsTable.vue';
 
 export {
@@ -62,4 +63,5 @@ export {
   KartTable,
   StatisticsTable,
   ResultsTable,
+  RaceDeleteTable,
 };

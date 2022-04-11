@@ -75,7 +75,11 @@ export default {
 				}
 			})
 			.then(response => {
-				this.f1drivers = response.data
+				let drivers = response.data
+				drivers.forEach(driver => {
+					driver.currentScore -= driver.deletedScore
+				})
+				this.f1drivers = drivers.sort((a, b) => a.currentScore > b.currentScore ? -1 : 1)
 				this.loading = false
 			})
 			.catch(error => {
@@ -89,7 +93,11 @@ export default {
 				}
 			})
 			.then(response => {
-				this.f2drivers = response.data
+				let drivers = response.data
+				drivers.forEach(driver => {
+					driver.currentScore -= driver.deletedScore
+				})
+				this.f2drivers = drivers.sort((a, b) => a.currentScore > b.currentScore ? -1 : 1)
 				this.loading = false
 			})
 			.catch(error => {
