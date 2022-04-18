@@ -10,101 +10,115 @@
 				{{alert.message}}
 			</alert>
 			<div class="col-md-5 ml-auto mr-auto">
-			<card type="login" plain>
-				<fg-input
-				class="no-border input-lg"
-				:class="{'has-danger': errors.name}"
-				addon-left-icon="now-ui-icons users_circle-08"
-				placeholder="Nome...  (Conforme kartódromo)"
-				v-model="driver.name"
-				>
-				</fg-input>
-				<div class="row">
+				<card type="login" plain>
 					<fg-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.nickname}"
-					addon-left-icon="now-ui-icons text_caps-small"
-					placeholder="Apelido..."
-					v-model="driver.nickname"
+						class="no-border input-lg"
+						:class="{'has-danger': errors.name}"
+						addon-left-icon="now-ui-icons users_circle-08"
+						placeholder="Nome...  (Conforme kartódromo)"
+						v-model="driver.name"
 					>
 					</fg-input>
-					<masked-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.number}"
-					addon-left-icon="now-ui-icons sport_trophy"
-					placeholder="Número..."
-					v-model="driver.number"
-					maskPattern="!###"
+					<div class="row">
+						<fg-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.nickname}"
+						addon-left-icon="now-ui-icons text_caps-small"
+						placeholder="Apelido..."
+						v-model="driver.nickname"
+						>
+						</fg-input>
+						<masked-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.number}"
+						addon-left-icon="now-ui-icons sport_trophy"
+						placeholder="Número..."
+						v-model="driver.number"
+						maskPattern="!###"
+						>
+						</masked-input>
+					</div>
+					<div class="row">
+						<fg-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.login}"
+						addon-left-icon="now-ui-icons users_single-02"
+						placeholder="Login..."
+						v-model="driver.login"
+						>
+						</fg-input>
+						<fg-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.password}"
+						addon-left-icon="now-ui-icons ui-1_lock-circle-open"
+						placeholder="Senha..."
+						type="password"
+						v-model="driver.password"
+						>
+						</fg-input>
+					</div>
+					<div class="row">
+						<fg-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.email}"
+						addon-left-icon="now-ui-icons ui-1_email-85"
+						placeholder="Email..."
+						v-model="driver.email"
+						>
+						</fg-input>
+						<masked-input
+						class="no-border input-lg"
+						:class="{'has-danger': errors.phone}"
+						addon-left-icon="now-ui-icons tech_mobile"
+						placeholder="Telefone..."
+						v-model="driver.phone"
+						maskPattern="(##) #####-####"
+						>
+						</masked-input>
+					</div>
+					<v-select
+						class="form-group no-border input-lg input-group"
+						:class="{'has-danger': errors.state}"
+						:options="states"
+						label="nome"
+						placeholder="Estado..."
+						v-model="driver.state"
 					>
-					</masked-input>
-				</div>
-				<div class="row">
-					<fg-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.login}"
-					addon-left-icon="now-ui-icons users_single-02"
-					placeholder="Login..."
-					v-model="driver.login"
-					>
-					</fg-input>
-					<fg-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.password}"
-					addon-left-icon="now-ui-icons ui-1_lock-circle-open"
-					placeholder="Senha..."
-					type="password"
-					v-model="driver.password"
-					>
-					</fg-input>
-				</div>
-				<div class="row">
-					<fg-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.email}"
-					addon-left-icon="now-ui-icons ui-1_email-85"
-					placeholder="Email..."
-					v-model="driver.email"
-					>
-					</fg-input>
-					<masked-input
-					class="no-border input-lg"
-					:class="{'has-danger': errors.phone}"
-					addon-left-icon="now-ui-icons tech_mobile"
-					placeholder="Telefone..."
-					v-model="driver.phone"
-					maskPattern="(##) #####-####"
-					>
-					</masked-input>
-				</div>
-				<v-select
-					class="form-group no-border input-lg input-group"
-					:class="{'has-danger': errors.state}"
-					:options="states"
-					label="nome"
-					placeholder="Estado..."
-					v-model="driver.state"
-				>
-				</v-select>
-				<n-radio v-model="driver.season" label="2022/2">Temporada 2022/2</n-radio>
-				<n-radio v-model="driver.season" label="">Corrida Única</n-radio>
-				<template slot="raw-content">
-				<div class="card-footer text-center">
-					<n-button type="primary" round size="lg" v-on:click="register" >Inscrever-se</n-button>
-				</div>
-				<div class="pull-left">
-					<h6>
-					<router-link to="/login"
-						class="link footer-link">Login
-					</router-link>
-					</h6>
-				</div>
-				<div class="pull-right">
-					<h6>
-					<a href="#pablo" class="link footer-link">Need Help?</a>
-					</h6>
-				</div>
-				</template>
-			</card>
+					</v-select>
+					<div id="checkRadios">
+						<div class="col-sm-12 col-lg-12">
+							<n-radio v-model="driver.season" label="">Corrida Única</n-radio>
+							<n-radio v-model="driver.season" label="2022/2">Temporada 2022/2</n-radio>
+						</div>
+						<div class="col-sm-12 col-lg-12">
+							<n-checkbox
+								:class="{'has-danger': errors.state}"
+								v-model="checkboxes.terms">
+								Li e aceito os
+								<router-link to="/regulation" class="">
+									Termos e Condições
+								</router-link>
+							</n-checkbox>
+						</div>
+					</div>
+					<template slot="raw-content">
+					<div class="card-footer text-center">
+						<n-button type="primary" round size="lg" v-on:click="register" >Inscrever-se</n-button>
+					</div>
+					<div class="pull-left">
+						<h6>
+						<router-link to="/login"
+							class="link footer-link">Login
+						</router-link>
+						</h6>
+					</div>
+					<div class="pull-right">
+						<h6>
+						<a href="#pablo" class="link footer-link">Need Help?</a>
+						</h6>
+					</div>
+					</template>
+				</card>
 			</div>
 		</div>
     </div>
@@ -115,7 +129,7 @@ import 'vue-select/dist/vue-select.css';
 
 import axios from 'axios'
 import vSelect from "vue-select";
-import { Card, Button, FormGroupInput, FormGroupInputMasked, Radio, Alert, } from '@/components';
+import { Card, Button, FormGroupInput, FormGroupInputMasked, Radio, Alert, Checkbox, } from '@/components';
 
 export default {
 	name: 'login-page',
@@ -125,6 +139,7 @@ export default {
 		Card,
 		[Radio.name]: Radio,
 		[Button.name]: Button,
+		[Checkbox.name]: Checkbox,
 		[FormGroupInput.name]: FormGroupInput,
 		[FormGroupInputMasked.name]: FormGroupInputMasked,
 		vSelect
@@ -146,7 +161,7 @@ export default {
 				email: "",
 				phone: "",
 				state: "",
-				season: '2022/2',
+				season: "",
 			},
 			states: [
 				{"nome": "Acre", "sigla": "AC"},
@@ -177,6 +192,9 @@ export default {
 				{"nome": "Sergipe", "sigla": "SE"},
 				{"nome": "Tocantins", "sigla": "TO"}
 			],
+			checkboxes: {
+				terms: false
+			},
 			errors: {},
 		}
 	},
@@ -226,6 +244,7 @@ export default {
 			if(!this.driver.phone) this.errors['phone'] = true
 			if(!this.driver.login) this.errors['login'] = true
 			if(!this.driver.password) this.errors['password'] = true
+			if(!this.checkboxes.terms) this.errors['terms'] = true
 
 			if (!this.isEmpty(this.errors)) {
 				this.alert = {
@@ -250,4 +269,8 @@ export default {
 	}
 };
 </script>
-<style></style>
+<style>
+	#checkRadios {
+		text-align: initial
+	}
+</style>

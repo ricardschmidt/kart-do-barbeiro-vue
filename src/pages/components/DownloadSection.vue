@@ -15,14 +15,13 @@
           </h5>
         </div>
         <div class="text-center col-md-12 col-lg-8">
-          <a
-		  	href="https://forms.gle/MyLCb2xd8KaVzX5e7"
-            target="_blank"
+          <router-link
+		  	to="sign-up"
             class="btn btn-primary btn-lg btn-round"
             role="button"
           >
             Inscrever-se
-          </a>
+          </router-link>
           <a
             href="https://ras-upload.s3.amazonaws.com/ckdb/Regulamento+Kart+do+Barbeiro.pdf"
             target="_blank"

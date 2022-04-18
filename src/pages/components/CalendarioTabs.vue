@@ -76,7 +76,7 @@
 							 src="https://ras-upload.s3.amazonaws.com/ckdb/img/tracks/t-beto-carreiro.png"
 							 alt="Kartodromo do Beto Carreiro">
 						<div>
-							<p class="track-date">Data:<span>23/04/2022</span> 15:00hrs</p>
+							<p class="track-date">Data:<span>23/04/2022</span> 09:00hrs</p>
 							<p>
 							A pista do Kartódromo Internacional do Beto Carreiro
 							é a sede de diversos campeonatos organizados na região
