@@ -629,6 +629,17 @@
 				</h5>
 			</div>
 		</div>
+		<div class="col-sm-12 col-lg-12 text-center">
+			<a
+				href="https://ras-upload.s3.amazonaws.com/ckdb/Regulamento+Kart+do+Barbeiro.pdf"
+				target="_blank"
+				class="btn btn-primary btn-lg btn-round"
+				role="button"
+			>
+				Download
+			</a>
+
+		</div>
 	</div>
   </div>
 </template>
