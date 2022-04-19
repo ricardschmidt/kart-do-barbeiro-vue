@@ -95,7 +95,7 @@
 									<div>
 										<h4>Pontuação Deletada</h4>
 										<h3>
-										{{parseInt(currentUser.deletedScore)}}
+										{{parseInt(currentUser.deletedScore) === 99 ? 0 :parseInt(currentUser.deletedScore)}}
 										</h3>
 									</div>
 								</div>
